@@ -1,1 +1,0 @@
-# rishachi.github.io
