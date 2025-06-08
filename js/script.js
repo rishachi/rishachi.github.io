@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         softSkillCommsRespect: { en: "Clear, Respectful, and Considerate Communication", vi: "Giao Tiếp Rõ Ràng, Tôn Trọng và Chu Đáo", ja: "明確かつ他者を尊重する丁寧な意思疎通" },
         aboutLocationNew: { en: "GLOBAL COLLABORATOR", vi: "CỘNG TÁC TOÀN CẦU", ja: "グローバルコラボレーター" },
         projectsTitle: { en: "[02] WORKS // SHOWCASE", vi: "[02] TÁC PHẨM // TRƯNG BÀY", ja: "[02] 作品 // ショーケース" },
-        worksAnimTitle: { en: "ANIMATION REEL", vi: "ANIMATION REEL", ja: "アニメーションリール" }, worksReelNote: { en: "My animation from 2024", vi: "Animation của tôi trong năm 20242", ja: "2024年の私のアニメーション" },
+        worksAnimTitle: { en: "ANIMATION REEL", vi: "ANIMATION REEL", ja: "アニメーションリール" }, worksReelNote: { en: "My animation from 2024", vi: "Animation của tôi trong năm 2024", ja: "2024年の私のアニメーション" },
         worksIllustTitle: { en: "ILLUSTRATION GALLERY", vi: "ILLUSTRATION GALLERY", ja: "ILLUSTRATION GALLERY" },
         illust1Title: { en: "Aoi", vi: "Aoi", ja: "葵" }, illust1Desc: { en: "Original character design for personal animation project.", vi: "Thiết kế nhân vật gốc cho dự án hoạt hình cá nhân.", ja: "個人アニメーションプロジェクトのためのオリジナルキャラクターデザイン。" },
         illust2Title: { en: "FERN AND FRIEREN", vi: "FERN VÀ FRIEREN", ja: "フェルンとフリーレン " }, illust2Desc: { en: "A fan art about anime Frieren: Beyond Journey's End", vi: "Một bức tranh fan art về anime Frieren: Beyond Journey's End.", ja: "アニメ「葬送のフリーレン」に関するファンアート。" },
