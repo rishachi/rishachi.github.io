@@ -131,11 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentYearValForTranslations = new Date().getFullYear().toString();
     const translations = {
-        navHome: { en: "HOME", vi: "TRANG CHỦ", ja: "ホーム" }, navAbout: { en: "PROFILE", vi: "HỒ SƠ", ja: "プロフィール" }, navProjects: { en: "WORKS", vi: "CÔNG TRÌNH", ja: "作品" }, navContact: { en: "CONTACT", vi: "LIÊN HỆ", ja: "連絡先" },
+        navHome: { en: "HOME", vi: "TRANG CHỦ", ja: "ホーム" }, navAbout: { en: "PROFILE", vi: "HỒ SƠ", ja: "プロフィール" }, navProjects: { en: "WORKS", vi: "SẢN PHẨM", ja: "作品" }, navContact: { en: "CONTACT", vi: "LIÊN HỆ", ja: "連絡先" },
         menuOpenLabel: { en: "Menu", vi: "Menu", ja: "メニュー" }, menuCloseLabel: { en: "Close", vi: "Đóng", ja: "閉じる" },
         heroRole: { en: "2D Animator // Illustrator", vi: "2D Animator // Hoạ Sĩ Minh Hoạ", ja: "2Dアニメーター // イラストレーター" }, heroNicknameFull: { en: "Hachi // 八", vi: "Hachi // 八", ja: "Hachi // 八" },
         heroTagline1: { en: "BRINGING", vi: "ĐEM", ja: "命を" }, heroTagline2: { en: "-IMAGINATION", vi: "-TRÍ TƯỞNG TƯỢNG", ja: "吹き込む" }, heroTagline3: { en: "TO LIFE_", vi: "VÀO CUỘC SỐNG_", ja: "創造_" },
-        heroVTLeft: { en: `PORTFOLIO<br>// VER. 2.2`, vi: `HỒ SƠ NĂNG LỰC<br>// PHIÊN BẢN 2.2`, ja: `ポートフォリオ<br>// VER. 2.2`}, heroVTBottomRight: { en: `© ${currentYearValForTranslations} PHAT TRAN`, vi: `© ${currentYearValForTranslations} PHAT TRAN`, ja: `© ${currentYearValForTranslations} PHAT TRAN`},
+        heroVTLeft: { en: `PORTFOLIO<br>// VER. 2.2`, vi: `PORTFOLIO<br>// VER. 2.2`, ja: `PORTFOLIO<br>// VER. 2.2`}, heroVTBottomRight: { en: `© ${currentYearValForTranslations} PHAT TRAN`, vi: `© ${currentYearValForTranslations} PHAT TRAN`, ja: `© ${currentYearValForTranslations} PHAT TRAN`},
         scrollDown: { en: "SCROLL", vi: "CUỘN XUỐNG", ja: "スクロール" },
         aboutTitle: { en: "[01] PROFILE", vi: "[01] HỒ SƠ", ja: "[01] プロフィール" },
         aboutP1: { en: "Hello! I'm Phat Tran (you can also call me RiSH), a passionate <strong>2D Animator and Illustrator</strong> with a deep love for the art of Japanese animation. My focus is on dynamic character animation, expressive storytelling, and creating visuals that resonate with the vibrant energy of anime.", vi: "Xin chào! Tôi là Phát Trần (bạn cũng có thể gọi tôi là RiSH), một <strong>2D Animator và Hoạ Sĩ Minh Hoạ</strong> đầy nhiệt huyết với tình yêu sâu sắc dành cho nghệ thuật hoạt hình Nhật Bản. Tôi tập trung vào hoạt hình nhân vật động, kể chuyện biểu cảm, và tạo ra hình ảnh cộng hưởng với năng lượng sống động của anime.", ja: "こんにちは！ファット・トラン（RiSHとも呼ばれています）です。日本のアニメーション芸術に深い愛情を注ぐ、情熱的な<strong>2Dアニメーター兼イラストレーター</strong>です。ダイナミックなキャラクターアニメーション、表現力豊かなストーリーテリング、そしてアニメの活気に満ちたエネルギーと共鳴するビジュアルの創造に焦点を当てています。" },
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         softSkillAdaptProactive: { en: "Proactive & Adaptable in Dynamic Environments", vi: "Chủ Động & Thích Nghi Tốt trong Môi Trường Năng Động", ja: "ダイナミックな環境での積極性と適応力" },
         softSkillCommsRespect: { en: "Clear, Respectful, and Considerate Communication", vi: "Giao Tiếp Rõ Ràng, Tôn Trọng và Chu Đáo", ja: "明確かつ他者を尊重する丁寧な意思疎通" },
         aboutLocationNew: { en: "GLOBAL COLLABORATOR", vi: "CỘNG TÁC TOÀN CẦU", ja: "グローバルコラボレーター" },
-        projectsTitle: { en: "[02] WORKS // SHOWCASE", vi: "[02] WORKS // SHOWCASE", ja: "[02] WORKS // SHOWCASE" },
+        projectsTitle: { en: "[02] WORKS // SHOWCASE", vi: "[02] TÁC PHẨM // TRƯNG BÀY", ja: "[02] 作品 // ショーケース" },
         worksAnimTitle: { en: "ANIMATION REEL", vi: "ANIMATION REEL", ja: "アニメーションリール" }, worksReelNote: { en: "My animation from 2024", vi: "Animation của tôi trong năm 20242", ja: "2024年の私のアニメーション" },
         worksIllustTitle: { en: "ILLUSTRATION GALLERY", vi: "ILLUSTRATION GALLERY", ja: "ILLUSTRATION GALLERY" },
         illust1Title: { en: "Aoi", vi: "Aoi", ja: "葵" }, illust1Desc: { en: "Original character design for personal animation project.", vi: "Thiết kế nhân vật gốc cho dự án hoạt hình cá nhân.", ja: "個人アニメーションプロジェクトのためのオリジナルキャラクターデザイン。" },
