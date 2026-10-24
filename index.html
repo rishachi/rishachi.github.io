@@ -1,340 +1,635 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHAT TRAN (RiSH) - 2D ANIMATOR / ILLUSTRATOR</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&family=Roboto+Mono:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Phat Tran (RiSH) — 2D Animator &amp; Illustrator</title>
+  <meta name="description" content="Portfolio of Phat Tran (RiSH), a Vietnam-based 2D animator and illustrator focused on anime-style key animation, character design and illustration.">
+  <meta name="author" content="Phat Tran">
+  <meta name="theme-color" content="#f2efe9">
+  <link rel="canonical" href="https://rishachi.github.io/">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Phat Tran — Portfolio">
+  <meta property="og:title" content="Phat Tran (RiSH) — 2D Animator & Illustrator">
+  <meta property="og:description" content="Anime-style key animation, character design and illustration — frame by frame.">
+  <meta property="og:url" content="https://rishachi.github.io/">
+  <meta property="og:image" content="https://rishachi.github.io/assets/img/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Ri_Shachi">
+  <meta name="twitter:image" content="https://rishachi.github.io/assets/img/og-card.jpg">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Archivo (variable width + weight, Vietnamese support), JetBrains Mono, Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+
+  <!-- Above-the-fold hero art -->
+  <link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/process-4-800.avif 800w, assets/img/process-4-1400.avif 1400w, assets/img/process-4-2000.avif 2000w" imagesizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script>
+    // Flag JS early (prevents flash of un-animated content) + restore language before paint.
+    document.documentElement.classList.replace('no-js', 'js');
+    try {
+      var saved = localStorage.getItem('rish:lang');
+      var nav = (navigator.language || 'en').slice(0, 2);
+      var lang = saved || (['vi', 'ja'].indexOf(nav) > -1 ? nav : 'en');
+      document.documentElement.lang = lang;
+      if (location.protocol.indexOf('http') === 0) {
+        var m = document.createElement('link');
+        m.rel = 'manifest';
+        m.href = 'site.webmanifest';
+        document.head.appendChild(m);
+      }
+    } catch (e) {}
+    // Fail-safe: never allow preloader to stay stuck if an external script or asset stalls
+    window.__loaderSafety = setTimeout(function () {
+      var l = document.querySelector('[data-loader]');
+      if (l) l.classList.add('is-done');
+      document.documentElement.classList.remove('motion');
+    }, 2400);
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Phat Tran",
+    "alternateName": ["RiSH", "Hachi", "Trần Tấn Phát"],
+    "jobTitle": "2D Animator & Illustrator",
+    "url": "https://rishachi.github.io/",
+    "image": "https://rishachi.github.io/assets/img/og-card.jpg",
+    "email": "mailto:hansaworkz@gmail.com",
+    "knowsLanguage": ["vi", "en", "ja"],
+    "address": { "@type": "PostalAddress", "addressCountry": "VN" },
+    "sameAs": [
+      "https://www.pixiv.net/en/users/26900996",
+      "https://x.com/Ri_Shachi",
+      "https://www.linkedin.com/in/phat-tran-720141184/"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
-    <div id="intro-overlay">
-        <div class="intro-content-yr">
-            <!-- data-text sẽ được dùng cho scramble -->
-            <h1 class="intro-name-yr" data-text="PHAT.TRAN"></h1>
-            <div class="intro-line-yr"></div>
+  <!-- ============ PRELOADER — film leader ============ -->
+  <div class="loader" data-loader aria-hidden="true">
+    <div class="loader__leader">
+      <svg viewBox="0 0 200 200" class="loader__ring">
+        <circle cx="100" cy="100" r="92" />
+        <circle cx="100" cy="100" r="74" />
+        <line x1="100" y1="0" x2="100" y2="200" />
+        <line x1="0" y1="100" x2="200" y2="100" />
+      </svg>
+      <div class="loader__sweep"></div>
+      <span class="loader__num" data-loader-num>000</span>
+    </div>
+    <div class="loader__meta">
+      <span>PHAT TRAN</span>
+      <span>PORTFOLIO — <span data-year>2026</span></span>
+      <span>ファット・トラン</span>
+    </div>
+  </div>
+
+  <!-- ============ CURSOR ============ -->
+  <div class="cursor" data-cursor-el aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label" data-cursor-label></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="RiSH — back to top">
+      <span class="brand__mark" aria-hidden="true">八</span>
+      <span class="brand__name">RiSH<sup>®</sup></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        <li><a class="roll" href="#reel"><span data-i18n="nav.reel">Reel</span></a></li>
+        <li><a class="roll" href="#process"><span data-i18n="nav.process">Process</span></a></li>
+        <li><a class="roll" href="#work"><span data-i18n="nav.work">Work</span></a></li>
+        <li><a class="roll" href="#about"><span data-i18n="nav.about">About</span></a></li>
+        <li><a class="roll" href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="header__tools">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" lang="en">EN</button>
+        <button type="button" data-lang="vi" lang="vi">VI</button>
+        <button type="button" data-lang="ja" lang="ja">JP</button>
+      </div>
+      <a class="status" href="#contact">
+        <span class="status__dot" aria-hidden="true"></span>
+        <span data-i18n="status">Available for work</span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-btn>
+        <span class="menu-btn__bars" aria-hidden="true"><i></i><i></i></span>
+        <span class="sr-only" data-i18n="a11y.menu">Open menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mmenu" id="mobile-menu" data-menu hidden>
+    <nav aria-label="Mobile">
+      <ol class="mmenu__links">
+        <li><a href="#reel"><small>01</small><span data-i18n="nav.reel">Reel</span></a></li>
+        <li><a href="#process"><small>02</small><span data-i18n="nav.process">Process</span></a></li>
+        <li><a href="#work"><small>03</small><span data-i18n="nav.work">Work</span></a></li>
+        <li><a href="#about"><small>04</small><span data-i18n="nav.about">About</span></a></li>
+        <li><a href="#contact"><small>05</small><span data-i18n="nav.contact">Contact</span></a></li>
+      </ol>
+    </nav>
+    <div class="mmenu__foot">
+      <a href="mailto:hansaworkz@gmail.com">hansaworkz@gmail.com</a>
+      <div class="mmenu__social">
+        <a href="https://www.pixiv.net/en/users/26900996" target="_blank" rel="noopener">Pixiv</a>
+        <a href="https://x.com/Ri_Shachi" target="_blank" rel="noopener">X</a>
+        <a href="https://www.linkedin.com/in/phat-tran-720141184/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUD: scroll position as an animation frame counter -->
+  <div class="hud" aria-hidden="true">
+    <span class="hud__rec"></span>
+    <span>F <b data-hud-frame>0001</b></span>
+    <span class="hud__sep">/</span>
+    <span data-hud-total>1440</span>
+    <span class="hud__fps">24FPS</span>
+  </div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero__grid">
+        <div class="hero__intro">
+          <p class="eyebrow" data-hero-fade>
+            <span class="eyebrow__idx">(00)</span>
+            <span data-i18n="hero.eyebrow">2D Animator &amp; Illustrator</span>
+          </p>
+          <p class="hero__lede" data-split="lines" data-i18n-html="hero.lede">Bringing imagination to life — <em>one frame</em> at a time.</p>
+          <p class="hero__sub" data-hero-fade data-i18n="hero.sub">Key animation, character design and anime-inspired illustration. Based in Vietnam — drawing my way toward the studios of Tokyo.</p>
+          <div class="hero__cta" data-hero-fade>
+            <a class="btn btn--solid" href="#work" data-magnetic>
+              <span data-i18n="hero.ctaWork">Selected work</span>
+              <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <button class="btn btn--ghost" type="button" data-reel-jump data-magnetic>
+              <span class="btn__play" aria-hidden="true"></span>
+              <span data-i18n="hero.ctaReel">Play showreel</span>
+            </button>
+          </div>
         </div>
+
+        <figure class="cel" data-lens data-cursor="peek">
+          <div class="cel__pegs" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="cel__frame">
+            <picture class="cel__layer cel__final">
+              <source type="image/avif" srcset="assets/img/process-4-800.avif 800w, assets/img/process-4-1400.avif 1400w, assets/img/process-4-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/img/process-4-800.webp 800w, assets/img/process-4-1400.webp 1400w, assets/img/process-4-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+              <img src="assets/img/process-4-1400.jpg" width="2600" height="1733" alt="Akari sprinting — final composited frame from Get Set Run" fetchpriority="high" decoding="async" data-i18n-attr="alt:alt.heroFinal">
+            </picture>
+            <picture class="cel__layer cel__sketch" aria-hidden="true">
+              <source type="image/avif" srcset="assets/img/process-1-800.avif 800w, assets/img/process-1-1400.avif 1400w, assets/img/process-1-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+              <source type="image/webp" srcset="assets/img/process-1-800.webp 800w, assets/img/process-1-1400.webp 1400w, assets/img/process-1-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+              <img src="assets/img/process-1-1400.jpg" width="2600" height="1733" alt="" decoding="async">
+            </picture>
+            <div class="cel__lens" data-lens-ring aria-hidden="true"><span>ROUGH ✎</span></div>
+            <span class="cel__corner cel__corner--tl" aria-hidden="true"></span>
+            <span class="cel__corner cel__corner--tr" aria-hidden="true"></span>
+            <span class="cel__corner cel__corner--bl" aria-hidden="true"></span>
+            <span class="cel__corner cel__corner--br" aria-hidden="true"></span>
+          </div>
+          <figcaption class="cel__meta">
+            <span>CUT — 008</span>
+            <span>AKARI / GET SET RUN</span>
+            <span class="cel__hint" data-i18n="hero.hint">Move over the frame to peek at the rough</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <h1 class="hero__name">
+        <span class="sr-only">Phat Tran — 2D Animator &amp; Illustrator</span>
+        <span class="hero__name-row" aria-hidden="true" data-hero-name>PHAT&nbsp;TRAN</span>
+      </h1>
+      <p class="hero__kana" aria-hidden="true">ファット・トラン</p>
+
+      <div class="hero__foot" data-hero-fade>
+        <a class="scroll-cue" href="#reel"><span class="scroll-cue__line" aria-hidden="true"></span><span data-i18n="hero.scroll">Scroll</span></a>
+        <span class="hero__route">VN <span aria-hidden="true">→</span> TYO</span>
+        <span class="hero__clock">HCMC <time data-clock>--:--</time> GMT+7</span>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true" data-marquee>
+      <div class="marquee__track">
+        <span>KEY ANIMATION</span><i>✦</i><span lang="ja">原画</span><i>✦</i>
+        <span>IN-BETWEEN</span><i>✦</i><span lang="ja">動画</span><i>✦</i>
+        <span>CHARACTER DESIGN</span><i>✦</i><span lang="ja">キャラデザ</span><i>✦</i>
+        <span>ILLUSTRATION</span><i>✦</i><span lang="ja">イラスト</span><i>✦</i>
+        <span>CLEAN-UP</span><i>✦</i><span lang="ja">仕上げ</span><i>✦</i>
+      </div>
     </div>
 
-    <canvas id="visualizer-bg"></canvas>
+    <!-- ============ 01 — SHOWREEL ============ -->
+    <section class="section reel" id="reel" data-theme="dark" aria-labelledby="reel-title">
+      <header class="section-head">
+        <span class="section-head__idx">01</span>
+        <h2 class="section-head__title" id="reel-title" data-split="chars" data-i18n="reel.title">Showreel</h2>
+        <span class="section-head__jp" lang="ja">ショーリール</span>
+        <span class="section-head__meta">2024 — 2025</span>
+      </header>
 
-    <header id="main-header">
-        <div class="container header-container">
-            <div class="logo interactive-element"><a href="#hero">[ 8 ]</a></div>
-
-            <nav id="main-navigation-yr">
-                <ul>
-                    <li><a href="#hero" data-translation-key="navHome" class="interactive-element nav-link active"><span>HOME</span></a></li>
-                    <li><a href="#about" data-translation-key="navAbout" class="interactive-element nav-link"><span>PROFILE</span></a></li>
-                    <li><a href="#works" data-translation-key="navProjects" class="interactive-element nav-link"><span>WORKS</span></a></li>
-                    <li><a href="#contact" data-translation-key="navContact" class="interactive-element nav-link"><span>CONTACT</span></a></li>
-                </ul>
-            </nav>
-
-            <div class="header-right-controls">
-                <div id="language-switcher">
-                    <button data-lang="en" class="lang-btn active interactive-element">EN</button>
-                    <button data-lang="vi" class="lang-btn interactive-element">VI</button>
-                    <button data-lang="ja" class="lang-btn interactive-element">JP</button>
-                </div>
-                <div class="menu-toggle interactive-element">
-                    <p id="menu-open" data-translation-key="menuOpenLabel">Menu</p>
-                    <p id="menu-close" data-translation-key="menuCloseLabel">Close</p>
-                </div>
-            </div>
+      <div class="reel__stage" data-reel-stage>
+        <div class="reel__player" data-reel data-cursor="play">
+          <button class="reel__poster" type="button" data-reel-play aria-label="Play showreel" data-i18n-attr="aria-label:reel.play">
+            <picture>
+              <source type="image/avif" srcset="assets/img/process-5-800.avif 800w, assets/img/process-5-1400.avif 1400w, assets/img/process-5-1751.avif 1751w" sizes="100vw">
+              <source type="image/webp" srcset="assets/img/process-5-800.webp 800w, assets/img/process-5-1400.webp 1400w, assets/img/process-5-1751.webp 1751w" sizes="100vw">
+              <img src="assets/img/process-5-1400.jpg" width="1751" height="1167" alt="" loading="lazy" decoding="async">
+            </picture>
+            <span class="reel__shade" aria-hidden="true"></span>
+            <span class="reel__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <span class="reel__label" aria-hidden="true"><span data-i18n="reel.play">Play reel</span> — 2024/25</span>
+            <span class="reel__tc" aria-hidden="true">TC <span data-timecode>00:00:00:00</span></span>
+            <span class="reel__rec" aria-hidden="true">● REC</span>
+          </button>
         </div>
-    </header>
+      </div>
 
-    <div class="menu-overlay">
-        <div class="menu-content">
-            <div class="menu-items">
-                <div class="col-lg menu-preview-img-container">
-                    <div class="menu-preview-img">
-                        <img src="img/gallery1.jpg" alt="Menu Preview Image" />
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="menu-links">
-                        <div class="link"><a href="#hero" data-img="img/gallery1.jpg" data-translation-key="navHome">HOME</a></div>
-                        <div class="link"><a href="#about" data-img="img/gallery2.jpg" data-translation-key="navAbout">PROFILE</a></div>
-                        <div class="link"><a href="#works" data-img="img/gallery3.jpg" data-translation-key="navProjects">WORKS</a></div>
-                        <div class="link"><a href="#contact" data-img="img/gallery4.jpg" data-translation-key="navContact">CONTACT</a></div>
-                    </div>
-                    <div class="menu-socials">
-                        <div class="social"><a href="https://www.pixiv.net/en/users/26900996" target="_blank" rel="noopener noreferrer"><span>Pixiv</span></a></div>
-                        <div class="social"><a href="https://x.com/Ri_Shachi" target="_blank" rel="noopener noreferrer"><span>X (Twitter)</span></a></div>
-                        <div class="social"><a href="https://www.linkedin.com/in/phat-tran-720141184/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-footer">
-                <div class="col-lg">
-                </div>
-                <div class="col-sm">
-                    <a href="mailto:hansaworkz@gmail.com" data-translation-key="contactButton"><span>SEND_EMAIL_MESSAGE</span></a>
-                    <a href="#" data-translation-key="heroNicknameFull"><span>Hachi // 八</span></a>
-                </div>
-            </div>
+      <div class="reel__foot">
+        <p class="reel__note" data-i18n="reel.note">A selection of my animation work from 2024 to early 2025 — character acting, sports motion and effects.</p>
+        <a class="link-arrow" href="https://www.youtube.com/watch?v=dxZP3VsqWcM" target="_blank" rel="noopener">
+          <span data-i18n="reel.youtube">Watch on YouTube</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ 02 — PROCESS (pinned, scroll-scrubbed) ============ -->
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <header class="section-head">
+        <span class="section-head__idx">02</span>
+        <h2 class="section-head__title" id="process-title" data-split="chars" data-i18n="process.title">Process</h2>
+        <span class="section-head__jp" lang="ja">作画工程</span>
+        <span class="section-head__meta" data-i18n="process.meta">Rough → Final</span>
+      </header>
+
+      <div class="process__pin" data-process>
+        <div class="process__stage">
+          <div class="process__frames">
+            <picture class="process__frame" data-step="0">
+              <source type="image/avif" srcset="assets/img/process-1-800.avif 800w, assets/img/process-1-1400.avif 1400w, assets/img/process-1-2000.avif 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <source type="image/webp" srcset="assets/img/process-1-800.webp 800w, assets/img/process-1-1400.webp 1400w, assets/img/process-1-2000.webp 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <img src="assets/img/process-1-1400.jpg" width="2600" height="1733" alt="Step 1 — rough key drawing of a sprinting girl" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step1">
+            </picture>
+            <picture class="process__frame" data-step="1">
+              <source type="image/avif" srcset="assets/img/process-2-800.avif 800w, assets/img/process-2-1400.avif 1400w, assets/img/process-2-2000.avif 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <source type="image/webp" srcset="assets/img/process-2-800.webp 800w, assets/img/process-2-1400.webp 1400w, assets/img/process-2-2000.webp 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <img src="assets/img/process-2-1400.jpg" width="2600" height="1733" alt="Step 2 — clean line art with shadow and highlight colour guides" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step2">
+            </picture>
+            <picture class="process__frame" data-step="2">
+              <source type="image/avif" srcset="assets/img/process-3-800.avif 800w, assets/img/process-3-1400.avif 1400w, assets/img/process-3-2000.avif 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <source type="image/webp" srcset="assets/img/process-3-800.webp 800w, assets/img/process-3-1400.webp 1400w, assets/img/process-3-2000.webp 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <img src="assets/img/process-3-1400.jpg" width="2600" height="1733" alt="Step 3 — flat colour with the character palette" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step3">
+            </picture>
+            <picture class="process__frame" data-step="3">
+              <source type="image/avif" srcset="assets/img/process-4-800.avif 800w, assets/img/process-4-1400.avif 1400w, assets/img/process-4-2000.avif 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <source type="image/webp" srcset="assets/img/process-4-800.webp 800w, assets/img/process-4-1400.webp 1400w, assets/img/process-4-2000.webp 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <img src="assets/img/process-4-1400.jpg" width="2600" height="1733" alt="Step 4 — character cel composited over a speed-line background" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step4">
+            </picture>
+            <picture class="process__frame" data-step="4">
+              <source type="image/avif" srcset="assets/img/process-5-800.avif 800w, assets/img/process-5-1400.avif 1400w, assets/img/process-5-1751.avif 1751w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <source type="image/webp" srcset="assets/img/process-5-800.webp 800w, assets/img/process-5-1400.webp 1400w, assets/img/process-5-1751.webp 1751w" sizes="(min-width: 1024px) 62vw, 100vw">
+              <img src="assets/img/process-5-1400.jpg" width="1751" height="1167" alt="Step 5 — final frame with lighting, blur and effects" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step5">
+            </picture>
+            <span class="process__wipe" aria-hidden="true"></span>
+            <span class="process__badge" aria-hidden="true">CUT 008 · <span data-process-label>RAFU</span></span>
+          </div>
         </div>
-    </div>
 
-    <div id="page-content-wrapper">
-        <main id="index-main">
-            <section id="hero" class="hero-yr">
-                <div class="hero-yr-title-block-wrapper">
-                    <h1 class="yr-title-jp-main" data-text="ファット">ファット</h1>
-                    <h2 class="yr-title-jp-sub" data-text="トラン">トラン</h2>
-                    <h3 class="yr-title-en-main" data-text="PHAT TRAN">PHAT TRAN</h3>
-                    <span class="yr-nickname-display" data-text="Hachi // 八" data-translation-key="heroNicknameFull">Hachi // 八</span>
-                    <p class="yr-title-role" data-text="2D Animator // Illustrator" data-translation-key="heroRole">2D Animator // Illustrator</p>
-                    <div class="hero-yr-deco-text hero-deco-mid-left scroll-fade-in" data-delay="1.2"> <!-- Tăng delay cho deco text vì intro dài hơn -->
-                        <span data-text="INITIATE_SEQ"></span>
-                    </div>
-                </div>
-
-                <div id="hero-slideshow-gallery" class="hero-slideshow-yr">
-                    <div class="slideshow-yr-slides">
-                        <div class="slide-yr active"><img src="img/gallery1.jpg" alt="My animation process: Sketch out the key animation." data-translation-key="slide1Alt"><div class="slide-yr-content"><h3 class="slide-yr-title" data-translation-key="slide1Title">MY ANIMATION PROCESS</h3><p class="slide-yr-description" data-translation-key="slide1Desc">Sketch out the key animation.</p></div></div>
-                        <div class="slide-yr"><img src="img/gallery2.jpg" alt="My animation process: Cleaning, adding in-between animation and shading." data-translation-key="slide2Alt"><div class="slide-yr-content"><h3 class="slide-yr-title" data-translation-key="slide2Title">MY ANIMATION PROCESS</h3><p class="slide-yr-description" data-translation-key="slide2Desc">Cleaning, adding in-beetween animation and shading.</p></div></div>
-                        <div class="slide-yr"><img src="img/gallery3.jpg" alt="My animation process: Coloring with the original color palette." data-translation-key="slide3Alt"><div class="slide-yr-content"><h3 class="slide-yr-title" data-translation-key="slide3Title">MY ANIMATION PROCESS</h3><p class="slide-yr-description" data-translation-key="slide3Desc">Coloring with the original color palette.</p></div></div>
-                        <div class="slide-yr"><img src="img/gallery4.jpg" alt="My animation process: Combine all cels together." data-translation-key="slide4Alt"><div class="slide-yr-content"><h3 class="slide-yr-title" data-translation-key="slide4Title">MY ANIMATION PROCESS</h3><p class="slide-yr-description" data-translation-key="slide4Desc">Combine all cels together.</p></div></div>
-                        <div class="slide-yr"><img src="img/gallery5.jpg" alt="My animation process: Adding filters and effects for the final look." data-translation-key="slide5Alt"><div class="slide-yr-content"><h3 class="slide-yr-title" data-translation-key="slide5Title">MY ANIMATION PROCESS</h3><p class="slide-yr-description" data-translation-key="slide5Desc">Adding filters and effects for the final look.</p></div></div>
-                    </div>
-                    <button class="slide-yr-nav prev" aria-label="Previous Slide" data-translation-key="slideNavPrevLabel" title="Previous Slide"><</button>
-                    <button class="slide-yr-nav next" aria-label="Next Slide" data-translation-key="slideNavNextLabel" title="Next Slide">></button>
-                    <div class="slide-yr-dots"></div>
-                </div>
-
-                <div class="gb-top-left-cluster scroll-fade-in" data-delay="0.8"></div>
-                <div class="hero-yr-graphic-block gb-accent-bar-top scroll-fade-in" data-delay="0.9"></div>
-                <div class="hero-yr-graphic-block gb-accent-bar-bottom-left scroll-fade-in" data-delay="0.9"></div>
-                <div class="hero-yr-icon-element scroll-scale-in" data-delay="0.9"></div>
-                <div class="hero-yr-text-module tm-out-of-nowhere scroll-fade-in" data-delay="0.8"><span data-translation-key="heroTagline1">BRINGING</span><span data-translation-key="heroTagline2">-IMAGINATION</span><span data-translation-key="heroTagline3">TO LIFE_</span></div>
-                <div class="hero-yr-text-module tm-character-label scroll-fade-in" data-delay="0.7"><span data-text="CHARACTER"></span></div>
-                <div class="hero-yr-deco-text hero-deco-top-right scroll-fade-in" data-delay="1.1">
-                    <span data-text="RH.DSGN // ID_008"></span>
-                </div>
-                <div class="hero-yr-vertical-text vt-left scroll-slide-right" data-delay="0.9">
-                    <span data-translation-key="heroVTLeft"></span> <!-- Text sẽ được JS chèn -->
-                </div>
-                <div class="hero-yr-vertical-text vt-bottom-right scroll-slide-left" data-delay="0.9">
-                    <span data-translation-key="heroVTBottomRight"></span> <!-- Text sẽ được JS chèn -->
-                </div>
-                <a href="#about" class="scroll-down-indicator interactive-element" data-text="SCROLL" data-translation-key="scrollDown"><span>SCROLL</span></a>
-            </section>
-
-            <section id="about" class="content-section">
-                <div class="section-bg-text" data-text="PORTFOLIO" aria-hidden="true">PORTFOLIO</div>
-                <div class="about-extra-labels" style="display: flex; gap: 10px; align-items: flex-end; margin-bottom: 10px;">
-                    <span class="about-label about-label-main">ABOUT ME</span>
-                    <span class="about-label about-label-id">ID: PHAT-008</span>
-                    <span class="about-label about-label-barcode">| | | | | | | | | |</span>
-                    <span class="about-label about-label-vertical">PROFILE</span>
-                </div>
-                <div class="interactive-bg-element ibe-square-1" data-scroll-speed="0.4" style="opacity:0.08;"></div>
-                <div class="interactive-bg-element ibe-line-1" data-scroll-speed="-0.2" style="opacity:0.08;"></div>
-                <div class="about-side-info">
-                    <span class="about-side-info-title">ANIMATOR & ILLUSTRATOR</span>
-                    <span class="about-side-info-desc">Portfolio 2024-2025</span>
-                </div>
-                <div class="container about-yr-container">
-                    <div class="section-title-yr-container">
-                        <h2 class="section-title-yr" data-text="[01] PROFILE" data-translation-key="aboutTitle"><span>[01] PROFILE</span></h2>
-                        <div class="section-title-deco-line"></div>
-                    </div>
-                    <div class="about-yr-layout-wrapper">
-                        <div class="about-yr-content-main">
-                            <div class="about-yr-text">
-                                <p data-translation-key="aboutP1">Hello! I'm Phat Tran (you can also call me RiSH), a passionate <strong>2D Animator and Illustrator</strong> with a deep love for the art of Japanese animation. My focus is on dynamic character animation, expressive storytelling, and creating visuals that resonate with the vibrant energy of anime.</p>
-                                <p data-translation-key="aboutP3">Whether it's crafting fluid keyframes, designing captivating characters, or illustrating immersive scenes, my goal is to contribute to projects that inspire and entertain. I'm always eager to learn and collaborate on exciting new ventures.</p>
-                            </div>
-                            <div class="about-yr-details-block scroll-fade-in" data-delay="0.3">
-                                <div class="detail-item"><span class="detail-label">STATUS:</span><span class="detail-value">OPEN FOR OPPORTUNITIES</span></div>
-                                <div class="detail-item"><span class="detail-label">ASPIRATION:</span><span class="detail-value">JOIN ANIME INDUSTRY / TOKYO</span></div>
-                                <div class="detail-item detail-lines"><span></span><span></span><span></span></div>
-                            </div>
-
-                            <div class="skills-yr-subsection">
-                                <h3 class="skills-title-yr" data-translation-key="skillsTitle">Core Skills & Expertise</h3>
-                                <div class="skills-category-group">
-                                    <div class="skills-subtitle-yr" data-translation-key="hardSkillsTitle"><span>Core Technical Foundation</span></div>
-                                    <div class="skills-grid-yr">
-    <div>
-        <span class="skill-category-yr" data-translation-key="skillCatAnimationFocus">Animation & Illustration</span>
-        <span class="skill-item-yr" data-translation-key="skillAnimMain">2D Character Animation & Storytelling Principles</span>
-        <span class="skill-item-yr" data-translation-key="skillAnimFX">Foundational 2D Effects (FX) & Motion Concepts</span>
-        <span class="skill-item-yr" data-translation-key="skillIllustCore">Character Design & Anime-Inspired Illustration</span>
-        <span class="skill-item-yr" data-translation-key="skillIllustTech">Digital Painting & Composition Fundamentals</span>
-    </div>
-                                        <div><span class="skill-category-yr" data-translation-key="skillCatSoftware">Software Proficiency</span><span class="skill-item-yr">Clip Studio Paint EX</span><span class="skill-item-yr">Experienced with Adobe software (e.g., Photoshop, After Effects, etc.)</span><span class="skill-item-yr">Opentoolz</span><span class="skill-item-yr">(Exploring Blender)</span><span class="skill-item-yr" data-translation-key="skillSoftwareNote" style="font-style: italic; color: var(--text-color-yr-subtle); font-size: 0.85em; padding-left:0; margin-top: 5px;">Proficient with key industry software.</span></div>
-                                        <div><span class="skill-category-yr" data-translation-key="skillCatLanguages">Languages</span><span class="skill-item-yr" data-translation-key="skillLang1">Vietnamese (Native)</span><span class="skill-item-yr" data-translation-key="skillLang2">English (Fluent)</span><span class="skill-item-yr" data-translation-key="skillLang3">Japanese (Intermediate)</span></div>
-                                    </div>
-                                </div>
-                                <div class="skills-category-group">
-                                    <div class="skills-subtitle-yr" data-translation-key="softSkillsTitle"><span>Professional Mindset & Approach</span></div>
-                                    <div class="skills-grid-yr soft-skills-grid">
-                                        <div><span class="skill-category-yr" data-translation-key="skillCatCoreAttributes">Core Attributes</span><span class="skill-item-yr" data-translation-key="softSkillLearnPassion">Passion for Anime & Commitment to Continuous Learning</span><span class="skill-item-yr" data-translation-key="softSkillTeamDetail">Detail-Oriented Team Player, Open to Feedback</span><span class="skill-item-yr" data-translation-key="softSkillAdaptProactive">Proactive & Adaptable in Dynamic Environments</span><span class="skill-item-yr" data-translation-key="softSkillCommsRespect">Clear, Respectful, and Considerate Communication</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="about-yr-deco">
-                                <div class="deco-line-yr"></div>
-                                <div class="deco-block-yr"></div>
-                                <span class="deco-text-yr" data-translation-key="aboutLocationNew"><span data-text="GLOBAL COLLABORATR"></span></span>
-                            </div>
-                        </div>
-                        <div class="about-yr-aside"><img src="img/tiket.png" alt="Phat Tran - Profile Accent Image" class="about-yr-accent-image"><div class="about-yr-decorative-text" data-text="PASSION">PASSION</div></div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="works" class="content-section">
-                <div class="section-bg-text works-bg-text" data-text="SHOWCASE" aria-hidden="true">SHOWCASE</div>
-                <div class="interactive-bg-element ibe-char-1" data-scroll-text="ART" data-scroll-speed="0.2" style="opacity:0.08;">ART</div>
-                <div class="interactive-bg-element ibe-rect-1" data-scroll-speed="0.5" style="opacity:0.08;"></div>
-                <div class="container projects-yr-container">
-                    <div class="works-extra-labels">
-                        <span class="works-label works-label-main">PROJECTS</span>
-                        <span class="works-label works-label-id">NO. 02</span>
-                        <span class="works-label works-label-barcode">| | | | | | | | | |</span>
-                        <span class="works-label works-label-vertical">GALLERY</span>
-                    </div>
-                    <div class="section-title-yr-container"><h2 class="section-title-yr" data-text="[02] WORKS // SHOWCASE" data-translation-key="projectsTitle"><span>[02] WORKS // SHOWCASE</span></h2><div class="section-title-deco-line"></div></div>
-                    <h3 class="subsection-title-yr" data-text="ANIMATION REEL" data-translation-key="worksAnimTitle">ANIMATION REEL</h3>
-                    <div style="padding:56.25% 0 0 0;position:relative; margin-bottom: 30px; border: 1px solid var(--border-color-yr); background-color: var(--light-gray);"><iframe src="https://www.youtube.com/embed/dxZP3VsqWcM" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Animation Reel"></iframe></div>
-                    <p style="text-align: center; font-size: 0.9rem; color: var(--text-color-yr-subtle); margin-bottom: 40px;" data-translation-key="worksReelNote">from 2024 to early 2025</p>
-
-                    <h3 class="subsection-title-yr" data-text="ILLUSTRATION GALLERY" data-translation-key="worksIllustTitle">ILLUSTRATION GALLERY</h3>
-                    <div class="project-grid-yr">
-                        <div class="works-side-info">
-
-                        </div>
-                        <!-- Card 1 -->
-                        <div class="project-card-yr illustration-card interactive-card">
-                            <div class="card-yr-image-wrapper">
-                                <img src="img/sailor aoi.jpg" alt="Original character design Aoi" class="card-yr-image">
-                                <div class="card-yr-hover-overlay">
-                                    <span class="hover-overlay-icon">+</span>
-                                    <span class="hover-overlay-text" data-translation-key="viewProjectHover">View</span>
-                                </div>
-                            </div>
-                            <div class="card-yr-content">
-                                <h4 class="card-yr-title" data-text="CHARACTER CONCEPT: AKIRA" data-translation-key="illust1Title">CHARACTER CONCEPT: AOI</h4>
-                                <p class="card-yr-desc" data-translation-key="illust1Desc">Original character design for personal animation project</p>
-                                <div class="card-yr-tags">
-                                    <span class="card-yr-tag" data-text="CHARACTER DESIGN">ORIGINAL</span>
-                                    <span class="card-yr-tag" data-text="SLICE OF LIFE">CHARACTER SHEET</span>
-                                </div>
-                                <a href="#" class="card-yr-link card-yr-view-project" data-text="VIEW DETAIL >>" data-translation-key="viewDetail">VIEW DETAIL >></a>
-                            </div>
-                        </div>
-                        <!-- Card 2 -->
-                        <div class="project-card-yr illustration-card interactive-card">
-                            <div class="card-yr-image-wrapper">
-                                <img src="img/fern.png" alt="Illustration Title 2" class="card-yr-image">
-                                <div class="card-yr-hover-overlay">
-                                    <span class="hover-overlay-icon">+</span>
-                                    <span class="hover-overlay-text" data-translation-key="viewProjectHover">View</span>
-                                </div>
-                            </div>
-                            <div class="card-yr-content">
-                                <h4 class="card-yr-title" data-text="FERN AND FRIEREN" data-translation-key="illust2Title">FERN AND FRIEREN</h4>
-                                <p class="card-yr-desc" data-translation-key="illust2Desc">A fan art about anime "Frieren: Beyond Journey's End"</p>
-                                <div class="card-yr-tags">
-                                    <span class="card-yr-tag" data-text="BACKGROUND ART">DIGITAL PAINTING</span>
-                                    <span class="card-yr-tag" data-text="ENVIRONMENT">ENVIRONMENT</span>
-                                </div>
-                                <a href="#" class="card-yr-link card-yr-view-project" data-text="VIEW DETAIL >>" data-translation-key="viewDetail">VIEW DETAIL >></a>
-                            </div>
-                        </div>
-                        <!-- Card 3 -->
-                        <div class="project-card-yr illustration-card interactive-card">
-                            <div class="card-yr-image-wrapper">
-                                <img src="img/tiketk.png" alt="Design Example" class="card-yr-image">
-                                <div class="card-yr-hover-overlay">
-                                    <span class="hover-overlay-icon">+</span>
-                                    <span class="hover-overlay-text" data-translation-key="viewProjectHover">View</span>
-                                </div>
-                            </div>
-                            <div class="card-yr-content">
-                                <h4 class="card-yr-title" data-text="CHARACTER DESIGN: RIN" data-translation-key="illust3Title">STANDEE DESIGN</h4>
-                                <p class="card-yr-desc" data-translation-key="illust3Desc">A standee design for my personal project</p>
-                                <div class="card-yr-tags">
-                                    <span class="card-yr-tag" data-text="DESIGN">DESIGN</span>
-                                    <span class="card-yr-tag" data-text="ANIME STYLE">STANDEE</span>
-                                </div>
-                                <a href="#" class="card-yr-link card-yr-view-project" data-text="VIEW DETAIL >>" data-translation-key="viewDetail">VIEW DETAIL >></a>
-                            </div>
-                        </div>
-                        <!-- Card 4 -->
-                        <div class="project-card-yr illustration-card interactive-card">
-                            <div class="card-yr-image-wrapper">
-                                <img src="img/gsr poster.jpg" alt="Character Design Example 2" class="card-yr-image">
-                                <div class="card-yr-hover-overlay">
-                                    <span class="hover-overlay-icon">+</span>
-                                    <span class="hover-overlay-text" data-translation-key="viewProjectHover">View</span>
-                                </div>
-                            </div>
-                            <div class="card-yr-content">
-                                <h4 class="card-yr-title" data-text="AKARI - GET SET RUN" data-translation-key="illust4Title">AKARI - GET SET RUN</h4>
-                                <p class="card-yr-desc" data-translation-key="illust4Desc">A poster design for my personal project</p>
-                                <div class="card-yr-tags">
-                                    <span class="card-yr-tag" data-text="CHARACTER DESIGN">DESIGN</span>
-                                    <span class="card-yr-tag" data-text="ANIME STYLE">POSTER</span>
-                                </div>
-                                <a href="#" class="card-yr-link card-yr-view-project" data-text="VIEW DETAIL >>" data-translation-key="viewDetail">VIEW DETAIL >></a>
-                            </div>
-                        </div>
-                        <!-- Thêm các project card khác nếu có -->
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact" class="content-section">
-                <div class="interactive-bg-element ibe-dots-1" data-scroll-speed="-0.3"><span></span><span></span><span></span><span></span></div>
-                <div class="container contact-yr-container">
-                    <div class="section-title-yr-container"><h2 class="section-title-yr" data-text="[03] CONTACT & LINKS" data-translation-key="contactTitle"><span>[03] CONTACT & LINKS</span></h2><div class="section-title-deco-line"></div></div>
-                    <div class="contact-yr-content">
-                        <p class="contact-yr-intro" data-translation-key="contactIntro">OPEN FOR OPPORTUNITIES & COLLABORATIONS.<br>LET'S CREATE SOMETHING AMAZING TOGETHER!</p>
-                        <a href="mailto:hansaworkz@gmail.com" class="cta-button-yr interactive-element" data-text="SEND_EMAIL_MESSAGE" data-translation-key="contactButton"><span>SEND_EMAIL_MESSAGE</span></a>
-                        <div class="contact-yr-socials">
-                            <a href="https://www.pixiv.net/en/users/26900996" target="_blank" rel="noopener noreferrer" data-text="PIXIV" class="interactive-element"><span>PIXIV</span></a>
-                            <a href="https://x.com/Ri_Shachi" target="_blank" rel="noopener noreferrer" data-text="X (TWITTER)" class="interactive-element"><span>X (TWITTER)</span></a>
-                            <a href="https://www.linkedin.com/in/phat-tran-720141184/" target="_blank" rel="noopener noreferrer" data-text="LINKEDIN" class="interactive-element"><span>LINKEDIN</span></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="container footer-yr-container">
-                <div class="footer-yr-line"></div>
-                <p class="footer-yr-text"><span data-translation-key="footerRights">© <span id="footer-current-year"></span> PHAT TRAN // ANIMATOR & ILLUSTRATOR. ALL RIGHTS RESERVED.</span></p>
-                <a href="#hero" id="scroll-to-top-btn" class="interactive-element" title="Scroll to top"><span>↑ TOP</span></a>
-            </div>
-        </footer>
-    </div>
-
-    <div id="info-modal" class="info-modal-yr" style="display: none;">
-        <div class="info-modal-content-yr">
-            <button class="info-modal-close-yr" data-text="CLOSE [X]" data-translation-key="modalClose">CLOSE [X]</button>
-            <h3 class="modal-yr-title"></h3>
-            <p class="modal-yr-date"></p>
-            <div class="modal-yr-body"></div>
+        <div class="process__info">
+          <p class="process__count" aria-hidden="true"><span class="process__count-cur" data-process-count>01</span><span class="process__count-tot">/05</span></p>
+          <ol class="process__steps">
+            <li class="process__step is-active">
+              <span class="process__step-jp" lang="ja">ラフ原画</span>
+              <h3 data-i18n="process.s1.t">Rough key</h3>
+              <p data-i18n="process.s1.d">Weight, line of action and the energy of the sprint come first — loose lines, big decisions.</p>
+            </li>
+            <li class="process__step">
+              <span class="process__step-jp" lang="ja">クリンナップ・影指定</span>
+              <h3 data-i18n="process.s2.t">Clean-up &amp; shadow guides</h3>
+              <p data-i18n="process.s2.d">Tightening the line, adding in-betweens and marking shadow and highlight areas with colour pencil.</p>
+            </li>
+            <li class="process__step">
+              <span class="process__step-jp" lang="ja">彩色</span>
+              <h3 data-i18n="process.s3.t">Colour</h3>
+              <p data-i18n="process.s3.d">Painting the cel with the character's original palette — base, shadow and highlight tones.</p>
+            </li>
+            <li class="process__step">
+              <span class="process__step-jp" lang="ja">合成</span>
+              <h3 data-i18n="process.s4.t">Composite</h3>
+              <p data-i18n="process.s4.d">Combining every cel with the background into a single, readable shot.</p>
+            </li>
+            <li class="process__step">
+              <span class="process__step-jp" lang="ja">撮影・エフェクト</span>
+              <h3 data-i18n="process.s5.t">Photography &amp; FX</h3>
+              <p data-i18n="process.s5.d">Light, blur and filters for the final look — the frame finally feels alive.</p>
+            </li>
+          </ol>
         </div>
-    </div>
 
-    <!-- Image Modal for Zoom View -->
-    <div id="image-modal-yr" class="image-modal-yr">
-      <span class="image-modal-close">&times;</span>
-      <img class="image-modal-content" id="image-modal-img" src="" alt="Zoomed Illustration">
-      <div class="image-modal-caption" id="image-modal-caption"></div>
-    </div>
+        <div class="process__sheet">
+          <div class="process__ticks" data-process-ticks aria-hidden="true"></div>
+          <div class="process__playhead" data-process-playhead aria-hidden="true"><span data-process-frame>F 001</span></div>
+          <div class="process__marks" role="tablist" aria-label="Animation stages">
+            <button type="button" data-process-go="0" class="is-active">KEY</button>
+            <button type="button" data-process-go="1">CLEAN</button>
+            <button type="button" data-process-go="2">COLOR</button>
+            <button type="button" data-process-go="3">COMP</button>
+            <button type="button" data-process-go="4">FX</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="js/gsap.min.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- ============ 03 — WORK ============ -->
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <header class="section-head">
+        <span class="section-head__idx">03</span>
+        <h2 class="section-head__title" id="work-title" data-split="chars" data-i18n="work.title">Selected Work</h2>
+        <span class="section-head__jp" lang="ja">作品</span>
+        <span class="section-head__meta">2024 — <span data-year>2026</span></span>
+      </header>
+
+      <!-- Featured case study -->
+      <article class="case" aria-labelledby="case-title">
+        <div class="case__intro">
+          <p class="kicker"><span class="kicker__dot" aria-hidden="true"></span><span data-i18n="case.kicker">Featured project · 2025</span></p>
+          <h3 class="case__title" id="case-title">
+            <span class="case__title-en">GET<span class="case__under">_</span>SET<br>RUN</span>
+            <span class="case__title-jp" lang="ja">ゲット・セット・ラン</span>
+          </h3>
+          <p class="case__desc" data-split="lines" data-i18n="case.desc">A short sports animation by the Shiguma Dakkusu team at FPT University. As project lead, I directed the team and drove the key animation and key visuals — the sprint of Akari, a runner chasing a finish line only she can see.</p>
+          <blockquote class="case__quote">
+            <p>“Beyond the finish line… ‘possibilities’ there. That is what I wish to see!”</p>
+          </blockquote>
+          <dl class="case__credits">
+            <div><dt data-i18n="case.role">Role</dt><dd data-i18n="case.roleVal">Project Lead · Key Animation</dd></div>
+            <div><dt data-i18n="case.team">Team</dt><dd>Shiguma Dakkusu</dd></div>
+            <div><dt data-i18n="case.art">Art Lead</dt><dd>Huỳnh Minh Hiếu</dd></div>
+            <div><dt data-i18n="case.color">Color Lead</dt><dd>Lê Vĩnh Phúc</dd></div>
+            <div><dt data-i18n="case.date">Released</dt><dd>05.05.2025</dd></div>
+          </dl>
+        </div>
+
+        <div class="case__media">
+          <figure class="case__item case__item--poster" data-parallax="0.08">
+            <button class="media-btn" type="button" data-lightbox data-full="assets/img/gsr-poster-1500.jpg" data-w="3100" data-h="5085" data-cap="cap.poster" data-cursor="view">
+              <picture>
+                <source type="image/avif" srcset="assets/img/gsr-poster-600.avif 600w, assets/img/gsr-poster-1000.avif 1000w, assets/img/gsr-poster-1500.avif 1500w" sizes="(min-width: 1024px) 28vw, 60vw">
+                <source type="image/webp" srcset="assets/img/gsr-poster-600.webp 600w, assets/img/gsr-poster-1000.webp 1000w, assets/img/gsr-poster-1500.webp 1500w" sizes="(min-width: 1024px) 28vw, 60vw">
+                <img src="assets/img/gsr-poster-1000.jpg" width="3100" height="5085" alt="Get Set Run key visual poster — a runner leaps over a red track at sunset" loading="lazy" decoding="async" data-i18n-attr="alt:alt.poster">
+              </picture>
+            </button>
+            <figcaption><span>A</span><span data-i18n="cap.poster">Key visual poster</span></figcaption>
+          </figure>
+          <figure class="case__item case__item--standee" data-parallax="-0.06">
+            <button class="media-btn" type="button" data-lightbox data-full="assets/img/gsr-standee-965.jpg" data-w="2000" data-h="5335" data-cap="cap.standee" data-cursor="view">
+              <picture>
+                <source type="image/avif" srcset="assets/img/gsr-standee-500.avif 500w, assets/img/gsr-standee-965.avif 965w" sizes="(min-width: 1024px) 18vw, 40vw">
+                <source type="image/webp" srcset="assets/img/gsr-standee-500.webp 500w, assets/img/gsr-standee-965.webp 965w" sizes="(min-width: 1024px) 18vw, 40vw">
+                <img src="assets/img/gsr-standee-500.jpg" width="2000" height="5335" alt="Get Set Run standee — a character reaching toward the viewer on a red background" loading="lazy" decoding="async" data-i18n-attr="alt:alt.standee">
+              </picture>
+            </button>
+            <figcaption><span>B</span><span data-i18n="cap.standee">Event standee</span></figcaption>
+          </figure>
+          <figure class="case__item case__item--breakdown" data-parallax="0.04">
+            <button class="media-btn" type="button" data-lightbox data-full="assets/img/process-breakdown-2000.jpg" data-w="14173" data-h="9449" data-cap="cap.breakdown" data-cursor="view">
+              <picture>
+                <source type="image/avif" srcset="assets/img/process-breakdown-800.avif 800w, assets/img/process-breakdown-1400.avif 1400w, assets/img/process-breakdown-2000.avif 2000w" sizes="(min-width: 1024px) 48vw, 100vw">
+                <source type="image/webp" srcset="assets/img/process-breakdown-800.webp 800w, assets/img/process-breakdown-1400.webp 1400w, assets/img/process-breakdown-2000.webp 2000w" sizes="(min-width: 1024px) 48vw, 100vw">
+                <img src="assets/img/process-breakdown-1400.jpg" width="14173" height="9449" alt="Layer breakdown of the sprint shot — background, colour, line and shadow layers side by side" loading="lazy" decoding="async" data-i18n-attr="alt:alt.breakdown">
+              </picture>
+            </button>
+            <figcaption><span>C</span><span data-i18n="cap.breakdown">Layer breakdown of the sprint cut</span></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- Illustration index -->
+      <div class="works-list">
+        <h3 class="works-list__title"><span data-i18n="work.illust">Illustration &amp; Character Design</span><span class="works-list__jp" lang="ja">イラスト・キャラクターデザイン</span></h3>
+
+        <article class="work-row">
+          <div class="work-row__meta">
+            <span class="work-row__no">04</span>
+            <h4 class="work-row__title" data-i18n="w.fern.t">Fern &amp; Frieren</h4>
+            <p class="work-row__desc" data-i18n="w.fern.d">Fan art for “Frieren: Beyond Journey's End” — a quiet, warm moment rendered with soft light and chromatic aberration.</p>
+            <ul class="tags"><li data-i18n="tag.fanart">Fan art</li><li data-i18n="tag.painting">Digital painting</li><li>2024</li></ul>
+          </div>
+          <figure class="work-row__media">
+            <button class="media-btn" type="button" data-lightbox data-full="assets/img/fern-1920.jpg" data-w="1920" data-h="1200" data-cap="w.fern.t" data-cursor="view">
+              <picture>
+                <source type="image/avif" srcset="assets/img/fern-800.avif 800w, assets/img/fern-1400.avif 1400w, assets/img/fern-1920.avif 1920w" sizes="(min-width: 1024px) 64vw, 100vw">
+                <source type="image/webp" srcset="assets/img/fern-800.webp 800w, assets/img/fern-1400.webp 1400w, assets/img/fern-1920.webp 1920w" sizes="(min-width: 1024px) 64vw, 100vw">
+                <img src="assets/img/fern-1400.jpg" width="1920" height="1200" alt="Fern hugging Frieren from behind, fan art illustration" loading="lazy" decoding="async" data-i18n-attr="alt:alt.fern">
+              </picture>
+            </button>
+          </figure>
+        </article>
+
+        <article class="work-row work-row--flip">
+          <div class="work-row__meta">
+            <span class="work-row__no">05</span>
+            <h4 class="work-row__title" data-i18n="w.aoi.t">Aoi — Character Sheet</h4>
+            <p class="work-row__desc" data-i18n="w.aoi.d">Original character turnaround for a personal animation project: front, back and profile views, built to stay on-model across many drawings.</p>
+            <ul class="tags"><li data-i18n="tag.original">Original character</li><li data-i18n="tag.turnaround">Turnaround</li><li>2024</li></ul>
+          </div>
+          <figure class="work-row__media">
+            <button class="media-btn" type="button" data-lightbox data-full="assets/img/aoi-2000.jpg" data-w="4800" data-h="2700" data-cap="w.aoi.t" data-cursor="view">
+              <picture>
+                <source type="image/avif" srcset="assets/img/aoi-800.avif 800w, assets/img/aoi-1400.avif 1400w, assets/img/aoi-2000.avif 2000w" sizes="(min-width: 1024px) 64vw, 100vw">
+                <source type="image/webp" srcset="assets/img/aoi-800.webp 800w, assets/img/aoi-1400.webp 1400w, assets/img/aoi-2000.webp 2000w" sizes="(min-width: 1024px) 64vw, 100vw">
+                <img src="assets/img/aoi-1400.jpg" width="4800" height="2700" alt="Aoi character turnaround — front, back and side views in a light blue sailor uniform" loading="lazy" decoding="async" data-i18n-attr="alt:alt.aoi">
+              </picture>
+            </button>
+          </figure>
+        </article>
+
+        <a class="more-card" href="https://www.pixiv.net/en/users/26900996" target="_blank" rel="noopener" data-cursor="open">
+          <span class="more-card__label" data-i18n="work.more">More artwork on Pixiv</span>
+          <span class="more-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ 04 — ABOUT ============ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <header class="section-head">
+        <span class="section-head__idx">04</span>
+        <h2 class="section-head__title" id="about-title" data-split="chars" data-i18n="about.title">About</h2>
+        <span class="section-head__jp" lang="ja">プロフィール</span>
+        <span class="section-head__meta">ID — PHAT-008</span>
+      </header>
+
+      <div class="about__grid">
+        <figure class="about__portrait" data-tilt>
+          <div class="about__portrait-inner">
+            <picture>
+              <source type="image/avif" srcset="assets/img/portrait-600.avif 600w, assets/img/portrait-1000.avif 1000w, assets/img/portrait-1500.avif 1500w" sizes="(min-width: 1024px) 34vw, 85vw">
+              <source type="image/webp" srcset="assets/img/portrait-600.webp 600w, assets/img/portrait-1000.webp 1000w, assets/img/portrait-1500.webp 1500w" sizes="(min-width: 1024px) 34vw, 85vw">
+              <img src="assets/img/portrait-1000.jpg" width="3100" height="4385" alt="Monochrome illustration of a character reaching a hand toward the viewer" loading="lazy" decoding="async" data-i18n-attr="alt:alt.portrait">
+            </picture>
+          </div>
+          <figcaption class="about__stamp" aria-hidden="true">
+            <span>八</span>
+          </figcaption>
+        </figure>
+
+        <div class="about__body">
+          <p class="about__lead" data-split="lines" data-i18n-html="about.lead">Hi, I'm Phat Tran — <em>RiSH</em>, or <em>Hachi (八)</em> to friends.</p>
+          <div class="about__text">
+            <p data-i18n-html="about.p1">I'm a 2D animator and illustrator with a deep love for Japanese animation. I care most about character acting that feels alive — weight, timing and the small gestures that make a drawing breathe.</p>
+            <p data-i18n-html="about.p2">From fluid key frames and on-model character designs to posters and key visuals, I want to help build scenes that inspire people. I learn fast, take feedback well, and I'm working toward joining the anime industry in Tokyo.</p>
+          </div>
+
+          <dl class="idcard">
+            <div><dt data-i18n="id.name">Name</dt><dd>Trần Tấn Phát</dd></div>
+            <div><dt data-i18n="id.alias">Alias</dt><dd>RiSH · Hachi 八</dd></div>
+            <div><dt data-i18n="id.base">Based in</dt><dd data-i18n="id.baseVal">Vietnam (GMT+7)</dd></div>
+            <div><dt data-i18n="id.goal">Goal</dt><dd data-i18n="id.goalVal">Anime industry — Tokyo</dd></div>
+            <div><dt data-i18n="id.status">Status</dt><dd class="idcard__status"><span class="status__dot" aria-hidden="true"></span><span data-i18n="id.statusVal">Open to opportunities</span></dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="skills">
+        <div class="skills__col">
+          <h3 class="skills__title"><span>A</span><span data-i18n="sk.anim">Animation</span></h3>
+          <ul>
+            <li data-i18n="sk.anim1">2D character animation &amp; acting</li>
+            <li data-i18n="sk.anim2">Key animation &amp; in-betweening</li>
+            <li data-i18n="sk.anim3">Clean-up &amp; shadow guides</li>
+            <li data-i18n="sk.anim4">Foundational 2D effects (FX)</li>
+          </ul>
+        </div>
+        <div class="skills__col">
+          <h3 class="skills__title"><span>B</span><span data-i18n="sk.illu">Illustration</span></h3>
+          <ul>
+            <li data-i18n="sk.illu1">Character design &amp; turnarounds</li>
+            <li data-i18n="sk.illu2">Anime-style illustration</li>
+            <li data-i18n="sk.illu3">Digital painting &amp; composition</li>
+            <li data-i18n="sk.illu4">Posters &amp; key visuals</li>
+          </ul>
+        </div>
+        <div class="skills__col">
+          <h3 class="skills__title"><span>C</span><span data-i18n="sk.tools">Tools</span></h3>
+          <ul class="chips">
+            <li>Clip Studio Paint EX</li>
+            <li>Photoshop</li>
+            <li>After Effects</li>
+            <li>OpenToonz</li>
+            <li>Blender <small data-i18n="sk.exploring">(exploring)</small></li>
+          </ul>
+        </div>
+        <div class="skills__col">
+          <h3 class="skills__title"><span>D</span><span data-i18n="sk.lang">Languages</span></h3>
+          <ul class="langs">
+            <li><span data-i18n="sk.vi">Vietnamese</span><span class="meter" style="--v:1"><i></i></span><small data-i18n="sk.native">Native</small></li>
+            <li><span data-i18n="sk.en">English</span><span class="meter" style="--v:.85"><i></i></span><small data-i18n="sk.fluent">Fluent</small></li>
+            <li><span data-i18n="sk.ja">Japanese</span><span class="meter" style="--v:.55"><i></i></span><small data-i18n="sk.inter">Intermediate</small></li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="values" aria-label="Work values">
+        <li><span>01</span><span data-i18n="val.1">Passion for animation &amp; constant learning</span></li>
+        <li><span>02</span><span data-i18n="val.2">Detail-oriented team player, open to feedback</span></li>
+        <li><span>03</span><span data-i18n="val.3">Proactive &amp; adaptable under deadlines</span></li>
+        <li><span>04</span><span data-i18n="val.4">Clear, respectful communication</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ 05 — CONTACT ============ -->
+    <section class="section contact" id="contact" data-theme="red" aria-labelledby="contact-title">
+      <header class="section-head">
+        <span class="section-head__idx">05</span>
+        <span class="section-head__title" data-i18n="contact.label">Contact</span>
+        <span class="section-head__jp" lang="ja">連絡先</span>
+        <span class="section-head__meta" data-i18n="contact.meta">Replies within 48h</span>
+      </header>
+
+      <h2 class="contact__title" id="contact-title" data-split="lines" data-i18n-html="contact.title">Let's make something <em>move.</em></h2>
+
+      <div class="contact__grid">
+        <div class="contact__mail">
+          <p class="contact__intro" data-i18n="contact.intro">Open for studio positions, freelance animation and illustration commissions, and collaborations.</p>
+          <div class="mailbox">
+            <a class="mailbox__link" href="mailto:hansaworkz@gmail.com" data-magnetic data-cursor="mail">hansaworkz@gmail.com</a>
+            <button class="mailbox__copy" type="button" data-copy="hansaworkz@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg>
+              <span data-i18n="contact.copy">Copy</span>
+            </button>
+          </div>
+        </div>
+
+        <ul class="socials">
+          <li><a href="https://www.pixiv.net/en/users/26900996" target="_blank" rel="noopener"><span>Pixiv</span><small data-i18n="soc.pixiv">Illustrations</small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
+          <li><a href="https://x.com/Ri_Shachi" target="_blank" rel="noopener"><span>X / Twitter</span><small>@Ri_Shachi</small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/phat-tran-720141184/" target="_blank" rel="noopener"><span>LinkedIn</span><small data-i18n="soc.linkedin">Career</small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
+          <li><a href="https://www.youtube.com/watch?v=dxZP3VsqWcM" target="_blank" rel="noopener"><span>YouTube</span><small data-i18n="soc.youtube">Showreel</small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
+        </ul>
+      </div>
+
+      <footer class="footer">
+        <span>© <span data-year>2026</span> Phat Tran</span>
+        <span data-i18n="footer.made">Designed &amp; animated frame by frame.</span>
+        <a class="footer__top" href="#top"><span data-i18n="footer.top">Back to top</span> ↑</a>
+      </footer>
+
+      <div class="contact__giant" aria-hidden="true">RiSH</div>
+    </section>
+  </main>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <dialog class="lightbox" data-lightbox-dialog aria-label="Artwork viewer">
+    <div class="lightbox__bar">
+      <span class="lightbox__count" data-lb-count>01 / 05</span>
+      <span class="lightbox__cap" data-lb-cap></span>
+      <button class="lightbox__close" type="button" data-lb-close><span data-i18n="lb.close">Close</span> ✕</button>
+    </div>
+    <div class="lightbox__stage" data-lb-stage>
+      <img class="lightbox__img" data-lb-img alt="">
+    </div>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Previous">←</button>
+    <button class="lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Next">→</button>
+  </dialog>
+
+  <!-- Toast -->
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <!-- Libraries (GSAP 3 + ScrollTrigger + SplitText, Lenis) -->
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/SplitText.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

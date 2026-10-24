@@ -1,0 +1,15 @@
+{
+  "name": "Phat Tran (RiSH) — 2D Animator & Illustrator",
+  "short_name": "RiSH",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f2efe9",
+  "theme_color": "#ff2a3d",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

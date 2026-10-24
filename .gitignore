@@ -1,0 +1,5 @@
+node_modules/
+source/
+tools/verify.mjs
+.DS_Store
+Thumbs.db
