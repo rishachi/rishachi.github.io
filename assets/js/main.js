@@ -141,7 +141,7 @@
       'cursor.view': 'VIEW',
       'cursor.open': 'PIXIV',
       'cursor.mail': 'EMAIL',
-      'toast.copied': 'Copied hansaworkz@gmail.com to clipboard'
+      'toast.copied': 'Copied rikun113@gmail.com to clipboard'
     },
 
     vi: {
@@ -274,7 +274,7 @@
       'cursor.view': 'PHÓNG TO',
       'cursor.open': 'PIXIV',
       'cursor.mail': 'GỬI MAIL',
-      'toast.copied': 'Đã sao chép hansaworkz@gmail.com'
+      'toast.copied': 'Đã sao chép rikun113@gmail.com'
     },
 
     ja: {
@@ -407,7 +407,7 @@
       'cursor.view': '拡大',
       'cursor.open': 'PIXIV',
       'cursor.mail': 'メール',
-      'toast.copied': 'hansaworkz@gmail.com をコピーしました'
+      'toast.copied': 'rikun113@gmail.com をコピーしました'
     }
   };
 
@@ -1475,7 +1475,7 @@
 
   if (copyBtn) {
     copyBtn.addEventListener('click', async () => {
-      const email = copyBtn.getAttribute('data-copy') || 'hansaworkz@gmail.com';
+      const email = copyBtn.getAttribute('data-copy') || 'rikun113@gmail.com';
       try {
         await navigator.clipboard.writeText(email);
       } catch (_) {

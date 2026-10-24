@@ -70,6 +70,23 @@ body {
 main { overflow-x: clip; }
 html:lang(ja) body { line-height: 1.8; }
 html:lang(ja) .about__text, html:lang(ja) .case__desc, html:lang(ja) .hero__sub { font-family: var(--f-jp); letter-spacing: 0.02em; }
+
+/* Vietnamese diacritic-safe display typography (prevents stacked accents like Ố, Ữ, Ẩ, Ộ from colliding or clipping) */
+html:lang(vi) .hero__lede { line-height: 1.24; }
+html:lang(vi) .section-head__title { line-height: 1.12; font-stretch: 72%; padding-top: 0.2em; }
+html:lang(vi) .contact .section-head__title { line-height: 1.2; font-stretch: 100%; padding-top: 0; }
+html:lang(vi) .process__step h3,
+html:lang(vi) .work-row__title { line-height: 1.22; }
+html:lang(vi) .more-card__label { line-height: 1.14; font-stretch: 74%; padding-block: 0.06em; }
+html:lang(vi) .about__lead { line-height: 1.22; }
+html:lang(vi) .contact__title {
+  font-size: clamp(2.5rem, 7.6vw, 7.75rem);
+  font-stretch: 72%;
+  line-height: 1.24;
+  letter-spacing: -0.01em;
+  padding-top: 0.08em;
+}
+html:lang(vi) .mmenu__links a { line-height: 1.22; font-stretch: 74%; padding: 0.35rem 0; }
 img, picture, svg, video { display: block; max-width: 100%; }
 img { height: auto; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
@@ -149,12 +166,12 @@ body::after {
 }
 
 /* Text roll on hover (uses text-shadow clone, no DOM duplication) */
-.roll { display: inline-block; overflow: hidden; vertical-align: top; }
-.roll > span { display: inline-block; text-shadow: 0 1.5em currentColor; transition: transform 0.5s var(--ease-out); }
-.roll:hover > span, .roll:focus-visible > span { transform: translateY(-1.5em); }
+.roll { display: inline-block; overflow: hidden; vertical-align: top; padding-top: 0.08em; margin-top: -0.08em; }
+.roll > span { display: inline-block; text-shadow: 0 1.65em currentColor; transition: transform 0.5s var(--ease-out); }
+.roll:hover > span, .roll:focus-visible > span { transform: translateY(-1.65em); }
 
-/* Split text helpers (SplitText masks) */
-.split-line { overflow: clip; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+/* Split text helpers (SplitText lines) — keep vertical bleed open so Vietnamese/accented diacritics never clip */
+.split-line { overflow: visible; }
 
 /* ---------- 4. Preloader ---------- */
 .loader {
@@ -238,7 +255,7 @@ body::after {
 .brand__name sup { font-size: 0.5em; font-weight: 500; margin-left: 1px; }
 
 .nav ul { display: flex; gap: clamp(1rem, 2.2vw, 2.25rem); }
-.nav a { font: 500 var(--fs-sm) / 1.2 var(--f-sans); letter-spacing: 0.04em; text-transform: uppercase; position: relative; }
+.nav a { font: 500 var(--fs-sm) / 1.4 var(--f-sans); letter-spacing: 0.04em; text-transform: uppercase; position: relative; }
 .nav a.is-active::after {
   content: ""; position: absolute; left: 50%; bottom: -0.5rem; width: 4px; height: 4px; margin-left: -2px;
   border-radius: 50%; background: var(--red);
