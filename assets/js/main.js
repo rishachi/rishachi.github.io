@@ -676,9 +676,11 @@
       if (ring) {
         ring.style.left = `${xPct}%`;
         ring.style.top = `${yPct}%`;
-        const d = isLockedFull ? 0 : rPx * 2;
+        const showRing = !isLockedFull && rPx > 8;
+        const d = showRing ? rPx * 2 : 0;
         ring.style.width = `${d}px`;
         ring.style.height = `${d}px`;
+        ring.classList.toggle('is-active', showRing);
       }
     }
 
@@ -1069,9 +1071,11 @@
 
     const STAGE_CODES = ['RAFU', 'CLEAN', 'SAI-SHIKI', 'GOUSEI', 'SATSUEI'];
     let processST = null;
+    let currentProgress = 0;
 
     function renderProcessProgress(progress) {
       const clamped = Math.max(0, Math.min(1, progress));
+      currentProgress = clamped;
       // 4 transitions across 5 frames (0..4)
       const scaled = clamped * (frames.length - 1);
       const activeIdx = Math.min(frames.length - 1, Math.round(scaled));
@@ -1107,6 +1111,7 @@
       if (playheadEl && sheetEl) {
         const w = sheetEl.clientWidth;
         playheadEl.style.transform = `translateX(${(clamped * w).toFixed(1)}px)`;
+        playheadEl.style.setProperty('--p', clamped.toFixed(3));
       }
       if (frameTagEl) {
         const fNum = Math.max(1, Math.round(clamped * 120));
@@ -1146,13 +1151,11 @@
             window.scrollTo({ top: targetScroll, behavior: 'smooth' });
           }
         } else if (hasGSAP && !prefersReducedMotion) {
-          const proxy = { p: 0 };
-          const curIdx = marks.findIndex((m) => m.classList.contains('is-active'));
-          proxy.p = Math.max(0, curIdx) / Math.max(1, frames.length - 1);
+          const proxy = { p: currentProgress };
           gsap.to(proxy, {
             p: targetProgress,
-            duration: 0.65,
-            ease: 'power3.inOut',
+            duration: 0.55,
+            ease: 'power3.out',
             onUpdate: () => renderProcessProgress(proxy.p)
           });
         } else {
@@ -1160,6 +1163,42 @@
         }
       });
     });
+
+    // Touch & mouse horizontal drag scrubbing on artwork frame & timeline ticks
+    const framesBox = processPin.querySelector('.process__frames');
+    [framesBox, processTicks].forEach((scrubSurface) => {
+      if (!scrubSurface) return;
+      let isScrubbing = false;
+
+      function updateFromPointer(e) {
+        const rect = scrubSurface.getBoundingClientRect();
+        if (!rect.width) return;
+        const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        if (processST && window.innerWidth >= 901) {
+          const targetScroll = processST.start + (processST.end - processST.start) * ratio;
+          window.scrollTo({ top: targetScroll, behavior: 'auto' });
+        } else {
+          renderProcessProgress(ratio);
+        }
+      }
+
+      scrubSurface.addEventListener('pointerdown', (e) => {
+        isScrubbing = true;
+        try { scrubSurface.setPointerCapture(e.pointerId); } catch (_) {}
+        updateFromPointer(e);
+      });
+      scrubSurface.addEventListener('pointermove', (e) => {
+        if (!isScrubbing) return;
+        updateFromPointer(e);
+      });
+      const stopScrub = () => { isScrubbing = false; };
+      scrubSurface.addEventListener('pointerup', stopScrub);
+      scrubSurface.addEventListener('pointercancel', stopScrub);
+    });
+
+    window.addEventListener('resize', () => {
+      renderProcessProgress(currentProgress);
+    }, { passive: true });
 
     renderProcessProgress(0);
   }
