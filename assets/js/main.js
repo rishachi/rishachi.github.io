@@ -60,6 +60,20 @@
       'cap.standee': 'Event standee design — Get Set Run',
       'cap.breakdown': '5-layer production breakdown of the sprint cut',
 
+      'work.douga': 'Genga & Douga',
+      'w.douga.t': 'Douga / Clean-up Study',
+      'w.douga.d': '26-drawing clean-up and in-between study of a wind-swept head turn — closed paint lines with Japanese studio shadow, highlight and colour-trace guides (iro-toresu).',
+      'douga.kMain': 'Main line',
+      'douga.kHi': 'Highlight',
+      'douga.kSh': 'Shadow',
+      'douga.kTr': 'Colour trace',
+      'douga.expand': 'Expand',
+      'douga.expandAria': 'Expand Douga animation in lightbox',
+      'douga.stageAria': 'Play or pause Douga animation',
+      'douga.onion': 'Onion',
+      'tag.douga': 'Douga · 26 drawings',
+      'tag.iro': 'Iro-toresu (色トレス)',
+
       'work.illust': 'Illustration & Character Design',
       'w.fern.t': 'Fern & Frieren',
       'w.fern.d': 'Fan art for “Frieren: Beyond Journey’s End” — a quiet, warm moment rendered with soft light and chromatic bloom.',
@@ -132,6 +146,7 @@
       'alt.poster': 'Get Set Run key visual poster — a runner leaps over a red track at sunset',
       'alt.standee': 'Get Set Run standee — a character reaching toward the viewer on a red background',
       'alt.breakdown': 'Layer breakdown of the sprint shot — background, colour, line and shadow layers side by side',
+      'alt.douga': '26-frame clean-up douga animation of a girl in a sailor uniform turning her head in the breeze',
       'alt.fern': 'Fern hugging Frieren from behind, fan art illustration',
       'alt.aoi': 'Aoi character turnaround — front, back and side views in a light blue sailor uniform',
       'alt.portrait': 'Monochrome illustration of a character reaching a hand toward the viewer',
@@ -192,6 +207,20 @@
       'cap.poster': 'Poster Key Visual — Get Set Run',
       'cap.standee': 'Thiết kế Standee sự kiện — Get Set Run',
       'cap.breakdown': 'Bóc tách 5 lớp (layer breakdown) của phân cảnh bứt tốc',
+
+      'work.douga': 'Genga & Douga',
+      'w.douga.t': 'Douga / Clean-up Study',
+      'w.douga.d': 'Bài luyện đi nét sạch (clean-up) và vẽ trung gian 26 tờ cho chuyển động xoay đầu đón gió — nét khép kín kèm chỉ định bóng, vùng sáng và đường màu chuẩn studio Nhật (色トレス).',
+      'douga.kMain': 'Nét chính',
+      'douga.kHi': 'Vùng sáng',
+      'douga.kSh': 'Chỉ định bóng',
+      'douga.kTr': 'Đường màu phụ',
+      'douga.expand': 'Phóng to',
+      'douga.expandAria': 'Mở rộng diễn hoạt Douga toàn màn hình',
+      'douga.stageAria': 'Phát hoặc tạm dừng diễn hoạt Douga',
+      'douga.onion': 'Soi nét',
+      'tag.douga': 'Douga · 26 tờ',
+      'tag.iro': 'Chỉ định bóng (色トレス)',
 
       'work.illust': 'Minh Hoạ & Thiết Kế Nhân Vật',
       'w.fern.t': 'Fern & Frieren',
@@ -265,6 +294,7 @@
       'alt.poster': 'Poster chính thức Get Set Run — nhân vật chạy trên đường đua dưới ánh hoàng hôn',
       'alt.standee': 'Thiết kế standee Get Set Run — nhân vật vươn tay về phía trước trên nền đỏ',
       'alt.breakdown': 'Bóc tách các lớp (layer breakdown) của cảnh chạy nước rút',
+      'alt.douga': 'Diễn hoạt Douga 26 khung hình nhân vật nữ sinh xoay đầu đón gió với chỉ định bóng chuẩn anime',
       'alt.fern': 'Tranh fan art Fern ôm Frieren từ phía sau',
       'alt.aoi': 'Bảng thiết kế nhân vật Aoi — góc nhìn trước, sau và nghiêng',
       'alt.portrait': 'Tranh minh hoạ đơn sắc nhân vật vươn bàn tay về phía người xem',
@@ -325,6 +355,20 @@
       'cap.poster': 'キービジュアルポスター — Get Set Run',
       'cap.standee': 'イベント用スタンディ — Get Set Run',
       'cap.breakdown': '疾走カットのレイヤー分解（背景・彩色・線画・影指定）',
+
+      'work.douga': '原画・動画',
+      'w.douga.t': '動画・クリンナップ習作',
+      'w.douga.d': '風になびく振り向き芝居の動画・クリンナップ習作（全26枚）。塗り分け用の閉じた主線に加え、ハイライト・影指定・色トレスを日本のスタジオ形式で描き分けています。',
+      'douga.kMain': '主線',
+      'douga.kHi': 'ハイライト',
+      'douga.kSh': '影指定',
+      'douga.kTr': '色トレス',
+      'douga.expand': '拡大',
+      'douga.expandAria': '動画アニメーションを拡大表示',
+      'douga.stageAria': '動画アニメーションを再生・一時停止',
+      'douga.onion': '透かし',
+      'tag.douga': '動画 · 26枚',
+      'tag.iro': '色トレス・影指定',
 
       'work.illust': 'イラスト・キャラクターデザイン',
       'w.fern.t': 'フェルンとフリーレン',
@@ -398,6 +442,7 @@
       'alt.poster': 'Get Set Run キービジュアルポスター',
       'alt.standee': 'Get Set Run スタンディデザイン',
       'alt.breakdown': '疾走カットのレイヤー分解図',
+      'alt.douga': '風になびく振り向きカットの動画・クリンナップアニメーション（全26枚）',
       'alt.fern': 'フリーレンを抱きしめるフェルンのファンアート',
       'alt.aoi': 'オリジナルキャラクター葵の三面図',
       'alt.portrait': '手を差し伸べるキャラクターのモノクロイラスト',
@@ -1280,6 +1325,259 @@
   }
 
   /* =====================================================================
+     13B. DOUGA LIGHT-TABLE INSPECTOR (26-DRAWING X-SHEET & ONION SKIN)
+     ===================================================================== */
+  const dougaEl = document.querySelector('[data-douga]');
+  if (dougaEl) {
+    const TOTAL = 26;
+    const DELAYS = [
+      125, 125, 125, 125, 125, 125,
+      125, 125, 125, 125, 125, 125,
+      125, 125, 125, 125, 125, 125,
+      125, 250, 125, 125, 250, 125,
+      125, 125
+    ];
+    const MAJOR_TICKS = new Set([0, 6, 12, 19, 22, 25]);
+
+    const canvas = dougaEl.querySelector('[data-douga-canvas]');
+    const onionCanvas = dougaEl.querySelector('[data-douga-onion]');
+    const stage = dougaEl.querySelector('[data-douga-stage]');
+    const ticksHost = dougaEl.querySelector('[data-douga-ticks]');
+    const playhead = dougaEl.querySelector('[data-douga-playhead]');
+    const scrub = dougaEl.querySelector('[data-douga-scrub]');
+    const curReadout = dougaEl.querySelector('[data-douga-cur]');
+    const sheetCode = dougaEl.querySelector('[data-douga-sheet-code]');
+    const onionBadge = dougaEl.querySelector('[data-douga-onion-badge]');
+    const prevBtn = dougaEl.querySelector('[data-douga-prev]');
+    const nextBtn = dougaEl.querySelector('[data-douga-next]');
+    const toggleBtn = dougaEl.querySelector('[data-douga-toggle]');
+    const speedBtn = dougaEl.querySelector('[data-douga-speed]');
+    const onionBtn = dougaEl.querySelector('[data-douga-onion-btn]');
+
+    const ctx = canvas ? canvas.getContext('2d', { alpha: false }) : null;
+    const octx = onionCanvas ? onionCanvas.getContext('2d', { alpha: false }) : null;
+
+    if (ticksHost) {
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < TOTAL; i++) {
+        const tick = document.createElement('i');
+        if (MAJOR_TICKS.has(i)) tick.className = 'major';
+        frag.appendChild(tick);
+      }
+      ticksHost.appendChild(frag);
+    }
+
+    const frames = new Array(TOTAL);
+    let loadPromise = null;
+    let isReady = false;
+    let isVisible = false;
+    let isPlaying = !prefersReducedMotion;
+    let isScrubbing = false;
+    let isOnion = false;
+    let speed = 1;
+    let cur = prefersReducedMotion ? 10 : 0;
+    let rafId = 0;
+    let lastTime = 0;
+    let accMs = 0;
+
+    if (toggleBtn) toggleBtn.setAttribute('aria-pressed', String(isPlaying));
+
+    function updateReadout() {
+      const label = String(cur + 1).padStart(2, '0');
+      if (curReadout) curReadout.textContent = label;
+      if (sheetCode) sheetCode.textContent = `A-${label}`;
+      if (playhead) playhead.style.setProperty('--p', (cur / (TOTAL - 1)).toFixed(4));
+      if (scrub) scrub.setAttribute('aria-valuenow', String(cur + 1));
+      if (onionBadge && isOnion) {
+        const prevNum = String(((cur - 1 + TOTAL) % TOTAL) + 1).padStart(2, '0');
+        onionBadge.textContent = `ONION · PREV A-${prevNum}`;
+      }
+    }
+
+    function draw() {
+      updateReadout();
+      if (!isReady || !ctx || !frames[cur]) return;
+      ctx.drawImage(frames[cur], 0, 0, canvas.width, canvas.height);
+
+      if (isOnion && octx && onionCanvas) {
+        const prev = (cur - 1 + TOTAL) % TOTAL;
+        if (frames[prev]) {
+          octx.globalCompositeOperation = 'source-over';
+          octx.drawImage(frames[prev], 0, 0, onionCanvas.width, onionCanvas.height);
+          // Screen-tint dark strokes to studio light-table cyan while keeping #fff snow white
+          octx.globalCompositeOperation = 'screen';
+          octx.fillStyle = '#18b6ff';
+          octx.fillRect(0, 0, onionCanvas.width, onionCanvas.height);
+        }
+      }
+    }
+
+    function stopLoop() {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+    }
+
+    function tick(now) {
+      if (!isPlaying || !isVisible || !isReady || isScrubbing) {
+        rafId = 0;
+        return;
+      }
+      if (!lastTime) lastTime = now;
+      const dt = Math.min(now - lastTime, 300);
+      lastTime = now;
+      accMs += dt;
+
+      const targetDelay = (DELAYS[cur] || 125) / speed;
+      if (accMs >= targetDelay) {
+        accMs %= targetDelay;
+        cur = (cur + 1) % TOTAL;
+        draw();
+      }
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function syncLoop() {
+      if (isPlaying && isVisible && isReady && !isScrubbing) {
+        if (!rafId) {
+          lastTime = 0;
+          rafId = requestAnimationFrame(tick);
+        }
+      } else {
+        stopLoop();
+      }
+    }
+
+    function preloadFrames() {
+      if (loadPromise) return loadPromise;
+      loadPromise = Promise.all(
+        Array.from({ length: TOTAL }, (_, i) => {
+          const img = new Image();
+          img.decoding = 'async';
+          img.src = `assets/img/douga/f${String(i + 1).padStart(2, '0')}.webp`;
+          frames[i] = img;
+          return (img.decode ? img.decode() : new Promise((res) => { img.onload = res; img.onerror = res; })).catch(() => {});
+        })
+      ).then(() => {
+        isReady = true;
+        dougaEl.classList.add('is-ready');
+        draw();
+        syncLoop();
+      });
+      return loadPromise;
+    }
+
+    function setPlaying(nextState) {
+      isPlaying = nextState;
+      if (toggleBtn) toggleBtn.setAttribute('aria-pressed', String(isPlaying));
+      if (isPlaying) preloadFrames();
+      syncLoop();
+    }
+
+    function stepBy(delta) {
+      setPlaying(false);
+      preloadFrames().then(() => {
+        cur = (cur + delta + TOTAL) % TOTAL;
+        draw();
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      const preloadIO = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          preloadFrames();
+          preloadIO.disconnect();
+        }
+      }, { rootMargin: '1200px 0px' });
+      preloadIO.observe(dougaEl);
+
+      const visIO = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          isVisible = e.isIntersecting;
+          syncLoop();
+        });
+      }, { threshold: 0.05 });
+      visIO.observe(dougaEl);
+    } else {
+      isVisible = true;
+      preloadFrames();
+    }
+
+    if (toggleBtn) toggleBtn.addEventListener('click', () => setPlaying(!isPlaying));
+    if (prevBtn) prevBtn.addEventListener('click', () => stepBy(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => stepBy(1));
+
+    if (stage) {
+      stage.addEventListener('click', () => setPlaying(!isPlaying));
+      stage.addEventListener('keydown', (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          setPlaying(!isPlaying);
+        }
+      });
+    }
+
+    if (speedBtn) {
+      speedBtn.addEventListener('click', () => {
+        speed = speed === 1 ? 0.5 : 1;
+        speedBtn.textContent = speed === 1 ? '1×' : '0.5×';
+        speedBtn.classList.toggle('is-active', speed !== 1);
+      });
+    }
+
+    if (onionBtn) {
+      onionBtn.addEventListener('click', () => {
+        isOnion = !isOnion;
+        onionBtn.setAttribute('aria-pressed', String(isOnion));
+        dougaEl.classList.toggle('is-onion', isOnion);
+        preloadFrames().then(draw);
+      });
+    }
+
+    if (scrub) {
+      const seekFromEvent = (clientX) => {
+        const r = scrub.getBoundingClientRect();
+        if (!r.width) return;
+        const p = Math.min(1, Math.max(0, (clientX - r.left) / r.width));
+        const idx = Math.round(p * (TOTAL - 1));
+        if (idx !== cur) {
+          cur = idx;
+          draw();
+        }
+      };
+
+      scrub.addEventListener('pointerdown', (e) => {
+        isScrubbing = true;
+        setPlaying(false);
+        if (scrub.setPointerCapture) {
+          try { scrub.setPointerCapture(e.pointerId); } catch (_) {}
+        }
+        preloadFrames().then(() => seekFromEvent(e.clientX));
+      });
+      scrub.addEventListener('pointermove', (e) => {
+        if (!isScrubbing) return;
+        seekFromEvent(e.clientX);
+      });
+      const endScrub = () => {
+        if (!isScrubbing) return;
+        isScrubbing = false;
+      };
+      scrub.addEventListener('pointerup', endScrub);
+      scrub.addEventListener('pointercancel', endScrub);
+
+      scrub.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); stepBy(-1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); stepBy(1); }
+        else if (e.key === 'Home') { e.preventDefault(); setPlaying(false); cur = 0; draw(); }
+        else if (e.key === 'End') { e.preventDefault(); setPlaying(false); cur = TOTAL - 1; draw(); }
+      });
+    }
+
+    updateReadout();
+  }
+
+  /* =====================================================================
      14. HIGH-RES LIGHTBOX VIEWER
      ===================================================================== */
   const lbDialog = document.querySelector('[data-lightbox-dialog]');
@@ -1306,7 +1604,7 @@
       if (lbImg) {
         lbImg.style.opacity = '0.2';
         lbImg.src = fullSrc;
-        lbImg.alt = thumbImg ? thumbImg.alt : '';
+        lbImg.alt = thumbImg ? thumbImg.alt : (capKey ? t(capKey) : '');
         lbImg.onload = () => {
           lbImg.style.opacity = '1';
         };

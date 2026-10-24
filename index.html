@@ -431,13 +431,90 @@
         </div>
       </article>
 
+      <!-- Genga & Douga showcase -->
+      <div class="works-list works-list--douga">
+        <h3 class="works-list__title"><span data-i18n="work.douga">Genga &amp; Douga</span><span class="works-list__jp" lang="ja">原画・動画</span></h3>
+
+        <article class="work-row douga-row">
+          <div class="work-row__meta">
+            <span class="work-row__no">04</span>
+            <h4 class="work-row__title" data-i18n="w.douga.t">Douga / Clean-up Study</h4>
+            <p class="work-row__desc" data-i18n="w.douga.d">26-drawing clean-up and in-between study of a wind-swept head turn — closed paint lines with Japanese studio shadow, highlight and colour-trace guides (iro-toresu).</p>
+            <ul class="douga-legend" aria-label="Production trace line legend">
+              <li><i style="--sw:#141414"></i><span data-i18n="douga.kMain">Main line</span></li>
+              <li><i style="--sw:#e53935"></i><span data-i18n="douga.kHi">Highlight</span></li>
+              <li><i style="--sw:#2955d9"></i><span data-i18n="douga.kSh">Shadow</span></li>
+              <li><i style="--sw:#43a047"></i><span data-i18n="douga.kTr">Trace</span></li>
+            </ul>
+            <ul class="tags"><li data-i18n="tag.douga">Douga · 26 drawings</li><li data-i18n="tag.iro">Iro-toresu (色トレス)</li><li>2025</li></ul>
+          </div>
+
+          <figure class="work-row__media douga" data-douga>
+            <div class="cel__pegs" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="douga__sheet">
+              <div class="douga__head">
+                <span class="douga__cut">CUT 004 · <b data-douga-sheet-code>A-01</b></span>
+                <span class="douga__spec">24FPS · 3KOMA</span>
+                <button class="douga__expand" type="button" data-lightbox data-full="assets/img/douga/loop.webp" data-w="1400" data-h="990" data-cap="w.douga.t" data-cursor="view" aria-label="Expand animation in lightbox" data-i18n-attr="aria-label:douga.expandAria">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span data-i18n="douga.expand">Expand</span>
+                </button>
+              </div>
+
+              <div class="douga__stage" data-douga-stage role="button" tabindex="0" aria-label="Toggle animation playback" data-i18n-attr="aria-label:douga.stageAria">
+                <picture class="douga__fallback">
+                  <source type="image/webp" srcset="assets/img/douga/loop.webp">
+                  <img src="assets/img/douga/poster.jpg" width="1280" height="905" alt="26-frame clean-up douga animation of a girl in a sailor uniform turning her head in the breeze" loading="lazy" decoding="async" data-i18n-attr="alt:alt.douga">
+                </picture>
+                <canvas class="douga__canvas" data-douga-canvas width="1280" height="905" aria-hidden="true"></canvas>
+                <canvas class="douga__onion" data-douga-onion width="1280" height="905" aria-hidden="true"></canvas>
+                <span class="douga__onion-badge" data-douga-onion-badge aria-hidden="true">ONION · PREV</span>
+                <span class="cel__corner cel__corner--tl" aria-hidden="true"></span>
+                <span class="cel__corner cel__corner--tr" aria-hidden="true"></span>
+                <span class="cel__corner cel__corner--bl" aria-hidden="true"></span>
+                <span class="cel__corner cel__corner--br" aria-hidden="true"></span>
+              </div>
+
+              <div class="douga__bar">
+                <div class="douga__transport">
+                  <button class="douga__btn" type="button" data-douga-prev aria-label="Previous drawing" title="Previous drawing">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <button class="douga__btn douga__btn--play" type="button" data-douga-toggle aria-pressed="true" aria-label="Pause or play animation">
+                    <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3v14H7zm7 0h3v14h-3z"/></svg>
+                    <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <button class="douga__btn" type="button" data-douga-next aria-label="Next drawing" title="Next drawing">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                  </button>
+                </div>
+
+                <div class="douga__scrub" data-douga-scrub role="slider" tabindex="0" aria-label="Drawing timeline" aria-valuemin="1" aria-valuemax="26" aria-valuenow="1">
+                  <div class="douga__ticks" data-douga-ticks aria-hidden="true"></div>
+                  <span class="douga__head-line" data-douga-playhead aria-hidden="true"></span>
+                </div>
+
+                <div class="douga__tools">
+                  <span class="douga__count" aria-live="off"><b data-douga-cur>01</b>/26</span>
+                  <button class="douga__chip" type="button" data-douga-speed aria-label="Playback speed">1×</button>
+                  <button class="douga__chip" type="button" data-douga-onion-btn aria-pressed="false">
+                    <span class="douga__chip-dot" aria-hidden="true"></span>
+                    <span data-i18n="douga.onion">Onion</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </figure>
+        </article>
+      </div>
+
       <!-- Illustration index -->
       <div class="works-list">
         <h3 class="works-list__title"><span data-i18n="work.illust">Illustration &amp; Character Design</span><span class="works-list__jp" lang="ja">イラスト・キャラクターデザイン</span></h3>
 
         <article class="work-row">
           <div class="work-row__meta">
-            <span class="work-row__no">04</span>
+            <span class="work-row__no">05</span>
             <h4 class="work-row__title" data-i18n="w.fern.t">Fern &amp; Frieren</h4>
             <p class="work-row__desc" data-i18n="w.fern.d">Fan art for “Frieren: Beyond Journey's End” — a quiet, warm moment rendered with soft light and chromatic aberration.</p>
             <ul class="tags"><li data-i18n="tag.fanart">Fan art</li><li data-i18n="tag.painting">Digital painting</li><li>2024</li></ul>
@@ -455,7 +532,7 @@
 
         <article class="work-row work-row--flip">
           <div class="work-row__meta">
-            <span class="work-row__no">05</span>
+            <span class="work-row__no">06</span>
             <h4 class="work-row__title" data-i18n="w.aoi.t">Aoi — Character Sheet</h4>
             <p class="work-row__desc" data-i18n="w.aoi.d">Original character turnaround for a personal animation project: front, back and profile views, built to stay on-model across many drawings.</p>
             <ul class="tags"><li data-i18n="tag.original">Original character</li><li data-i18n="tag.turnaround">Turnaround</li><li>2024</li></ul>

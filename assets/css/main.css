@@ -69,7 +69,8 @@ body {
 }
 main { overflow-x: clip; }
 html:lang(ja) body { line-height: 1.8; }
-html:lang(ja) .about__text, html:lang(ja) .case__desc, html:lang(ja) .hero__sub { font-family: var(--f-jp); letter-spacing: 0.02em; }
+html:lang(ja) .about__text, html:lang(ja) .case__desc, html:lang(ja) .hero__sub, html:lang(ja) .work-row__desc { font-family: var(--f-jp); letter-spacing: 0.02em; }
+html:lang(ja) .work-row__title { font-family: var(--f-jp); font-size: clamp(1.35rem, 2.2vw, 2.2rem); line-height: 1.3; letter-spacing: 0; }
 
 /* Vietnamese diacritic-safe display typography (prevents stacked accents like Ố, Ữ, Ẩ, Ộ from colliding or clipping) */
 html:lang(vi) .hero__lede { line-height: 1.24; }
@@ -557,6 +558,7 @@ html:lang(ja) .hero__lede em { font-style: normal; font-weight: 700; }
 }
 
 .works-list { display: grid; gap: clamp(4rem, 9vw, 8rem); }
+.works-list--douga { margin-bottom: clamp(5rem, 11vw, 9.5rem); }
 .works-list__title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); font-size: var(--fs-md); font-weight: 600; letter-spacing: -0.01em; }
 .works-list__jp { font: 700 var(--fs-xs) var(--f-jp); letter-spacing: 0.3em; color: var(--red); }
 .work-row { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: end; }
@@ -566,6 +568,112 @@ html:lang(ja) .hero__lede em { font-style: normal; font-weight: 700; }
 .work-row__no { font: 800 clamp(3rem, 6vw, 6rem) / 0.8 var(--f-sans); font-stretch: 64%; -webkit-text-stroke: 1px var(--ink); color: transparent; }
 .work-row__title { font-size: var(--fs-lg); font-weight: 700; line-height: 1.02; letter-spacing: -0.025em; }
 .work-row__desc { color: var(--muted); max-width: 26rem; }
+
+/* Douga / Light-table inspector */
+.douga-row { align-items: center; }
+.douga-legend {
+  display: flex; flex-wrap: wrap; gap: 0.45rem 0.9rem; padding: 0.65rem 0;
+  border-block: 1px dashed var(--line);
+  font: 500 var(--fs-xs) / 1.2 var(--f-mono); letter-spacing: 0.06em; color: var(--ink-3);
+}
+.douga-legend li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.douga-legend i { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--sw); flex: none; box-shadow: 0 0 0 1px rgb(0 0 0 / 0.12); }
+
+.douga { position: relative; padding-top: 1.65rem; }
+.douga .cel__pegs { top: 0; }
+.douga__sheet {
+  background: #fff; border: 1px solid var(--line-strong); border-radius: var(--radius);
+  box-shadow: 0 1px 0 var(--line), 0 28px 60px -28px rgb(14 14 14 / 0.28);
+  overflow: hidden;
+}
+.douga__head {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+  padding: 0.55rem 0.9rem; background: var(--paper-2); border-bottom: 1px solid var(--line);
+  font: 500 var(--fs-xs) / 1 var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+}
+.douga__cut b { color: var(--red); font-weight: 700; font-variant-numeric: tabular-nums; }
+.douga__spec { opacity: 0.8; }
+.douga__expand {
+  display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.55rem;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--paper); color: var(--ink);
+  font: 600 0.6875rem / 1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+.douga__expand:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.douga__expand svg { width: 0.8rem; height: 0.8rem; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.douga__stage {
+  position: relative; aspect-ratio: 1280 / 905; background: #fff; overflow: hidden;
+  cursor: pointer; user-select: none; touch-action: pan-y;
+}
+.douga__fallback, .douga__fallback img,
+.douga__canvas, .douga__onion {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;
+}
+.douga__canvas, .douga__onion { opacity: 0; pointer-events: none; }
+.douga.is-ready .douga__canvas { opacity: 1; }
+.douga.is-ready .douga__fallback { opacity: 0; pointer-events: none; }
+.douga.is-ready.is-onion .douga__onion { opacity: 0.5; mix-blend-mode: multiply; }
+
+.douga__onion-badge {
+  position: absolute; left: 1.35rem; top: 1.2rem; padding: 0.25rem 0.5rem;
+  background: #18b6ff; color: #fff; border-radius: 2px;
+  font: 700 0.625rem / 1 var(--f-mono); letter-spacing: 0.1em;
+  opacity: 0; transform: translateY(-4px); transition: opacity 0.25s, transform 0.25s; pointer-events: none;
+}
+.douga.is-onion .douga__onion-badge { opacity: 1; transform: none; }
+
+.douga__bar {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.9rem;
+  padding: 0.65rem 0.9rem; background: var(--paper-2); border-top: 1px solid var(--line);
+}
+.douga__transport { display: inline-flex; align-items: center; gap: 0.25rem; }
+.douga__btn {
+  display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 4px;
+  border: 1px solid var(--line-strong); background: var(--paper); color: var(--ink);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.douga__btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.douga__btn svg { width: 0.95rem; height: 0.95rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.douga__btn--play svg { fill: currentColor; stroke: none; width: 0.85rem; height: 0.85rem; }
+.douga__btn--play .ic-play { display: none; }
+.douga__btn--play[aria-pressed="false"] .ic-pause { display: none; }
+.douga__btn--play[aria-pressed="false"] .ic-play { display: block; }
+
+.douga__scrub {
+  position: relative; height: 1.75rem; display: flex; align-items: center;
+  cursor: ew-resize; touch-action: pan-y; user-select: none;
+}
+.douga__ticks {
+  width: 100%; height: 0.95rem; display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 1px solid var(--line-strong);
+}
+.douga__ticks i { width: 1px; height: 38%; background: var(--line-strong); pointer-events: none; }
+.douga__ticks i.major { height: 95%; background: var(--ink); width: 1.5px; }
+.douga__head-line {
+  --p: 0; position: absolute; left: calc(var(--p) * 100%); top: 0.2rem; bottom: 0.2rem;
+  width: 2px; margin-left: -1px; background: var(--red); pointer-events: none;
+}
+.douga__head-line::before {
+  content: ""; position: absolute; top: -2px; left: -3px; width: 8px; height: 8px;
+  border-radius: 50%; background: var(--red);
+}
+
+.douga__tools { display: inline-flex; align-items: center; gap: 0.45rem; font: 600 var(--fs-xs) / 1 var(--f-mono); }
+.douga__count { font-variant-numeric: tabular-nums; letter-spacing: 0.06em; color: var(--muted); min-width: 3.3rem; text-align: right; }
+.douga__count b { color: var(--ink); font-weight: 700; }
+.douga__chip {
+  display: inline-flex; align-items: center; gap: 0.35rem; height: 2rem; padding: 0 0.6rem;
+  border: 1px solid var(--line-strong); border-radius: 4px; background: var(--paper); color: var(--ink);
+  font: 600 0.6875rem / 1 var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.douga__chip:hover { border-color: var(--ink); }
+.douga__chip[aria-pressed="true"], .douga__chip.is-active {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+.douga__chip-dot { width: 0.45rem; height: 0.45rem; border-radius: 50%; background: #18b6ff; }
 
 .more-card {
   position: relative; display: flex; justify-content: space-between; align-items: center; gap: 2rem;
@@ -909,6 +1017,21 @@ html:lang(ja) .contact__title em { font-style: normal; font-weight: 900; }
   .case__item--standee { margin-top: 0; }
   .case__credits { grid-template-columns: 1fr 1fr; }
   .case__credits > div:last-child { grid-column: 1 / -1; }
+
+  .douga__spec { display: none; }
+  .douga__bar {
+    grid-template-columns: auto 1fr;
+    gap: 0.55rem 0.65rem;
+    padding: 0.65rem 0.75rem;
+  }
+  .douga__scrub {
+    grid-column: 1 / -1;
+    order: -1;
+    height: 1.5rem;
+  }
+  .douga__tools { justify-self: end; }
+  .douga__btn { width: 2.2rem; height: 2.2rem; }
+  .douga__chip { height: 2.2rem; padding: 0 0.55rem; }
 
   .more-card { padding: 1.35rem 0; gap: 1rem; }
   .more-card__label { font-size: clamp(1.5rem, 6.8vw, 2.25rem); }
