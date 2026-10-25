@@ -346,26 +346,56 @@ html:lang(ja) .hero__lede em { font-style: normal; font-weight: 700; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.25rem; }
 
 /* The cel: animation paper with peg holes; the lens reveals the rough sketch */
-.cel { position: relative; justify-self: end; width: 100%; max-width: min(100%, calc((100svh - var(--header-h) - 16.5vw - 7.5rem) * 1.5)); min-width: min(100%, 24rem); }
+.cel { position: relative; justify-self: end; width: 100%; max-width: min(100%, calc((100svh - var(--header-h) - 16.5vw - 7.5rem) * (16 / 9))); min-width: min(100%, 24rem); }
 .cel__pegs { position: absolute; top: -1.6rem; left: 50%; display: flex; gap: 1.25rem; transform: translateX(-50%); align-items: center; }
 .cel__pegs i { width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--paper-3); box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.25); }
 .cel__pegs i:nth-child(1), .cel__pegs i:nth-child(3) { width: 1.6rem; height: 0.6rem; border-radius: 999px; }
 .cel__frame {
-  position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: #fff;
+  position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #0c0d12;
   box-shadow: 0 1px 0 var(--line), 0 30px 60px -30px rgb(14 14 14 / 0.35);
   touch-action: pan-y;
 }
-.cel__layer, .cel__layer img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cel__cut-layer {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0; pointer-events: none; transition: opacity 0.35s ease;
+}
+.cel__cut-layer.is-active {
+  opacity: 1; pointer-events: auto;
+}
+.cel__layer, .cel__layer img, .cel__layer picture, .cel__video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
 .cel__sketch {
   --x: 50%; --y: 50%; --r: 0px;
   -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), #000 calc(100% - 1px), transparent 100%);
           mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), #000 calc(100% - 1px), transparent 100%);
+  background: #fff; pointer-events: none;
 }
+.cel__sketch img, .cel__sketch picture { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cel__badge {
+  position: absolute; left: 1rem; top: 1rem; padding: 0.25rem 0.55rem;
+  background: linear-gradient(135deg, #ff7a18, #af002d); color: #fff; border-radius: 2px;
+  font: 700 0.625rem / 1 var(--f-mono); letter-spacing: 0.1em;
+  pointer-events: none; box-shadow: 0 4px 12px rgb(255 120 50 / 0.35); z-index: 3;
+}
+.cel__badge--akari {
+  background: var(--ink); box-shadow: 0 4px 12px rgb(0 0 0 / 0.25);
+}
+.cel__expand {
+  position: absolute; right: 0.85rem; top: 0.85rem; z-index: 3;
+  display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 999px;
+  background: rgba(14, 14, 14, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  color: #fff; font: 600 0.6875rem / 1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s; cursor: pointer;
+}
+.cel__expand:hover { background: #fff; color: var(--ink); border-color: #fff; }
+.cel__expand svg { width: 0.8rem; height: 0.8rem; fill: none; stroke: currentColor; stroke-width: 2; }
 .cel__lens {
   position: absolute; top: 50%; left: 50%; width: 0; height: 0; pointer-events: none;
   border: 1.5px solid var(--red); border-radius: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0; transition: opacity 0.2s var(--ease-out);
+  opacity: 0; transition: opacity 0.2s var(--ease-out); z-index: 4;
 }
 .cel__lens.is-active { opacity: 1; }
 .cel__lens span {
@@ -373,16 +403,32 @@ html:lang(ja) .hero__lede em { font-style: normal; font-weight: 700; }
   padding: 0.25rem 0.5rem; background: var(--red); color: var(--paper); white-space: nowrap;
   font: 700 0.625rem / 1 var(--f-mono); letter-spacing: 0.12em;
 }
-.cel__corner { position: absolute; width: 1.25rem; height: 1.25rem; border: 0 solid var(--ink); opacity: 0.6; pointer-events: none; }
+.cel__corner { position: absolute; width: 1.25rem; height: 1.25rem; border: 0 solid #fff; opacity: 0.6; pointer-events: none; z-index: 3; }
 .cel__corner--tl { top: 0.75rem; left: 0.75rem; border-width: 1px 0 0 1px; }
 .cel__corner--tr { top: 0.75rem; right: 0.75rem; border-width: 1px 1px 0 0; }
 .cel__corner--bl { bottom: 0.75rem; left: 0.75rem; border-width: 0 0 1px 1px; }
 .cel__corner--br { bottom: 0.75rem; right: 0.75rem; border-width: 0 1px 1px 0; }
 .cel__meta {
-  display: flex; justify-content: space-between; gap: 1rem; padding-top: 0.6rem;
-  font: 500 var(--fs-xs) var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding-top: 0.75rem;
+  font: 500 var(--fs-xs) var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
 }
-.cel__hint { color: var(--red); }
+.cel__meta-cuts { display: inline-flex; align-items: center; gap: 0.45rem; }
+.cel__cut-pill {
+  display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.28rem 0.65rem;
+  border-radius: 999px; border: 1px solid var(--line-strong); background: var(--paper);
+  font: 600 0.6875rem / 1 var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); cursor: pointer; transition: all 0.2s ease;
+}
+.cel__cut-pill:hover { color: var(--ink); border-color: var(--ink); }
+.cel__cut-pill.is-active {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+.cel__cut-dot {
+  width: 0.4rem; height: 0.4rem; border-radius: 50%; background: var(--line-strong);
+  transition: background-color 0.2s ease;
+}
+.cel__cut-pill.is-active .cel__cut-dot { background: var(--red); }
+.cel__hint { color: var(--red); font-size: 0.6875rem; }
 
 .hero__name {
   position: relative; margin-top: clamp(0.75rem, 2vh, 1.5rem);
@@ -1138,8 +1184,10 @@ html:lang(ja) .contact__title em { font-style: normal; font-weight: 900; }
   }
   .cel { margin-top: 0.65rem; }
   .cel__pegs { top: -1.25rem; transform: translateX(-50%) scale(0.85); }
-  .cel__meta span:nth-child(2) { display: none; }
-  .cel__hint { text-align: right; }
+  .cel__meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .cel__meta-cuts { width: 100%; display: flex; gap: 0.35rem; }
+  .cel__cut-pill { flex: 1; justify-content: center; padding: 0.25rem 0.45rem; font-size: 0.625rem; }
+  .cel__hint { font-size: 0.625rem; }
   .hero__name { margin-top: 1.1rem; font-size: 20.5vw; }
   .hero__route { display: none; }
 

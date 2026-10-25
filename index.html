@@ -195,16 +195,40 @@
         <figure class="cel" data-lens data-cursor="peek">
           <div class="cel__pegs" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="cel__frame">
-            <picture class="cel__layer cel__final">
-              <source type="image/avif" srcset="assets/img/process-4-800.avif 800w, assets/img/process-4-1400.avif 1400w, assets/img/process-4-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
-              <source type="image/webp" srcset="assets/img/process-4-800.webp 800w, assets/img/process-4-1400.webp 1400w, assets/img/process-4-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
-              <img src="assets/img/process-4-1400.jpg" width="2600" height="1733" alt="Akari sprinting — final composited frame from Get Set Run" fetchpriority="high" decoding="async" data-i18n-attr="alt:alt.heroFinal">
-            </picture>
-            <picture class="cel__layer cel__sketch" aria-hidden="true">
-              <source type="image/avif" srcset="assets/img/process-1-800.avif 800w, assets/img/process-1-1400.avif 1400w, assets/img/process-1-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
-              <source type="image/webp" srcset="assets/img/process-1-800.webp 800w, assets/img/process-1-1400.webp 1400w, assets/img/process-1-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
-              <img src="assets/img/process-1-1400.jpg" width="2600" height="1733" alt="" decoding="async">
-            </picture>
+            <!-- Cut 004 Shinkai Video Layer (Default Active) -->
+            <div class="cel__cut-layer cel__cut-layer--shinkai is-active" data-layer="shinkai">
+              <video class="cel__video" src="assets/video/shinkai-cut-1.mp4" poster="assets/img/douga/poster-final.jpg" playsinline autoplay muted loop preload="auto" aria-hidden="true"></video>
+              <div class="cel__layer cel__sketch" aria-hidden="true">
+                <img src="assets/img/douga/loop.webp" width="1400" height="990" alt="Shinkai head turn clean-up douga line art" decoding="async">
+              </div>
+              <span class="cel__badge" aria-hidden="true" data-i18n="hero.badge">FINAL CUT ● 24FPS (撮影)</span>
+              <button class="cel__expand" type="button" data-lightbox data-video="assets/video/shinkai-cut-1.mp4" data-cap="w.douga.t" aria-label="Expand video in lightbox" data-i18n-attr="aria-label:hero.expandAria">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                <span data-i18n="hero.expand">Expand</span>
+              </button>
+            </div>
+
+            <!-- Cut 008 Akari Sprint Layer (Secondary) -->
+            <div class="cel__cut-layer cel__cut-layer--akari" data-layer="akari">
+              <picture class="cel__layer cel__final">
+                <source type="image/avif" srcset="assets/img/process-4-800.avif 800w, assets/img/process-4-1400.avif 1400w, assets/img/process-4-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+                <source type="image/webp" srcset="assets/img/process-4-800.webp 800w, assets/img/process-4-1400.webp 1400w, assets/img/process-4-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+                <img src="assets/img/process-4-1400.jpg" width="2600" height="1733" alt="Akari sprinting — final composited frame from Get Set Run" loading="lazy" decoding="async" data-i18n-attr="alt:alt.heroFinal">
+              </picture>
+              <div class="cel__layer cel__sketch" aria-hidden="true">
+                <picture>
+                  <source type="image/avif" srcset="assets/img/process-1-800.avif 800w, assets/img/process-1-1400.avif 1400w, assets/img/process-1-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+                  <source type="image/webp" srcset="assets/img/process-1-800.webp 800w, assets/img/process-1-1400.webp 1400w, assets/img/process-1-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+                  <img src="assets/img/process-1-1400.jpg" width="2600" height="1733" alt="" decoding="async">
+                </picture>
+              </div>
+              <span class="cel__badge cel__badge--akari" aria-hidden="true" data-i18n="hero.badgeAkari">KEY ANIMATION ● LO</span>
+              <button class="cel__expand" type="button" data-lightbox data-full="assets/img/process-4-2000.avif" data-w="2600" data-h="1733" data-cap="case.title" aria-label="Expand Akari sprint in lightbox" data-i18n-attr="aria-label:hero.expandAkariAria">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                <span data-i18n="hero.expand">Expand</span>
+              </button>
+            </div>
+
             <div class="cel__lens" data-lens-ring aria-hidden="true"><span>ROUGH ✎</span></div>
             <span class="cel__corner cel__corner--tl" aria-hidden="true"></span>
             <span class="cel__corner cel__corner--tr" aria-hidden="true"></span>
@@ -212,8 +236,16 @@
             <span class="cel__corner cel__corner--br" aria-hidden="true"></span>
           </div>
           <figcaption class="cel__meta">
-            <span>CUT — 008</span>
-            <span>AKARI / GET SET RUN</span>
+            <div class="cel__meta-cuts" role="tablist" aria-label="Select hero animation cut">
+              <button class="cel__cut-pill is-active" type="button" role="tab" aria-selected="true" data-hero-cut="shinkai">
+                <span class="cel__cut-dot" aria-hidden="true"></span>
+                <b>CUT 004</b> <span class="cel__cut-name" data-i18n="hero.cutShinkai">SHINKAI (VIDEO)</span>
+              </button>
+              <button class="cel__cut-pill" type="button" role="tab" aria-selected="false" data-hero-cut="akari">
+                <span class="cel__cut-dot" aria-hidden="true"></span>
+                <b>CUT 008</b> <span class="cel__cut-name" data-i18n="hero.cutAkari">AKARI (SPRINT)</span>
+              </button>
+            </div>
             <span class="cel__hint" data-i18n="hero.hint">Move over the frame to peek at the rough</span>
           </figcaption>
         </figure>

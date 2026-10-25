@@ -27,6 +27,13 @@
       'hero.ctaWork': 'Selected work',
       'hero.ctaReel': 'Play showreel',
       'hero.hint': 'Move over the frame to peek at the rough · Click to lock',
+      'hero.badge': 'FINAL CUT ● 24FPS (撮影)',
+      'hero.badgeAkari': 'KEY ANIMATION ● LO',
+      'hero.cutShinkai': 'SHINKAI (VIDEO)',
+      'hero.cutAkari': 'AKARI (SPRINT)',
+      'hero.expand': 'Expand',
+      'hero.expandAria': 'Expand video in lightbox',
+      'hero.expandAkariAria': 'Expand Akari sprint in lightbox',
       'hero.scroll': 'Scroll',
 
       'reel.title': 'Showreel',
@@ -192,6 +199,13 @@
       'hero.ctaWork': 'Xem tác phẩm',
       'hero.ctaReel': 'Xem showreel',
       'hero.hint': 'Di chuột lên tranh để soi nét phác (Genga) · Click để giữ',
+      'hero.badge': 'FINAL CUT ● 24FPS (撮影)',
+      'hero.badgeAkari': 'DIỄN HOẠT CHÍNH (GENGA) ● LO',
+      'hero.cutShinkai': 'SHINKAI (VIDEO)',
+      'hero.cutAkari': 'AKARI (SPRINT)',
+      'hero.expand': 'Phóng to',
+      'hero.expandAria': 'Mở xem video trong hộp phóng to',
+      'hero.expandAkariAria': 'Mở xem bản vẽ Akari trong hộp phóng to',
       'hero.scroll': 'Cuộn xuống',
 
       'reel.title': 'Showreel',
@@ -357,6 +371,13 @@
       'hero.ctaWork': '作品を見る',
       'hero.ctaReel': 'リールを再生',
       'hero.hint': 'フレームに重ねるとラフ原画を表示・クリックで固定',
+      'hero.badge': 'ファイナルカット ● 24FPS (撮影)',
+      'hero.badgeAkari': '原画・レイアウト (LO)',
+      'hero.cutShinkai': '新海風（動画）',
+      'hero.cutAkari': 'アカリ（疾走）',
+      'hero.expand': '拡大',
+      'hero.expandAria': 'ライトボックスで動画を拡大',
+      'hero.expandAkariAria': 'ライトボックスでアカリの原画を拡大',
       'hero.scroll': 'スクロール',
 
       'reel.title': 'Showreel',
@@ -749,26 +770,29 @@
   }
 
   /* =====================================================================
-     7. HERO INTERACTIVE CEL LENS (GENGA X-RAY LOUPE)
+     7. HERO INTERACTIVE CEL LENS (GENGA X-RAY LOUPE & VIDEO HERO)
      ===================================================================== */
   const cel = document.querySelector('[data-lens]');
   let sweepDemoHeroLens = function () {};
 
   if (cel) {
     const frame = cel.querySelector('.cel__frame');
-    const sketch = cel.querySelector('.cel__sketch');
+    const sketches = cel.querySelectorAll('.cel__sketch');
     const ring = cel.querySelector('[data-lens-ring]');
     const ringLabel = ring ? ring.querySelector('span') : null;
+    const cutBtns = cel.querySelectorAll('[data-hero-cut]');
+    const cutLayers = cel.querySelectorAll('[data-layer]');
+    const heroVideo = cel.querySelector('.cel__video');
     let isLockedFull = false;
 
     const LENS_RADIUS = () => (window.innerWidth < 640 ? 85 : 135);
 
     function setLensPos(xPct, yPct, rPx) {
-      if (sketch) {
+      sketches.forEach((sketch) => {
         sketch.style.setProperty('--x', `${xPct}%`);
         sketch.style.setProperty('--y', `${yPct}%`);
         sketch.style.setProperty('--r', `${rPx}px`);
-      }
+      });
       if (ring) {
         ring.style.left = `${xPct}%`;
         ring.style.top = `${yPct}%`;
@@ -780,7 +804,7 @@
       }
     }
 
-    if (frame && sketch) {
+    if (frame && sketches.length) {
       let currentR = 0;
       let targetR = 0;
       let curX = 55;
@@ -814,9 +838,7 @@
         requestLensTick();
       }
 
-      frame.addEventListener('pointerenter', (e) => {
-        handlePointer(e);
-      });
+      frame.addEventListener('pointerenter', handlePointer);
       frame.addEventListener('pointermove', handlePointer);
       frame.addEventListener('pointerleave', () => {
         if (!isLockedFull) {
@@ -825,8 +847,9 @@
         }
       });
 
-      // Click toggles full rough keyframe vs loupe
+      // Click toggles full rough keyframe vs loupe (ignores expand button or cut pills)
       frame.addEventListener('click', (e) => {
+        if (e.target.closest('.cel__expand') || e.target.closest('[data-hero-cut]')) return;
         isLockedFull = !isLockedFull;
         const rect = frame.getBoundingClientRect();
         targetX = ((e.clientX - rect.left) / rect.width) * 100;
@@ -837,6 +860,54 @@
         }
         requestLensTick();
       });
+
+      // Hero cut switching (Shinkai Video vs Akari Sprint)
+      function setHeroCut(cutKey) {
+        cutBtns.forEach((btn) => {
+          const isTarget = btn.getAttribute('data-hero-cut') === cutKey;
+          btn.classList.toggle('is-active', isTarget);
+          btn.setAttribute('aria-selected', String(isTarget));
+        });
+        cutLayers.forEach((layer) => {
+          const isTarget = layer.getAttribute('data-layer') === cutKey;
+          layer.classList.toggle('is-active', isTarget);
+        });
+        if (heroVideo) {
+          if (cutKey === 'shinkai') {
+            heroVideo.play().catch(() => {});
+          } else {
+            heroVideo.pause();
+          }
+        }
+        isLockedFull = false;
+        targetR = 0;
+        if (ringLabel) ringLabel.textContent = 'ROUGH ✎';
+        requestLensTick();
+      }
+
+      cutBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const cut = btn.getAttribute('data-hero-cut');
+          if (cut) setHeroCut(cut);
+        });
+      });
+
+      // Robust autoplay handling for hero video
+      if (heroVideo) {
+        const startHeroVideo = () => {
+          heroVideo.play().catch(() => {
+            const unlock = () => {
+              heroVideo.play().catch(() => {});
+              window.removeEventListener('pointerdown', unlock);
+              window.removeEventListener('touchstart', unlock);
+            };
+            window.addEventListener('pointerdown', unlock, { once: true });
+            window.addEventListener('touchstart', unlock, { once: true });
+          });
+        };
+        startHeroVideo();
+      }
 
       // Brief automatic demo sweep after hero loads so user sees the X-ray effect immediately
       sweepDemoHeroLens = function () {
