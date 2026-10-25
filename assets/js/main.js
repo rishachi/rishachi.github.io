@@ -21,9 +21,9 @@
       'nav.contact': 'Contact',
       status: 'Available for work',
 
-      'hero.eyebrow': '2D Animator & Illustrator',
+      'hero.eyebrow': 'Key Animator (原画)',
       'hero.lede': 'Bringing imagination to life — <em>one frame</em> at a time.',
-      'hero.sub': 'Key animation, character design and anime-inspired illustration. Based in Vietnam — drawing my way toward the studios of Tokyo.',
+      'hero.sub': 'Key animation, character acting, and layout for Japanese anime productions. Based in Vietnam — drawing toward Tokyo studios.',
       'hero.ctaWork': 'Selected work',
       'hero.ctaReel': 'Play showreel',
       'hero.hint': 'Move over the frame to peek at clean line art · Click to lock',
@@ -101,10 +101,11 @@
       'tag.original': 'Original character',
       'tag.turnaround': 'Turnaround',
       'work.more': 'More artwork on Pixiv',
+      'work.pixivTag': 'Pixiv Archive · 50+ Illustrations',
 
       'about.title': 'About',
       'about.lead': "Hi, I'm Phat Tran — <em>RiSH</em>, or <em>Hachi (八)</em> to colleagues and friends.",
-      'about.p1': "I'm an <strong>In-between Animator (Douga / 動画) and Digital Paint artist</strong> currently working at an anime production studio in Ho Chi Minh City, actively training and progressing toward <strong>Key Animation (Genga / 原画)</strong> within the studio pipeline. Contributing daily to commercial television anime productions, I ground my craft in meticulous in-betweening, volume consistency, and digital paint (Shiage) — building a disciplined foundation for dynamic character acting.",
+      'about.p1': 'Working professionally in anime production in Ho Chi Minh City, I handle the full 2D cut pipeline — from <strong>Layout (LO) and Key Animation (Genga / 原画)</strong> through <strong>Clean-up, In-betweening (Douga / 動画)</strong>, and <strong>Digital Paint (Shiage / 仕上げ)</strong>. With hands-on experience across both key motion decisions and precise line clean-up, I bring meticulous volume control and disciplined X-sheet timing to every production cut.',
       'about.p2': "I hold a <strong>Bachelor's Degree in Graphic Design (With Distinction / Honours) from FPT University</strong>. Combining a rigorous academic foundation in visual composition and anatomy with Japanese studio pipeline mastery, I focus on dynamic character acting, sakuga action sequences, and disciplined timesheet (X-sheet) timing.",
 
       'id.name': 'Name',
@@ -114,13 +115,20 @@
       'id.base': 'Based in',
       'id.baseVal': 'Ho Chi Minh City, Vietnam (GMT+7)',
       'id.credits': 'Credits',
-      'id.creditsVal': 'Phat Tan — KeyFrame Staff List ↗',
+      'id.creditsVal': 'Tan Phat — KeyFrame Staff List ↗',
       'id.edu': 'Education',
       'id.eduVal': 'B.A. Graphic Design (Honours) · FPT University',
       'id.goal': 'Goal',
       'id.goalVal': 'Commercial Anime — Tokyo & Global',
       'id.status': 'Status',
       'id.statusVal': 'Active Studio Artist (Douga & Shiage) · Training for Key Animation',
+
+      'credits.title': 'Production Credits · Selected Titles',
+      'credits.thProject': 'Project',
+      'credits.thRole': 'Role',
+      'credits.thYear': 'Year',
+      'credits.thStudio': 'Studio / Team',
+      'credits.commercial': 'Commercial anime credits (TV/Theatrical): Available upon request / subject to NDA.',
 
       'sk.anim': 'Animation',
       'sk.anim1': 'Layout (LO) & Key Animation (Genga / 原画)',
@@ -162,6 +170,7 @@
       'lb.close': 'Close',
 
       'alt.heroFinal': 'Akari sprinting — final composited frame from Get Set Run',
+      'alt.reelPoster': 'Phat Tran (RiSH) Animation Showreel 2024-2026 poster',
       'alt.step1': 'Step 1 — rough key drawing of a sprinting girl',
       'alt.step2': 'Step 2 — clean line art with shadow and highlight colour guides',
       'alt.step3': 'Step 3 — flat colour with the character palette',
@@ -193,9 +202,9 @@
       'nav.contact': 'Liên hệ',
       status: 'Sẵn sàng hợp tác',
 
-      'hero.eyebrow': '2D Animator & Hoạ sĩ Minh hoạ',
+      'hero.eyebrow': 'Hoạ sĩ Diễn hoạt chính · Key Animator (原画)',
       'hero.lede': 'Thổi hồn vào trí tưởng tượng — qua <em>từng khung hình.</em>',
-      'hero.sub': 'Diễn hoạt chính (Key Animation), thiết kế nhân vật và minh hoạ phong cách Anime. Sống tại Việt Nam — đang từng nét vẽ tiến tới các studio tại Tokyo.',
+      'hero.sub': 'Diễn hoạt chính (Key Animation), diễn xuất nhân vật và bố cục layout cho anime Nhật Bản. Sống tại Việt Nam — vẽ từng khung hình hướng tới các studio Tokyo.',
       'hero.ctaWork': 'Xem tác phẩm',
       'hero.ctaReel': 'Xem showreel',
       'hero.hint': 'Di chuột lên tranh để soi nét vẽ sạch (Clean-up) · Click để giữ',
@@ -273,10 +282,11 @@
       'tag.original': 'Nhân vật gốc',
       'tag.turnaround': 'Character sheet',
       'work.more': 'Xem thêm tranh trên Pixiv',
+      'work.pixivTag': 'Kho Tranh Pixiv · Hơn 50 Tác Phẩm',
 
       'about.title': 'Hồ Sơ',
       'about.lead': 'Xin chào, mình là Phát Trần — đồng nghiệp và bạn bè thường gọi là <em>RiSH</em> hay <em>Hachi (八)</em>.',
-      'about.p1': 'Hiện tại, mình đang làm việc chuyên nghiệp tại một studio anime ở TP. Hồ Chí Minh trong vai trò <strong>hoạ sĩ Diễn hoạt trung gian (Douga / 動画) và Digital Paint (仕上げ)</strong>, đồng thời không ngừng rèn giũa để tiến bước lên vị trí <strong>Key Animator (Genga / 原画)</strong> trong quy trình sản xuất của xưởng. Trực tiếp thực hiện các khung hình douga và tô màu hoàn thiện cho các dự án anime truyền hình thương mại giúp mình thấu hiểu sâu sắc từng nhịp chuyển động vi mô, giữ vững độ chuẩn xác của nét vẽ và kỷ luật nghiêm ngặt theo tiêu chuẩn ngành hoạt hình Nhật Bản.',
+      'about.p1': 'Hoạt động chuyên nghiệp trong quy trình sản xuất anime tại TP. Hồ Chí Minh, mình có khả năng đảm nhiệm trọn vẹn một cut diễn hoạt 2D — từ <strong>Bố cục Layout (LO), Diễn hoạt chính (Genga / 原画)</strong> đến <strong>Clean-up, Diễn hoạt trung gian (Douga / 動画)</strong> và <strong>Tô màu kỹ thuật số (Shiage / 仕上げ)</strong>. Việc làm chủ xuyên suốt từ nhịp chuyển động chính đến từng đường nét hoàn thiện giúp mình duy trì khối nhân vật ổn định và nhịp timesheet (X-sheet) chuẩn xác trong từng khung hình.',
       'about.p2': 'Mình tốt nghiệp <strong>Cử nhân Thiết kế Đồ hoạ loại Giỏi (With Distinction / Honours) tại Đại học FPT</strong>. Kết hợp nền tảng học thuật vững chắc về giải phẫu, bố cục hình ảnh với quy trình chuẩn của các xưởng phim hoạt hình Nhật Bản, mình chuyên sâu vào diễn xuất nhân vật có hồn, các phân cảnh hành động sakuga giàu động lượng và nhịp điệu timesheet (X-sheet) chuẩn xác.',
 
       'id.name': 'Họ tên',
@@ -286,13 +296,20 @@
       'id.base': 'Nơi ở',
       'id.baseVal': 'TP. Hồ Chí Minh, Việt Nam (GMT+7)',
       'id.credits': 'Credit tác phẩm',
-      'id.creditsVal': 'Phat Tan — KeyFrame Staff List ↗',
+      'id.creditsVal': 'Tan Phat — KeyFrame Staff List ↗',
       'id.edu': 'Học vấn',
       'id.eduVal': 'Cử nhân Thiết kế Đồ hoạ (Tốt nghiệp loại Giỏi) · ĐH FPT',
       'id.goal': 'Mục tiêu',
       'id.goalVal': 'Ngành Anime thương mại — Tokyo & Quốc tế',
       'id.status': 'Trạng thái',
       'id.statusVal': 'Hoạ sĩ Studio (Douga & Shiage) · Đang rèn luyện Key Animation',
+
+      'credits.title': 'Danh Sách Phim & Dự Án Tham Gia',
+      'credits.thProject': 'Tác phẩm / Dự án',
+      'credits.thRole': 'Vai trò đảm nhiệm',
+      'credits.thYear': 'Năm',
+      'credits.thStudio': 'Đơn vị sản xuất',
+      'credits.commercial': 'Credits anime thương mại (TV series & Chiếu rạp): Cung cấp theo yêu cầu (tuân thủ NDA bảo mật).',
 
       'sk.anim': 'Diễn hoạt (Animation)',
       'sk.anim1': 'Layout (LO) & Diễn hoạt chính (Genga / 原画)',
@@ -334,6 +351,7 @@
       'lb.close': 'Đóng',
 
       'alt.heroFinal': 'Akari bứt tốc — khung hình hoàn thiện từ dự án Get Set Run',
+      'alt.reelPoster': 'Poster Showreel diễn hoạt 2024-2026 của Phát Trần (RiSH)',
       'alt.step1': 'Bước 1 — bản vẽ phác thảo khung hình chính (rough key)',
       'alt.step2': 'Bước 2 — đi nét sạch và chỉ định vùng bóng/ánh sáng',
       'alt.step3': 'Bước 3 — tô màu phẳng theo bảng màu nhân vật',
@@ -365,9 +383,9 @@
       'nav.contact': '連絡先',
       status: 'お仕事募集中',
 
-      'hero.eyebrow': '2Dアニメーター・イラストレーター',
+      'hero.eyebrow': '2Dアニメーター・原画マン (Key Animator)',
       'hero.lede': '想像に命を吹き込む — <em>1フレーム</em>ずつ。',
-      'hero.sub': '原画・キャラクターデザイン・アニメ風イラスト制作。ベトナムを拠点に、東京のアニメスタジオを目指して日々描いています。',
+      'hero.sub': '日本のアニメーション制作における原画（一原・二原）・レイアウト・キャラクター芝居を担当。ベトナムを拠点に東京のスタジオを目指して作画中。',
       'hero.ctaWork': '作品を見る',
       'hero.ctaReel': 'リールを再生',
       'hero.hint': 'フレームに重ねると動画・クリンナップを表示・クリックで固定',
@@ -445,10 +463,11 @@
       'tag.original': 'オリジナル',
       'tag.turnaround': '設定画・三面図',
       'work.more': 'Pixivでさらに作品を見る',
+      'work.pixivTag': 'Pixiv アーカイブ · 50点以上の作品',
 
       'about.title': 'About',
       'about.lead': 'こんにちは、ファット・トラン（<em>RiSH</em> / <em>Hachi 八</em>）です。',
-      'about.p1': 'ホーチミン市のアニメ制作スタジオにて、商業<strong>動画マン（Douga）およびデジタルペイント（仕上げ）</strong>としてTVアニメ等の制作に携わりながら、スタジオ内で<strong>原画マン（Key Animator）</strong>へのステップアップを目指して日々作画に励んでいます。商業アニメの最前線で動画・仕上げの実務を重ねることで、線のクリンナップ精度、中割りの軌道、厳密なツメ指示の理解を深め、説得力ある原画を描くための強固な土台を築いています。',
+      'about.p1': 'ホーチミン市のアニメ制作現場において、<strong>レイアウト（LO）・原画（Genga）</strong>から<strong>クリンナップ・動画（Douga）</strong>、そして<strong>デジタルペイント（仕上げ / Shiage）</strong>に至るまで、2Dアニメーションの1カットを通貫して制作できるスキルを備えています。動きの設計から線の清書・彩色まで一貫して担える経験を活かし、立体感（デッサン）の維持と厳密なタイムシート設計に基づいた作画を実践しています。',
       'about.p2': '<strong>FPT大学グラフィックデザイン学部を優秀賞（With Distinction / Honours）で卒業</strong>。大学でのデッサン・画面構成の知見と、日本のアニメ制作パイプライン（作画・タイムシート・RETAS）を融合させ、説得力あるキャラクター芝居、ケレン味あるアクション作画、正確なツメ指示を追求しています。',
 
       'id.name': '氏名',
@@ -458,13 +477,20 @@
       'id.base': '拠点',
       'id.baseVal': 'ベトナム・ホーチミン市 (GMT+7)',
       'id.credits': '作画クレジット',
-      'id.creditsVal': '作画スタッフリスト（Phat Tan / ID: 400619） ↗',
+      'id.creditsVal': '作画スタッフリスト（Tan Phat / ID: 400619） ↗',
       'id.edu': '学歴',
       'id.eduVal': 'FPT大学 グラフィックデザイン学部 優秀卒業（Honours）',
       'id.goal': '目標',
       'id.goalVal': '日本および世界のアニメ業界',
       'id.status': 'ステータス',
       'id.statusVal': '商業スタジオ所属（動画・仕上げ） · 原画研修中',
+
+      'credits.title': '参加作品クレジット (Production Credits)',
+      'credits.thProject': '作品名',
+      'credits.thRole': '担当役職',
+      'credits.thYear': '制作年',
+      'credits.thStudio': '制作スタジオ / チーム',
+      'credits.commercial': '商業アニメ作品クレジット（TV/劇場版）：秘密保持契約（NDA）に基づき、ご要望に応じて開示いたします。',
 
       'sk.anim': 'アニメーション',
       'sk.anim1': 'レイアウト（LO） & 原画（Genga / 一原・二原）',
@@ -506,6 +532,7 @@
       'lb.close': '閉じる',
 
       'alt.heroFinal': '疾走する明（アカリ）— Get Set Run 完成フレーム',
+      'alt.reelPoster': 'ファット・トラン（RiSH）アニメーション作画リール 2024-2026 ポスター',
       'alt.step1': '工程1 — ラフ原画',
       'alt.step2': '工程2 — クリンナップと影指定',
       'alt.step3': '工程3 — 彩色',
@@ -635,6 +662,19 @@
         }
       });
     });
+
+    const creditsTbody = document.querySelector('[data-credits-body]');
+    if (creditsTbody && window.PORTFOLIO_CREDITS) {
+      creditsTbody.innerHTML = window.PORTFOLIO_CREDITS.map(function (item) {
+        var roleText = t(item.roleKey) || item.roleFallback;
+        return '<tr>' +
+          '<td><strong>' + item.project + '</strong></td>' +
+          '<td>' + roleText + '</td>' +
+          '<td>' + item.year + '</td>' +
+          '<td>' + item.studio + '</td>' +
+        '</tr>';
+      }).join('');
+    }
 
     if (!isInitial) {
       setupTextSplits(true);
