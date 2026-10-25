@@ -195,10 +195,31 @@
         <figure class="cel" data-lens data-cursor="peek">
           <div class="cel__pegs" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="cel__frame">
-            <!-- Cut 004 Shinkai Video Layer (Default Active) -->
-            <div class="cel__cut-layer cel__cut-layer--shinkai is-active" data-layer="shinkai">
-              <video class="cel__video" src="assets/video/shinkai-cut-1.mp4" poster="assets/img/douga/poster-final.jpg" playsinline autoplay muted loop preload="auto" aria-hidden="true"></video>
-              <div class="cel__layer cel__sketch" aria-hidden="true">
+            <!-- Cut 008 Akari Sprint Layer (Default Active on load — FX to Clean loupe) -->
+            <div class="cel__cut-layer cel__cut-layer--akari is-active" data-layer="akari">
+              <picture class="cel__layer cel__final">
+                <source type="image/avif" srcset="assets/img/process-5-800.avif 800w, assets/img/process-5-1400.avif 1400w, assets/img/process-5-1751.avif 1751w" sizes="(min-width: 1024px) 50vw, 100vw">
+                <source type="image/webp" srcset="assets/img/process-5-800.webp 800w, assets/img/process-5-1400.webp 1400w, assets/img/process-5-1751.webp 1751w" sizes="(min-width: 1024px) 50vw, 100vw">
+                <img src="assets/img/process-5-1400.jpg" width="1751" height="1167" alt="Akari sprinting — photography and FX frame from Get Set Run" fetchpriority="high" decoding="async" data-i18n-attr="alt:alt.heroFinal">
+              </picture>
+              <div class="cel__layer cel__sketch cel__sketch--akari" aria-hidden="true">
+                <picture>
+                  <source type="image/avif" srcset="assets/img/process-2-800.avif 800w, assets/img/process-2-1400.avif 1400w, assets/img/process-2-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+                  <source type="image/webp" srcset="assets/img/process-2-800.webp 800w, assets/img/process-2-1400.webp 1400w, assets/img/process-2-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
+                  <img src="assets/img/process-2-1400.jpg" width="2600" height="1733" alt="" decoding="async">
+                </picture>
+              </div>
+              <span class="cel__badge cel__badge--akari" aria-hidden="true" data-i18n="hero.badgeAkari">PHOTOGRAPHY &amp; FX ● SATSUEI (撮影)</span>
+              <button class="cel__expand" type="button" data-lightbox data-full="assets/img/process-5-1751.jpg" data-w="1751" data-h="1167" data-cap="case.title" aria-label="Expand Akari sprint in lightbox" data-i18n-attr="aria-label:hero.expandAkariAria">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                <span data-i18n="hero.expand">Expand</span>
+              </button>
+            </div>
+
+            <!-- Cut 004 Shinkai Video Layer (Available via Switcher) -->
+            <div class="cel__cut-layer cel__cut-layer--shinkai" data-layer="shinkai">
+              <video class="cel__video" src="assets/video/shinkai-cut-1.mp4" poster="assets/img/douga/poster-final.jpg" playsinline muted loop preload="metadata" aria-hidden="true"></video>
+              <div class="cel__layer cel__sketch cel__sketch--shinkai" aria-hidden="true">
                 <img src="assets/img/douga/loop.webp" width="1400" height="990" alt="Shinkai head turn clean-up douga line art" decoding="async">
               </div>
               <span class="cel__badge" aria-hidden="true" data-i18n="hero.badge">FINAL CUT ● 24FPS (撮影)</span>
@@ -208,28 +229,7 @@
               </button>
             </div>
 
-            <!-- Cut 008 Akari Sprint Layer (Secondary) -->
-            <div class="cel__cut-layer cel__cut-layer--akari" data-layer="akari">
-              <picture class="cel__layer cel__final">
-                <source type="image/avif" srcset="assets/img/process-4-800.avif 800w, assets/img/process-4-1400.avif 1400w, assets/img/process-4-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
-                <source type="image/webp" srcset="assets/img/process-4-800.webp 800w, assets/img/process-4-1400.webp 1400w, assets/img/process-4-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
-                <img src="assets/img/process-4-1400.jpg" width="2600" height="1733" alt="Akari sprinting — final composited frame from Get Set Run" loading="lazy" decoding="async" data-i18n-attr="alt:alt.heroFinal">
-              </picture>
-              <div class="cel__layer cel__sketch" aria-hidden="true">
-                <picture>
-                  <source type="image/avif" srcset="assets/img/process-1-800.avif 800w, assets/img/process-1-1400.avif 1400w, assets/img/process-1-2000.avif 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
-                  <source type="image/webp" srcset="assets/img/process-1-800.webp 800w, assets/img/process-1-1400.webp 1400w, assets/img/process-1-2000.webp 2000w" sizes="(min-width: 1024px) 50vw, 100vw">
-                  <img src="assets/img/process-1-1400.jpg" width="2600" height="1733" alt="" decoding="async">
-                </picture>
-              </div>
-              <span class="cel__badge cel__badge--akari" aria-hidden="true" data-i18n="hero.badgeAkari">KEY ANIMATION ● LO</span>
-              <button class="cel__expand" type="button" data-lightbox data-full="assets/img/process-4-2000.avif" data-w="2600" data-h="1733" data-cap="case.title" aria-label="Expand Akari sprint in lightbox" data-i18n-attr="aria-label:hero.expandAkariAria">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                <span data-i18n="hero.expand">Expand</span>
-              </button>
-            </div>
-
-            <div class="cel__lens" data-lens-ring aria-hidden="true"><span>ROUGH ✎</span></div>
+            <div class="cel__lens" data-lens-ring aria-hidden="true"><span>CLEAN ✎</span></div>
             <span class="cel__corner cel__corner--tl" aria-hidden="true"></span>
             <span class="cel__corner cel__corner--tr" aria-hidden="true"></span>
             <span class="cel__corner cel__corner--bl" aria-hidden="true"></span>
@@ -237,16 +237,16 @@
           </div>
           <figcaption class="cel__meta">
             <div class="cel__meta-cuts" role="tablist" aria-label="Select hero animation cut">
-              <button class="cel__cut-pill is-active" type="button" role="tab" aria-selected="true" data-hero-cut="shinkai">
-                <span class="cel__cut-dot" aria-hidden="true"></span>
-                <b>CUT 004</b> <span class="cel__cut-name" data-i18n="hero.cutShinkai">SHINKAI (VIDEO)</span>
-              </button>
-              <button class="cel__cut-pill" type="button" role="tab" aria-selected="false" data-hero-cut="akari">
+              <button class="cel__cut-pill is-active" type="button" role="tab" aria-selected="true" data-hero-cut="akari">
                 <span class="cel__cut-dot" aria-hidden="true"></span>
                 <b>CUT 008</b> <span class="cel__cut-name" data-i18n="hero.cutAkari">AKARI (SPRINT)</span>
               </button>
+              <button class="cel__cut-pill" type="button" role="tab" aria-selected="false" data-hero-cut="shinkai">
+                <span class="cel__cut-dot" aria-hidden="true"></span>
+                <b>CUT 004</b> <span class="cel__cut-name" data-i18n="hero.cutShinkai">SHINKAI (VIDEO)</span>
+              </button>
             </div>
-            <span class="cel__hint" data-i18n="hero.hint">Move over the frame to peek at the rough</span>
+            <span class="cel__hint" data-i18n="hero.hint">Move over the frame to peek at clean line art</span>
           </figcaption>
         </figure>
       </div>
@@ -547,25 +547,25 @@
             <ul class="tags"><li data-i18n="tag.douga">Douga · 26 drawings</li><li data-i18n="tag.iro">Iro-toresu (色トレス)</li><li data-i18n="tag.satsuei">Composite &amp; FX (撮影)</li><li>2025</li></ul>
           </div>
 
-          <figure class="work-row__media douga" data-douga>
+          <figure class="work-row__media douga is-final" data-douga data-douga-mode="final">
             <div class="cel__pegs" aria-hidden="true"><i></i><i></i><i></i></div>
             <div class="douga__sheet">
               <div class="douga__head">
                 <div class="douga__modes" role="tablist" aria-label="View mode">
-                  <button class="douga__mode-btn is-active" type="button" role="tab" aria-selected="true" data-douga-mode="line">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                    <span data-i18n="douga.tabLine">Line Art</span>
-                  </button>
-                  <button class="douga__mode-btn" type="button" role="tab" aria-selected="false" data-douga-mode="final">
+                  <button class="douga__mode-btn is-active" type="button" role="tab" aria-selected="true" data-douga-mode="final">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
                     <span data-i18n="douga.tabFinal">Final Cut</span>
                   </button>
+                  <button class="douga__mode-btn" type="button" role="tab" aria-selected="false" data-douga-mode="line">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    <span data-i18n="douga.tabLine">Line Art</span>
+                  </button>
                 </div>
                 <div class="douga__spec-box">
-                  <span class="douga__cut" data-douga-cut-label>CUT 004 · <b data-douga-sheet-code>A-01</b></span>
-                  <span class="douga__spec" data-douga-spec-label>24FPS · 3KOMA</span>
+                  <span class="douga__cut" data-douga-cut-label>CUT 004 · <b data-douga-sheet-code>FINAL</b></span>
+                  <span class="douga__spec" data-douga-spec-label>1080P · 24FPS</span>
                 </div>
-                <button class="douga__expand" type="button" data-lightbox data-full="assets/img/douga/loop.webp" data-video="assets/video/shinkai-cut-1.mp4" data-w="1400" data-h="990" data-cap="w.douga.t" data-cursor="view" aria-label="Expand animation in lightbox" data-i18n-attr="aria-label:douga.expandAria">
+                <button class="douga__expand" type="button" data-lightbox data-full="assets/img/douga/loop.webp" data-video="assets/video/shinkai-cut-1.mp4" data-current-mode="final" data-w="1400" data-h="990" data-cap="w.douga.t" data-cursor="view" aria-label="Expand animation in lightbox" data-i18n-attr="aria-label:douga.expandAria">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                   <span data-i18n="douga.expand">Expand</span>
                 </button>

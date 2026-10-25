@@ -346,12 +346,12 @@ html:lang(ja) .hero__lede em { font-style: normal; font-weight: 700; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.25rem; }
 
 /* The cel: animation paper with peg holes; the lens reveals the rough sketch */
-.cel { position: relative; justify-self: end; width: 100%; max-width: min(100%, calc((100svh - var(--header-h) - 16.5vw - 7.5rem) * (16 / 9))); min-width: min(100%, 24rem); }
+.cel { position: relative; justify-self: end; width: 100%; max-width: min(100%, calc((100svh - var(--header-h) - 16.5vw - 7.5rem) * 1.5)); min-width: min(100%, 24rem); }
 .cel__pegs { position: absolute; top: -1.6rem; left: 50%; display: flex; gap: 1.25rem; transform: translateX(-50%); align-items: center; }
 .cel__pegs i { width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--paper-3); box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.25); }
 .cel__pegs i:nth-child(1), .cel__pegs i:nth-child(3) { width: 1.6rem; height: 0.6rem; border-radius: 999px; }
 .cel__frame {
-  position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #0c0d12;
+  position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: #0c0d12;
   box-shadow: 0 1px 0 var(--line), 0 30px 60px -30px rgb(14 14 14 / 0.35);
   touch-action: pan-y;
 }
@@ -379,7 +379,7 @@ html:lang(ja) .hero__lede em { font-style: normal; font-weight: 700; }
   pointer-events: none; box-shadow: 0 4px 12px rgb(255 120 50 / 0.35); z-index: 3;
 }
 .cel__badge--akari {
-  background: var(--ink); box-shadow: 0 4px 12px rgb(0 0 0 / 0.25);
+  background: linear-gradient(135deg, #ff7a18, #af002d); box-shadow: 0 4px 12px rgb(255 120 50 / 0.35);
 }
 .cel__expand {
   position: absolute; right: 0.85rem; top: 0.85rem; z-index: 3;
