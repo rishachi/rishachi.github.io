@@ -61,18 +61,21 @@
       'cap.breakdown': '5-layer production breakdown of the sprint cut',
 
       'work.douga': 'Genga & Douga',
-      'w.douga.t': 'Douga / Clean-up Study',
-      'w.douga.d': '26-drawing clean-up and in-between study of a wind-swept head turn — closed paint lines with Japanese studio shadow, highlight and colour-trace guides (iro-toresu).',
+      'w.douga.t': 'Douga & Final Cut Study',
+      'w.douga.d': '26-drawing clean-up and in-between study of a wind-swept head turn — from raw closed trace lines (iro-toresu) to final Makoto Shinkai-style compositing, sunset lighting and bokeh.',
+      'douga.tabLine': 'Line Art',
+      'douga.tabFinal': 'Final Cut',
       'douga.kMain': 'Main line',
       'douga.kHi': 'Highlight',
       'douga.kSh': 'Shadow',
       'douga.kTr': 'Colour trace',
       'douga.expand': 'Expand',
-      'douga.expandAria': 'Expand Douga animation in lightbox',
-      'douga.stageAria': 'Play or pause Douga animation',
+      'douga.expandAria': 'Expand animation in lightbox',
+      'douga.stageAria': 'Play or pause animation',
       'douga.onion': 'Onion',
       'tag.douga': 'Douga · 26 drawings',
       'tag.iro': 'Iro-toresu (色トレス)',
+      'tag.satsuei': 'Composite & FX (撮影)',
 
       'work.illust': 'Illustration & Character Design',
       'w.fern.t': 'Fern & Frieren',
@@ -209,18 +212,21 @@
       'cap.breakdown': 'Bóc tách 5 lớp (layer breakdown) của phân cảnh bứt tốc',
 
       'work.douga': 'Genga & Douga',
-      'w.douga.t': 'Douga / Clean-up Study',
-      'w.douga.d': 'Bài luyện đi nét sạch (clean-up) và vẽ trung gian 26 tờ cho chuyển động xoay đầu đón gió — nét khép kín kèm chỉ định bóng, vùng sáng và đường màu chuẩn studio Nhật (色トレス).',
+      'w.douga.t': 'Nghiên Cứu Douga & Phim Hoàn Thiện',
+      'w.douga.d': 'Nghiên cứu clean-up và vẽ trung gian (in-between) 26 tờ cho động tác quay đầu trong gió — từ nét vẽ khép kín kèm chỉ dẫn bóng màu (iro-toresu) đến thước phim hoàn thiện phong cách Shinkai với ánh sáng hoàng hôn và hiệu ứng bokeh.',
+      'douga.tabLine': 'Nét vẽ Douga',
+      'douga.tabFinal': 'Phim hoàn thiện',
       'douga.kMain': 'Nét chính',
       'douga.kHi': 'Vùng sáng',
       'douga.kSh': 'Chỉ định bóng',
       'douga.kTr': 'Đường màu phụ',
       'douga.expand': 'Phóng to',
-      'douga.expandAria': 'Mở rộng diễn hoạt Douga toàn màn hình',
-      'douga.stageAria': 'Phát hoặc tạm dừng diễn hoạt Douga',
+      'douga.expandAria': 'Mở rộng hoạt ảnh toàn màn hình',
+      'douga.stageAria': 'Phát hoặc tạm dừng diễn hoạt',
       'douga.onion': 'Soi nét',
       'tag.douga': 'Douga · 26 tờ',
       'tag.iro': 'Chỉ định bóng (色トレス)',
+      'tag.satsuei': 'Hoàn thiện & Kỹ xảo (撮影)',
 
       'work.illust': 'Minh Hoạ & Thiết Kế Nhân Vật',
       'w.fern.t': 'Fern & Frieren',
@@ -357,18 +363,21 @@
       'cap.breakdown': '疾走カットのレイヤー分解（背景・彩色・線画・影指定）',
 
       'work.douga': '原画・動画',
-      'w.douga.t': '動画・クリンナップ習作',
-      'w.douga.d': '風になびく振り向き芝居の動画・クリンナップ習作（全26枚）。塗り分け用の閉じた主線に加え、ハイライト・影指定・色トレスを日本のスタジオ形式で描き分けています。',
+      'w.douga.t': '動画・完成カット習作',
+      'w.douga.d': '風に揺れる振り向きの動画・クリンナップ26枚の習作。色トレス指定（影・ハイライト・境界線）の線画から、新海誠風の夕景ライティング・ボケ・撮影処理を施した完成カットまで。',
+      'douga.tabLine': '動画・線画',
+      'douga.tabFinal': '完成カット',
       'douga.kMain': '主線',
       'douga.kHi': 'ハイライト',
       'douga.kSh': '影指定',
       'douga.kTr': '色トレス',
       'douga.expand': '拡大',
-      'douga.expandAria': '動画アニメーションを拡大表示',
-      'douga.stageAria': '動画アニメーションを再生・一時停止',
+      'douga.expandAria': 'アニメーションを拡大表示',
+      'douga.stageAria': 'アニメーションを再生・一時停止',
       'douga.onion': '透かし',
       'tag.douga': '動画 · 26枚',
       'tag.iro': '色トレス・影指定',
+      'tag.satsuei': '撮影・仕上げ (Satsuei)',
 
       'work.illust': 'イラスト・キャラクターデザイン',
       'w.fern.t': 'フェルンとフリーレン',
@@ -1325,9 +1334,10 @@
   }
 
   /* =====================================================================
-     13B. DOUGA LIGHT-TABLE INSPECTOR (26-DRAWING X-SHEET & ONION SKIN)
+     13B. DOUGA LIGHT-TABLE INSPECTOR (26-DRAWING X-SHEET & ONION SKIN & FINAL CUT)
      ===================================================================== */
   const dougaEl = document.querySelector('[data-douga]');
+  let dougaMode = 'line'; // 'line' | 'final'
   if (dougaEl) {
     const TOTAL = 26;
     const DELAYS = [
@@ -1339,20 +1349,32 @@
     ];
     const MAJOR_TICKS = new Set([0, 6, 12, 19, 22, 25]);
 
+    // Cumulative timing map for exact frame-to-video synchronization (sum = 3.500s)
+    const CUMULATIVE_TIMES = [0];
+    for (let i = 0; i < TOTAL; i++) {
+      CUMULATIVE_TIMES[i + 1] = CUMULATIVE_TIMES[i] + (DELAYS[i] || 125) / 1000;
+    }
+    const TOTAL_DURATION = CUMULATIVE_TIMES[TOTAL];
+
     const canvas = dougaEl.querySelector('[data-douga-canvas]');
     const onionCanvas = dougaEl.querySelector('[data-douga-onion]');
+    const video = dougaEl.querySelector('[data-douga-video]');
     const stage = dougaEl.querySelector('[data-douga-stage]');
     const ticksHost = dougaEl.querySelector('[data-douga-ticks]');
     const playhead = dougaEl.querySelector('[data-douga-playhead]');
     const scrub = dougaEl.querySelector('[data-douga-scrub]');
     const curReadout = dougaEl.querySelector('[data-douga-cur]');
+    const totReadout = dougaEl.querySelector('[data-douga-tot]');
     const sheetCode = dougaEl.querySelector('[data-douga-sheet-code]');
     const onionBadge = dougaEl.querySelector('[data-douga-onion-badge]');
+    const specLabel = dougaEl.querySelector('[data-douga-spec-label]');
+    const modeBtns = dougaEl.querySelectorAll('[data-douga-mode]');
     const prevBtn = dougaEl.querySelector('[data-douga-prev]');
     const nextBtn = dougaEl.querySelector('[data-douga-next]');
     const toggleBtn = dougaEl.querySelector('[data-douga-toggle]');
     const speedBtn = dougaEl.querySelector('[data-douga-speed]');
     const onionBtn = dougaEl.querySelector('[data-douga-onion-btn]');
+    const expandBtn = dougaEl.querySelector('.douga__expand');
 
     const ctx = canvas ? canvas.getContext('2d', { alpha: false }) : null;
     const octx = onionCanvas ? onionCanvas.getContext('2d', { alpha: false }) : null;
@@ -1383,14 +1405,28 @@
     if (toggleBtn) toggleBtn.setAttribute('aria-pressed', String(isPlaying));
 
     function updateReadout() {
-      const label = String(cur + 1).padStart(2, '0');
-      if (curReadout) curReadout.textContent = label;
-      if (sheetCode) sheetCode.textContent = `A-${label}`;
-      if (playhead) playhead.style.setProperty('--p', (cur / (TOTAL - 1)).toFixed(4));
-      if (scrub) scrub.setAttribute('aria-valuenow', String(cur + 1));
-      if (onionBadge && isOnion) {
-        const prevNum = String(((cur - 1 + TOTAL) % TOTAL) + 1).padStart(2, '0');
-        onionBadge.textContent = `ONION · PREV A-${prevNum}`;
+      if (dougaMode === 'final') {
+        const vTime = video ? (video.currentTime || 0) : (CUMULATIVE_TIMES[cur] || 0);
+        const vDur = (video && video.duration && !isNaN(video.duration)) ? video.duration : TOTAL_DURATION;
+        const ratio = Math.max(0, Math.min(1, vTime / Math.max(0.1, vDur)));
+        if (curReadout) curReadout.textContent = `${vTime.toFixed(1)}s`;
+        if (totReadout) totReadout.textContent = ` / ${vDur.toFixed(1)}s`;
+        if (sheetCode) sheetCode.textContent = 'FINAL';
+        if (specLabel) specLabel.textContent = '1080P · 24FPS';
+        if (playhead) playhead.style.setProperty('--p', ratio.toFixed(4));
+        if (scrub) scrub.setAttribute('aria-valuenow', String(Math.round(ratio * (TOTAL - 1)) + 1));
+      } else {
+        const label = String(cur + 1).padStart(2, '0');
+        if (curReadout) curReadout.textContent = label;
+        if (totReadout) totReadout.textContent = '/26';
+        if (sheetCode) sheetCode.textContent = `A-${label}`;
+        if (specLabel) specLabel.textContent = '24FPS · 3KOMA';
+        if (playhead) playhead.style.setProperty('--p', (cur / (TOTAL - 1)).toFixed(4));
+        if (scrub) scrub.setAttribute('aria-valuenow', String(cur + 1));
+        if (onionBadge && isOnion) {
+          const prevNum = String(((cur - 1 + TOTAL) % TOTAL) + 1).padStart(2, '0');
+          onionBadge.textContent = `ONION · PREV A-${prevNum}`;
+        }
       }
     }
 
@@ -1420,7 +1456,7 @@
     }
 
     function tick(now) {
-      if (!isPlaying || !isVisible || !isReady || isScrubbing) {
+      if (!isPlaying || !isVisible || !isReady || isScrubbing || dougaMode === 'final') {
         rafId = 0;
         return;
       }
@@ -1439,6 +1475,18 @@
     }
 
     function syncLoop() {
+      if (dougaMode === 'final') {
+        stopLoop();
+        if (video) {
+          if (isPlaying && isVisible && !isScrubbing) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }
+        return;
+      }
+
       if (isPlaying && isVisible && isReady && !isScrubbing) {
         if (!rafId) {
           lastTime = 0;
@@ -1471,22 +1519,105 @@
     function setPlaying(nextState) {
       isPlaying = nextState;
       if (toggleBtn) toggleBtn.setAttribute('aria-pressed', String(isPlaying));
-      if (isPlaying) preloadFrames();
-      syncLoop();
+      if (dougaMode === 'final' && video) {
+        if (isPlaying) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      } else {
+        if (isPlaying) preloadFrames();
+        syncLoop();
+      }
+    }
+
+    function setMode(nextMode) {
+      if (dougaMode === nextMode) return;
+      dougaMode = nextMode;
+      dougaEl.dataset.dougaMode = dougaMode;
+      if (expandBtn) expandBtn.dataset.currentMode = dougaMode;
+
+      modeBtns.forEach((b) => {
+        const isAct = b.getAttribute('data-douga-mode') === dougaMode;
+        b.classList.toggle('is-active', isAct);
+        b.setAttribute('aria-selected', String(isAct));
+      });
+      dougaEl.classList.toggle('is-final', dougaMode === 'final');
+
+      if (dougaMode === 'final') {
+        stopLoop();
+        if (video) {
+          video.playbackRate = speed;
+          const targetTime = Math.min(TOTAL_DURATION - 0.05, CUMULATIVE_TIMES[cur] || 0);
+          try { video.currentTime = targetTime; } catch (_) {}
+          if (isPlaying && isVisible) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }
+      } else {
+        if (video) {
+          const vTime = video.currentTime || 0;
+          let matchedIdx = 0;
+          for (let i = 0; i < TOTAL; i++) {
+            if (vTime >= CUMULATIVE_TIMES[i] && vTime < CUMULATIVE_TIMES[i + 1]) {
+              matchedIdx = i;
+              break;
+            }
+          }
+          cur = matchedIdx;
+          video.pause();
+        }
+        preloadFrames().then(() => {
+          draw();
+          syncLoop();
+        });
+      }
+      updateReadout();
+    }
+
+    modeBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = btn.getAttribute('data-douga-mode');
+        if (target) setMode(target);
+      });
+    });
+
+    if (video) {
+      video.addEventListener('timeupdate', () => {
+        if (dougaMode === 'final' && !isScrubbing) {
+          updateReadout();
+        }
+      });
+      video.addEventListener('ended', () => {
+        if (video.hasAttribute('loop')) {
+          video.currentTime = 0;
+          video.play().catch(() => {});
+        }
+      });
     }
 
     function stepBy(delta) {
       setPlaying(false);
-      preloadFrames().then(() => {
-        cur = (cur + delta + TOTAL) % TOTAL;
-        draw();
-      });
+      if (dougaMode === 'final' && video) {
+        const nextTime = Math.max(0, Math.min(TOTAL_DURATION - 0.04, (video.currentTime || 0) + delta * 0.125));
+        video.currentTime = nextTime;
+        updateReadout();
+      } else {
+        preloadFrames().then(() => {
+          cur = (cur + delta + TOTAL) % TOTAL;
+          draw();
+        });
+      }
     }
 
     if ('IntersectionObserver' in window) {
       const preloadIO = new IntersectionObserver((entries) => {
         if (entries.some((e) => e.isIntersecting)) {
           preloadFrames();
+          if (video) video.load();
           preloadIO.disconnect();
         }
       }, { rootMargin: '1200px 0px' });
@@ -1502,6 +1633,7 @@
     } else {
       isVisible = true;
       preloadFrames();
+      if (video) video.load();
     }
 
     if (toggleBtn) toggleBtn.addEventListener('click', () => setPlaying(!isPlaying));
@@ -1523,11 +1655,13 @@
         speed = speed === 1 ? 0.5 : 1;
         speedBtn.textContent = speed === 1 ? '1×' : '0.5×';
         speedBtn.classList.toggle('is-active', speed !== 1);
+        if (video) video.playbackRate = speed;
       });
     }
 
     if (onionBtn) {
       onionBtn.addEventListener('click', () => {
+        if (dougaMode === 'final') return;
         isOnion = !isOnion;
         onionBtn.setAttribute('aria-pressed', String(isOnion));
         dougaEl.classList.toggle('is-onion', isOnion);
@@ -1540,10 +1674,16 @@
         const r = scrub.getBoundingClientRect();
         if (!r.width) return;
         const p = Math.min(1, Math.max(0, (clientX - r.left) / r.width));
-        const idx = Math.round(p * (TOTAL - 1));
-        if (idx !== cur) {
-          cur = idx;
-          draw();
+        if (dougaMode === 'final' && video) {
+          const vDur = (video.duration && !isNaN(video.duration)) ? video.duration : TOTAL_DURATION;
+          video.currentTime = p * vDur;
+          updateReadout();
+        } else {
+          const idx = Math.round(p * (TOTAL - 1));
+          if (idx !== cur) {
+            cur = idx;
+            draw();
+          }
         }
       };
 
@@ -1553,7 +1693,11 @@
         if (scrub.setPointerCapture) {
           try { scrub.setPointerCapture(e.pointerId); } catch (_) {}
         }
-        preloadFrames().then(() => seekFromEvent(e.clientX));
+        if (dougaMode === 'final') {
+          seekFromEvent(e.clientX);
+        } else {
+          preloadFrames().then(() => seekFromEvent(e.clientX));
+        }
       });
       scrub.addEventListener('pointermove', (e) => {
         if (!isScrubbing) return;
@@ -1569,8 +1713,18 @@
       scrub.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') { e.preventDefault(); stepBy(-1); }
         else if (e.key === 'ArrowRight') { e.preventDefault(); stepBy(1); }
-        else if (e.key === 'Home') { e.preventDefault(); setPlaying(false); cur = 0; draw(); }
-        else if (e.key === 'End') { e.preventDefault(); setPlaying(false); cur = TOTAL - 1; draw(); }
+        else if (e.key === 'Home') {
+          e.preventDefault();
+          setPlaying(false);
+          if (dougaMode === 'final' && video) { video.currentTime = 0; updateReadout(); }
+          else { cur = 0; draw(); }
+        }
+        else if (e.key === 'End') {
+          e.preventDefault();
+          setPlaying(false);
+          if (dougaMode === 'final' && video) { video.currentTime = TOTAL_DURATION - 0.05; updateReadout(); }
+          else { cur = TOTAL - 1; draw(); }
+        }
       });
     }
 
@@ -1585,6 +1739,7 @@
 
   if (lbDialog && lbButtons.length) {
     const lbImg = lbDialog.querySelector('[data-lb-img]');
+    const lbVideo = lbDialog.querySelector('[data-lb-video]');
     const lbCap = lbDialog.querySelector('[data-lb-cap]');
     const lbCount = lbDialog.querySelector('[data-lb-count]');
     const lbStage = lbDialog.querySelector('[data-lb-stage]');
@@ -1597,18 +1752,41 @@
       lbIndex = (index + lbButtons.length) % lbButtons.length;
       const btn = lbButtons[lbIndex];
       const fullSrc = btn.getAttribute('data-full');
+      const videoSrc = btn.getAttribute('data-video');
       const capKey = btn.getAttribute('data-cap');
       const thumbImg = btn.querySelector('img');
 
+      const isDougaExpand = btn.classList.contains('douga__expand');
+      const isVideoItem = Boolean(videoSrc && (btn.dataset.currentMode === 'final' || (!isDougaExpand && videoSrc)));
+
       if (lbStage) lbStage.classList.remove('is-zoomed');
-      if (lbImg) {
-        lbImg.style.opacity = '0.2';
-        lbImg.src = fullSrc;
-        lbImg.alt = thumbImg ? thumbImg.alt : (capKey ? t(capKey) : '');
-        lbImg.onload = () => {
-          lbImg.style.opacity = '1';
-        };
+
+      if (isVideoItem && lbVideo) {
+        lbDialog.classList.add('is-video');
+        if (lbImg) lbImg.style.display = 'none';
+        lbVideo.style.display = 'block';
+        lbVideo.src = videoSrc;
+        lbVideo.currentTime = 0;
+        lbVideo.play().catch(() => {});
+      } else {
+        lbDialog.classList.remove('is-video');
+        if (lbVideo) {
+          lbVideo.pause();
+          lbVideo.removeAttribute('src');
+          lbVideo.load();
+          lbVideo.style.display = 'none';
+        }
+        if (lbImg) {
+          lbImg.style.display = 'block';
+          lbImg.style.opacity = '0.2';
+          lbImg.src = fullSrc;
+          lbImg.alt = thumbImg ? thumbImg.alt : (capKey ? t(capKey) : '');
+          lbImg.onload = () => {
+            lbImg.style.opacity = '1';
+          };
+        }
       }
+
       if (lbCap) lbCap.textContent = capKey ? t(capKey) : '';
       if (lbCount) {
         lbCount.textContent = `${String(lbIndex + 1).padStart(2, '0')} / ${String(lbButtons.length).padStart(2, '0')}`;
@@ -1626,6 +1804,11 @@
     }
 
     function closeLightbox() {
+      if (lbVideo) {
+        lbVideo.pause();
+        lbVideo.removeAttribute('src');
+        lbVideo.load();
+      }
       if (typeof lbDialog.close === 'function' && lbDialog.open) {
         lbDialog.close();
       } else {
@@ -1653,6 +1836,10 @@
     }
 
     lbDialog.addEventListener('close', () => {
+      if (lbVideo) {
+        lbVideo.pause();
+        lbVideo.removeAttribute('src');
+      }
       if (lenis) lenis.start();
     });
 

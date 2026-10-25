@@ -438,24 +438,36 @@
         <article class="work-row douga-row">
           <div class="work-row__meta">
             <span class="work-row__no">04</span>
-            <h4 class="work-row__title" data-i18n="w.douga.t">Douga / Clean-up Study</h4>
-            <p class="work-row__desc" data-i18n="w.douga.d">26-drawing clean-up and in-between study of a wind-swept head turn — closed paint lines with Japanese studio shadow, highlight and colour-trace guides (iro-toresu).</p>
+            <h4 class="work-row__title" data-i18n="w.douga.t">Douga &amp; Final Cut Study</h4>
+            <p class="work-row__desc" data-i18n="w.douga.d">26-drawing clean-up and in-between study of a wind-swept head turn — from raw closed trace lines (iro-toresu) to final Makoto Shinkai-style compositing, sunset lighting and bokeh.</p>
             <ul class="douga-legend" aria-label="Production trace line legend">
               <li><i style="--sw:#141414"></i><span data-i18n="douga.kMain">Main line</span></li>
               <li><i style="--sw:#e53935"></i><span data-i18n="douga.kHi">Highlight</span></li>
               <li><i style="--sw:#2955d9"></i><span data-i18n="douga.kSh">Shadow</span></li>
               <li><i style="--sw:#43a047"></i><span data-i18n="douga.kTr">Trace</span></li>
             </ul>
-            <ul class="tags"><li data-i18n="tag.douga">Douga · 26 drawings</li><li data-i18n="tag.iro">Iro-toresu (色トレス)</li><li>2025</li></ul>
+            <ul class="tags"><li data-i18n="tag.douga">Douga · 26 drawings</li><li data-i18n="tag.iro">Iro-toresu (色トレス)</li><li data-i18n="tag.satsuei">Composite &amp; FX (撮影)</li><li>2025</li></ul>
           </div>
 
           <figure class="work-row__media douga" data-douga>
             <div class="cel__pegs" aria-hidden="true"><i></i><i></i><i></i></div>
             <div class="douga__sheet">
               <div class="douga__head">
-                <span class="douga__cut">CUT 004 · <b data-douga-sheet-code>A-01</b></span>
-                <span class="douga__spec">24FPS · 3KOMA</span>
-                <button class="douga__expand" type="button" data-lightbox data-full="assets/img/douga/loop.webp" data-w="1400" data-h="990" data-cap="w.douga.t" data-cursor="view" aria-label="Expand animation in lightbox" data-i18n-attr="aria-label:douga.expandAria">
+                <div class="douga__modes" role="tablist" aria-label="View mode">
+                  <button class="douga__mode-btn is-active" type="button" role="tab" aria-selected="true" data-douga-mode="line">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    <span data-i18n="douga.tabLine">Line Art</span>
+                  </button>
+                  <button class="douga__mode-btn" type="button" role="tab" aria-selected="false" data-douga-mode="final">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+                    <span data-i18n="douga.tabFinal">Final Cut</span>
+                  </button>
+                </div>
+                <div class="douga__spec-box">
+                  <span class="douga__cut" data-douga-cut-label>CUT 004 · <b data-douga-sheet-code>A-01</b></span>
+                  <span class="douga__spec" data-douga-spec-label>24FPS · 3KOMA</span>
+                </div>
+                <button class="douga__expand" type="button" data-lightbox data-full="assets/img/douga/loop.webp" data-video="assets/video/shinkai-cut-1.mp4" data-w="1400" data-h="990" data-cap="w.douga.t" data-cursor="view" aria-label="Expand animation in lightbox" data-i18n-attr="aria-label:douga.expandAria">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                   <span data-i18n="douga.expand">Expand</span>
                 </button>
@@ -468,7 +480,9 @@
                 </picture>
                 <canvas class="douga__canvas" data-douga-canvas width="1280" height="905" aria-hidden="true"></canvas>
                 <canvas class="douga__onion" data-douga-onion width="1280" height="905" aria-hidden="true"></canvas>
+                <video class="douga__video" data-douga-video src="assets/video/shinkai-cut-1.mp4" poster="assets/img/douga/poster-final.jpg" playsinline muted loop preload="metadata" aria-hidden="true"></video>
                 <span class="douga__onion-badge" data-douga-onion-badge aria-hidden="true">ONION · PREV</span>
+                <span class="douga__final-badge" data-douga-final-badge aria-hidden="true">COMPOSITE · SHINKAI STYLE (撮影)</span>
                 <span class="cel__corner cel__corner--tl" aria-hidden="true"></span>
                 <span class="cel__corner cel__corner--tr" aria-hidden="true"></span>
                 <span class="cel__corner cel__corner--bl" aria-hidden="true"></span>
@@ -495,7 +509,7 @@
                 </div>
 
                 <div class="douga__tools">
-                  <span class="douga__count" aria-live="off"><b data-douga-cur>01</b>/26</span>
+                  <span class="douga__count" aria-live="off"><b data-douga-cur>01</b><span data-douga-tot>/26</span></span>
                   <button class="douga__chip" type="button" data-douga-speed aria-label="Playback speed">1×</button>
                   <button class="douga__chip" type="button" data-douga-onion-btn aria-pressed="false">
                     <span class="douga__chip-dot" aria-hidden="true"></span>
@@ -694,6 +708,7 @@
     </div>
     <div class="lightbox__stage" data-lb-stage>
       <img class="lightbox__img" data-lb-img alt="">
+      <video class="lightbox__video" data-lb-video controls playsinline loop></video>
     </div>
     <button class="lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Previous">←</button>
     <button class="lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Next">→</button>
