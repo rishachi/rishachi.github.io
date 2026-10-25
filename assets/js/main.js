@@ -104,13 +104,13 @@
 
       'about.title': 'About',
       'about.lead': "Hi, I'm Phat Tran — <em>RiSH</em>, or <em>Hachi (八)</em> to colleagues and friends.",
-      'about.p1': "I'm a commercial <strong>Key Animator (Genga / 原画) and Digital Paint artist</strong> currently working at an anime production studio in Ho Chi Minh City. Bypassing the traditional in-between (Douga) stage, I advanced directly into commercial Key Animation (1st &amp; 2nd Key) and Digital Paint (Shiage), contributing to television anime and commercial productions.",
+      'about.p1': "I'm an <strong>In-between Animator (Douga / 動画) and Digital Paint artist</strong> currently working at an anime production studio in Ho Chi Minh City, actively training and progressing toward <strong>Key Animation (Genga / 原画)</strong> within the studio pipeline. Contributing daily to commercial television anime productions, I ground my craft in meticulous in-betweening, volume consistency, and digital paint (Shiage) — building a disciplined foundation for dynamic character acting.",
       'about.p2': "I hold a <strong>Bachelor's Degree in Graphic Design (With Distinction / Honours) from FPT University</strong>. Combining a rigorous academic foundation in visual composition and anatomy with Japanese studio pipeline mastery, I focus on dynamic character acting, sakuga action sequences, and disciplined timesheet (X-sheet) timing.",
 
       'id.name': 'Name',
       'id.alias': 'Alias',
       'id.role': 'Role',
-      'id.roleVal': 'Key Animator (原画) & Digital Paint (仕上げ)',
+      'id.roleVal': 'In-between (動画) & Digital Paint (仕上げ) · Aspiring Key Animator (原画)',
       'id.base': 'Based in',
       'id.baseVal': 'Ho Chi Minh City, Vietnam (GMT+7)',
       'id.credits': 'Credits',
@@ -120,7 +120,7 @@
       'id.goal': 'Goal',
       'id.goalVal': 'Commercial Anime — Tokyo & Global',
       'id.status': 'Status',
-      'id.statusVal': 'Active Studio Artist · Open for select Genga',
+      'id.statusVal': 'Active Studio Artist (Douga & Shiage) · Training for Key Animation',
 
       'sk.anim': 'Animation',
       'sk.anim1': 'Layout (LO) & Key Animation (Genga / 原画)',
@@ -276,13 +276,13 @@
 
       'about.title': 'Hồ Sơ',
       'about.lead': 'Xin chào, mình là Phát Trần — đồng nghiệp và bạn bè thường gọi là <em>RiSH</em> hay <em>Hachi (八)</em>.',
-      'about.p1': 'Mình là <strong>Key Animator (Hoạ sĩ Diễn hoạt chính - 原画) và Digital Paint artist</strong> hiện đang làm việc chuyên nghiệp tại một studio sản xuất Anime ở TP. Hồ Chí Minh. Vượt qua giai đoạn trung gian (Douga) truyền thống để bước thẳng lên vị trí Key Animation (Genga) và Digital Paint (Shiage), mình trực tiếp tham gia vào các dự án anime truyền hình và thương mại.',
+      'about.p1': 'Hiện tại, mình đang làm việc chuyên nghiệp tại một studio anime ở TP. Hồ Chí Minh trong vai trò <strong>hoạ sĩ Diễn hoạt trung gian (Douga / 動画) và Digital Paint (仕上げ)</strong>, đồng thời không ngừng rèn giũa để tiến bước lên vị trí <strong>Key Animator (Genga / 原画)</strong> trong quy trình sản xuất của xưởng. Trực tiếp thực hiện các khung hình douga và tô màu hoàn thiện cho các dự án anime truyền hình thương mại giúp mình thấu hiểu sâu sắc từng nhịp chuyển động vi mô, giữ vững độ chuẩn xác của nét vẽ và kỷ luật nghiêm ngặt theo tiêu chuẩn ngành hoạt hình Nhật Bản.',
       'about.p2': 'Mình tốt nghiệp <strong>Cử nhân Thiết kế Đồ hoạ loại Giỏi (With Distinction / Honours) tại Đại học FPT</strong>. Kết hợp nền tảng học thuật vững chắc về giải phẫu, bố cục hình ảnh với quy trình chuẩn của các xưởng phim hoạt hình Nhật Bản, mình chuyên sâu vào diễn xuất nhân vật có hồn, các phân cảnh hành động sakuga giàu động lượng và nhịp điệu timesheet (X-sheet) chuẩn xác.',
 
       'id.name': 'Họ tên',
       'id.alias': 'Nghệ danh',
       'id.role': 'Vai trò',
-      'id.roleVal': 'Key Animator (原画) & Digital Paint (仕上げ)',
+      'id.roleVal': 'In-between (動画) & Digital Paint (仕上げ) · Hướng tới Key Animator (原画)',
       'id.base': 'Nơi ở',
       'id.baseVal': 'TP. Hồ Chí Minh, Việt Nam (GMT+7)',
       'id.credits': 'Credit tác phẩm',
@@ -292,7 +292,7 @@
       'id.goal': 'Mục tiêu',
       'id.goalVal': 'Ngành Anime thương mại — Tokyo & Quốc tế',
       'id.status': 'Trạng thái',
-      'id.statusVal': 'Hoạ sĩ Studio chuyên nghiệp · Nhận đặt hàng Genga / LO chọn lọc',
+      'id.statusVal': 'Hoạ sĩ Studio (Douga & Shiage) · Đang rèn luyện Key Animation',
 
       'sk.anim': 'Diễn hoạt (Animation)',
       'sk.anim1': 'Layout (LO) & Diễn hoạt chính (Genga / 原画)',
@@ -448,13 +448,13 @@
 
       'about.title': 'About',
       'about.lead': 'こんにちは、ファット・トラン（<em>RiSH</em> / <em>Hachi 八</em>）です。',
-      'about.p1': 'ホーチミン市のアニメ制作スタジオにて、商業<strong>原画マン（Key Animator）およびデジタルペイント（仕上げ）</strong>として活動しています。動画工程を飛び級し、商業作品の原画（一原・二原）および仕上げへ直属配属され、TVアニメ等の制作に携わっています。',
+      'about.p1': 'ホーチミン市のアニメ制作スタジオにて、商業<strong>動画マン（Douga）およびデジタルペイント（仕上げ）</strong>としてTVアニメ等の制作に携わりながら、スタジオ内で<strong>原画マン（Key Animator）</strong>へのステップアップを目指して日々作画に励んでいます。商業アニメの最前線で動画・仕上げの実務を重ねることで、線のクリンナップ精度、中割りの軌道、厳密なツメ指示の理解を深め、説得力ある原画を描くための強固な土台を築いています。',
       'about.p2': '<strong>FPT大学グラフィックデザイン学部を優秀賞（With Distinction / Honours）で卒業</strong>。大学でのデッサン・画面構成の知見と、日本のアニメ制作パイプライン（作画・タイムシート・RETAS）を融合させ、説得力あるキャラクター芝居、ケレン味あるアクション作画、正確なツメ指示を追求しています。',
 
       'id.name': '氏名',
       'id.alias': '名義',
       'id.role': '役職',
-      'id.roleVal': '原画マン（Genga） & デジタルペイント（仕上げ）',
+      'id.roleVal': '動画（Douga） & 仕上げ · 原画育成中（Genga）',
       'id.base': '拠点',
       'id.baseVal': 'ベトナム・ホーチミン市 (GMT+7)',
       'id.credits': '作画クレジット',
@@ -464,7 +464,7 @@
       'id.goal': '目標',
       'id.goalVal': '日本および世界のアニメ業界',
       'id.status': 'ステータス',
-      'id.statusVal': '商業スタジオ所属 · 指名原画・二原のご相談受付中',
+      'id.statusVal': '商業スタジオ所属（動画・仕上げ） · 原画研修中',
 
       'sk.anim': 'アニメーション',
       'sk.anim1': 'レイアウト（LO） & 原画（Genga / 一原・二原）',
