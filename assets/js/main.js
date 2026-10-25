@@ -616,7 +616,13 @@
   const langButtons = document.querySelectorAll('[data-lang]');
 
   function t(key) {
-    return (I18N[currentLang] && I18N[currentLang][key]) || I18N.en[key] || key;
+    if (I18N[currentLang] && typeof I18N[currentLang][key] === 'string') {
+      return I18N[currentLang][key];
+    }
+    if (I18N.en && typeof I18N.en[key] === 'string') {
+      return I18N.en[key];
+    }
+    return null;
   }
 
   function applyTranslations(lang, isInitial) {
@@ -657,8 +663,9 @@
       if (!spec) return;
       spec.split(',').forEach((pair) => {
         const [attr, key] = pair.split(':').map((s) => s.trim());
-        if (attr && key) {
-          el.setAttribute(attr, t(key));
+        const val = t(key);
+        if (attr && val) {
+          el.setAttribute(attr, val);
         }
       });
     });
