@@ -123,15 +123,12 @@
       'id.status': 'Status',
       'id.statusVal': 'Active Studio Artist (Douga & Shiage) · Training for Key Animation',
 
-      'credits.title': 'Commercial Anime Credits & Filmography',
+      'credits.title': 'Production Credits · Selected Titles',
       'credits.thProject': 'Project',
       'credits.thRole': 'Role',
       'credits.thYear': 'Year',
       'credits.thStudio': 'Studio / Team',
-      'credits.commercial': 'Commercial production credits verified via KeyFrame Staff List (ID: 400619). Additional in-production cuts subject to NDA.',
-      'credits.role.douga': 'In-Between Animation (動画)',
-      'credits.role.shiage': 'Finish Animation / Paint (仕上げ)',
-      'credits.role.both': 'In-Between & Finish Animation (動画・仕上げ)',
+      'credits.commercial': 'Commercial anime credits (TV/Theatrical): Available upon request / subject to NDA.',
 
       'sk.anim': 'Animation',
       'sk.anim1': 'Layout (LO) & Key Animation (Genga / 原画)',
@@ -307,15 +304,12 @@
       'id.status': 'Trạng thái',
       'id.statusVal': 'Hoạ sĩ Studio (Douga & Shiage) · Đang rèn luyện Key Animation',
 
-      'credits.title': 'Credits Anime Thương Mại & Tác Phẩm Tham Gia',
+      'credits.title': 'Danh Sách Phim & Dự Án Tham Gia',
       'credits.thProject': 'Tác phẩm / Dự án',
       'credits.thRole': 'Vai trò đảm nhiệm',
       'credits.thYear': 'Năm',
       'credits.thStudio': 'Đơn vị sản xuất',
-      'credits.commercial': 'Dữ liệu credits thương mại đối chiếu theo KeyFrame Staff List (ID: 400619). Một số dự án đang sản xuất được bảo lưu theo NDA.',
-      'credits.role.douga': 'Diễn hoạt trung gian (動画 / Douga)',
-      'credits.role.shiage': 'Tô màu kỹ thuật số (仕上げ / Shiage)',
-      'credits.role.both': 'Diễn hoạt trung gian & Tô màu (動画・仕上げ)',
+      'credits.commercial': 'Credits anime thương mại (TV series & Chiếu rạp): Cung cấp theo yêu cầu (tuân thủ NDA bảo mật).',
 
       'sk.anim': 'Diễn hoạt (Animation)',
       'sk.anim1': 'Layout (LO) & Diễn hoạt chính (Genga / 原画)',
@@ -491,15 +485,12 @@
       'id.status': 'ステータス',
       'id.statusVal': '商業スタジオ所属（動画・仕上げ） · 原画研修中',
 
-      'credits.title': '商業アニメ参加作品クレジット (Commercial Credits)',
+      'credits.title': '参加作品クレジット (Production Credits)',
       'credits.thProject': '作品名',
       'credits.thRole': '担当役職',
       'credits.thYear': '制作年',
       'credits.thStudio': '制作スタジオ / チーム',
-      'credits.commercial': '作画スタッフリスト（Tan Phat / ID: 400619）掲載の商業制作実績。現在制作中の未公開カットはNDA（秘密保持契約）に基づきます。',
-      'credits.role.douga': '動画 (Douga)',
-      'credits.role.shiage': '仕上げ (Shiage)',
-      'credits.role.both': '動画・仕上げ (Douga & Shiage)',
+      'credits.commercial': '商業アニメ作品クレジット（TV/劇場版）：秘密保持契約（NDA）に基づき、ご要望に応じて開示いたします。',
 
       'sk.anim': 'アニメーション',
       'sk.anim1': 'レイアウト（LO） & 原画（Genga / 一原・二原）',
@@ -676,9 +667,8 @@
     if (creditsTbody && window.PORTFOLIO_CREDITS) {
       creditsTbody.innerHTML = window.PORTFOLIO_CREDITS.map(function (item) {
         var roleText = t(item.roleKey) || item.roleFallback;
-        var tagHtml = item.category ? ' <span class="credits-table__tag">' + item.category + '</span>' : '';
         return '<tr>' +
-          '<td><strong>' + item.project + '</strong>' + tagHtml + '</td>' +
+          '<td><strong>' + item.project + '</strong></td>' +
           '<td>' + roleText + '</td>' +
           '<td>' + item.year + '</td>' +
           '<td>' + item.studio + '</td>' +
