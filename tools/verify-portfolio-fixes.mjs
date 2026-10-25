@@ -124,10 +124,15 @@ async function run() {
     if (!creditsLinkText.includes('Tan Phat')) {
       throw new Error('FAILED: Credits link text does not match "Tan Phat"!');
     }
-    if (creditsRows.length < 1 || !creditsRows[0][0].includes('GET_SET RUN')) {
-      throw new Error('FAILED: Credits table missing GET_SET RUN default entry!');
+    if (creditsRows.length !== 8) {
+      throw new Error(`FAILED: Expected 8 rows in Credits table, got ${creditsRows.length}!`);
     }
-    console.log('  ✓ About bio neutral statement and Credits table verified.\n');
+    const hasSuzume = creditsRows.some(r => r[0].includes('Suzume'));
+    const hasMushoku = creditsRows.some(r => r[0].includes('Mushoku'));
+    if (!hasSuzume || !hasMushoku) {
+      throw new Error('FAILED: Commercial credits missing Suzume or Mushoku Tensei!');
+    }
+    console.log('  ✓ About bio neutral statement and all 8 Commercial Credits verified.\n');
 
     // 7. Trilingual switching test (EN -> VI -> JA -> EN)
     console.log('[7. TRILINGUAL SWITCHING TEST]');

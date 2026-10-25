@@ -184,11 +184,82 @@
     {
       id: 'gsr',
       project: 'GET_SET RUN',
+      category: 'Short Film',
       year: '2025',
       roleKey: 'case.roleVal',
       roleFallback: 'Director · Key Animation (Genga) · Key Visual',
       studio: 'Shiguma Dakkusu (FPT University)',
       isCommercial: false
+    },
+    {
+      id: 'yoasobi',
+      project: 'YOASOBI × Overwatch: "Orion"',
+      category: 'Music Video',
+      year: '2024',
+      roleKey: 'credits.role.both',
+      roleFallback: 'In-Between & Finish Animation (動画・仕上げ)',
+      studio: 'Studio Hibari',
+      isCommercial: true
+    },
+    {
+      id: 'mushoku',
+      project: 'Mushoku Tensei II / III (無職転生)',
+      category: 'TV Anime',
+      year: '2023 — 2024',
+      roleKey: 'credits.role.shiage',
+      roleFallback: 'Finish Animation / Paint (仕上げ)',
+      studio: 'Studio Bind',
+      isCommercial: true
+    },
+    {
+      id: 'elite',
+      project: 'Classroom of the Elite (ようこそ実力至上主義の教室へ)',
+      category: 'TV Anime',
+      year: '2022 — 2024',
+      roleKey: 'credits.role.both',
+      roleFallback: 'In-Between & Finish Animation (動画・仕上げ)',
+      studio: 'Lerche',
+      isCommercial: true
+    },
+    {
+      id: 'highcard',
+      project: 'HIGH CARD (ハイカード)',
+      category: 'TV Anime',
+      year: '2023 — 2024',
+      roleKey: 'credits.role.both',
+      roleFallback: 'In-Between & Finish Animation (動画・仕上げ)',
+      studio: 'Studio Hibari',
+      isCommercial: true
+    },
+    {
+      id: 'hanako',
+      project: 'After-school Hanako-kun (放課後少年花子くん)',
+      category: 'TV Anime',
+      year: '2023 — 2024',
+      roleKey: 'credits.role.both',
+      roleFallback: 'In-Between & Finish Animation (動画・仕上げ)',
+      studio: 'Lerche',
+      isCommercial: true
+    },
+    {
+      id: 'given',
+      project: 'given: The Movie (映画 ギヴン / 10th Mix)',
+      category: 'Theatrical / OAD',
+      year: '2021 — 2024',
+      roleKey: 'credits.role.shiage',
+      roleFallback: 'Finish Animation / Paint (仕上げ)',
+      studio: 'Lerche',
+      isCommercial: true
+    },
+    {
+      id: 'suzume',
+      project: 'Suzume no Tojimari (すずめの戸締まり)',
+      category: 'Theatrical Film',
+      year: '2022',
+      roleKey: 'credits.role.douga',
+      roleFallback: 'In-Between Animation (動画)',
+      studio: 'CoMix Wave Films / Story Inc.',
+      isCommercial: true
     }
   ];
 

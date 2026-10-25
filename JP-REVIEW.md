@@ -79,12 +79,15 @@ This document lists all new and updated Japanese strings introduced in the `port
 
 | Key | Japanese Text | English Meaning | Notes |
 | :--- | :--- | :--- | :--- |
-| `credits.title` | `参加作品クレジット (Production Credits)` | Production Credits | Header for credits box |
+| `credits.title` | `商業アニメ参加作品クレジット (Commercial Credits)` | Commercial Anime Credits & Filmography | Header for credits box |
 | `credits.thProject` | `作品名` | Project Title | Table column: Project |
 | `credits.thRole` | `担当役職` | Assigned Role | Table column: Role |
 | `credits.thYear` | `制作年` | Production Year | Table column: Year |
 | `credits.thStudio` | `制作スタジオ / チーム` | Studio / Team | Table column: Studio |
-| `credits.commercial` | `商業アニメ作品クレジット（TV/劇場版）：秘密保持契約（NDA）に基づき、ご要望に応じて開示いたします。` | Commercial anime credits (TV/Theatrical): Disclosed upon request in compliance with Non-Disclosure Agreements (NDA). | Footer note for unlisted studio titles |
+| `credits.role.douga` | `動画 (Douga)` | In-Between Animation | Department: In-betweening |
+| `credits.role.shiage` | `仕上げ (Shiage)` | Finish Animation / Paint | Department: Digital Painting |
+| `credits.role.both` | `動画・仕上げ (Douga & Shiage)` | In-Between & Finish Animation | Department: Douga & Shiage |
+| `credits.commercial` | `作画スタッフリスト（Tan Phat / ID: 400619）掲載の商業制作実績。現在制作中の未公開カットはNDA（秘密保持契約）に基づきます。` | Commercial anime credits verified via KeyFrame Staff List (ID: 400619). Additional in-production cuts subject to NDA. | Footer note beneath table |
 
 ---
 

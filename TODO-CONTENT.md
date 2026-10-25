@@ -6,19 +6,21 @@ Tài liệu này lưu trữ các hạng mục nội dung thực tế cần ngư�
 
 ## 1. Tác vụ cần bổ sung từ INPUT (Xếp theo mức độ tác động)
 
-### [ƯU TIÊN 1] — Danh sách Credit Anime Thương Mại Có Thể Công Khai
-- **Hiện trạng trên site**: Đang hiển thị dòng bảo lưu `Credits thương mại: theo yêu cầu (tuân thủ NDA)`. Bảng chỉ liệt kê dự án phim ngắn nguyên tác *GET_SET RUN*.
-- **Dữ liệu cần cung cấp**:
-  - Tên phim (TV Anime / Theatrical Film / OVA / Game PV).
-  - Vai trò chính xác trên phim: Layout (LO) / 1st Key (一原) / 2nd Key (二原) / In-between (動画) / Digital Paint (仕上げ).
-  - Năm phát hành.
-  - Studio sản xuất chính tại Nhật hoặc studio đối tác (In-between / Shiage studio) tại Việt Nam.
-  - Số tập (Episode) và số cut (Cut number) nếu hợp đồng cho phép ghi nhận công khai.
-- **Tác động**: Đây là bằng chứng quan trọng nhất đối với Producer và Animation Director (Sakkan) để xác minh kinh nghiệm thực chiến trên dây chuyền công nghiệp.
+### [ĐÃ HOÀN THÀNH TÍCH HỢP] — Danh sách Credit Anime Thương Mại Từ KeyFrame Staff List (ID: 400619)
+- **Đã tích hợp vào web**: Bảng Credits tại Section 04 About hiện đã hiển thị đầy đủ 8 dự án (7 dự án anime/MV thương mại từ KeyFrame Staff List + phim ngắn nguyên tác *GET_SET RUN*):
+  - *GET_SET RUN* (2025 | Short Film | Director · Key Animation · Key Visual | Shiguma Dakkusu, FPT University)
+  - *YOASOBI × Overwatch: "Orion"* (2024 | Music Video | In-Between & Finish Animation | Studio Hibari)
+  - *Mushoku Tensei II / III (無職転生)* (2023 — 2024 | TV Anime | Finish Animation / Paint | Studio Bind)
+  - *Classroom of the Elite (ようこそ実力至上主義の教室へ)* (2022 — 2024 | TV Anime | In-Between & Finish Animation | Lerche)
+  - *HIGH CARD (ハイカード)* (2023 — 2024 | TV Anime | In-Between & Finish Animation | Studio Hibari)
+  - *After-school Hanako-kun (放課後少年花子くん)* (2023 — 2024 | TV Anime | In-Between & Finish Animation | Lerche)
+  - *given: The Movie (映画 ギヴン / 10th Mix)* (2021 — 2024 | Theatrical / OAD | Finish Animation / Paint | Lerche)
+  - *Suzume no Tojimari (すずめの戸締まり)* (2022 | Theatrical Film | In-Between Animation | CoMix Wave Films / Story Inc.)
+- **Bổ sung tương lai (nếu có)**: Bổ sung số tập (Episode) và số cut (Cut number) cụ thể nếu studio đối tác cho phép công bố chi tiết.
 
 ---
 
-### [ƯU TIÊN 2] — Shot List Chi Tiết Cho Showreel (Breakdown Timecode)
+### [ƯU TIÊN 1] — Shot List Chi Tiết Cho Showreel (Breakdown Timecode)
 - **Hiện trạng trên site**: Reel player dạng click-to-load YouTube facade, chưa kích hoạt bảng nhảy timecode tương tác do INPUT để trống.
 - **Dữ liệu cần cung cấp**:
   - Timecode bắt đầu và kết thúc từng cut (ví dụ: `00:00 - 00:04 | GET_SET RUN | Sprint Sakuga | LO & 1st Key`).
