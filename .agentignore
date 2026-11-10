@@ -1,0 +1,19 @@
+# Ignore heavy media, vendor bundles & raw production project files (Rule 4)
+node_modules/
+source/
+assets/img/
+assets/video/
+assets/vendor/
+*.psd
+*.clip
+*.mov
+*.mp4
+*.webm
+*.aep
+*.blend
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.avif
+package-lock.json

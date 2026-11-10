@@ -17,8 +17,12 @@
   --red: #ff2a3d;
   --red-deep: #d9142a;
   --blue: #2f5bff;
+  --cobalt: #3b82f6;
+  --amber: #f59e0b;
   --line: rgb(14 14 14 / 0.14);
   --line-strong: rgb(14 14 14 / 0.32);
+  --rule: var(--line);
+  --ink-mute: var(--muted);
 
   --f-sans: "Archivo", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
@@ -2012,4 +2016,652 @@ html[data-studio-mode="darkroom"] .atelier-pill .ic-moon { display: block; }
   .reel__cues { grid-template-columns: 1fr; }
   .work-toolbar { flex-direction: column; align-items: stretch; }
 }
+
+/* ==========================================================================
+   20 — SAKUGA 24FPS THEATRE PLAYER, 100-FRAME CAMERA GRID & CUT BREAKDOWN
+   ========================================================================== */
+
+/* ---------- 20.1 Sakuga 24fps Theatre Deck Tabs ---------- */
+.theatre-deck-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--paper-2);
+}
+.theatre-deck-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.72rem;
+  border-radius: 2px;
+  font: 700 0.65rem / 1 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+.theatre-deck-tab:hover {
+  color: var(--ink);
+}
+.theatre-deck-tab.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+.theatre-deck-tab__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
+}
+.theatre-deck-tab__dot--yt {
+  background: var(--cobalt);
+  box-shadow: 0 0 8px var(--cobalt);
+}
+
+.theatre-panel[hidden] {
+  display: none !important;
+}
+
+/* ---------- 20.2 Sakuga 24fps Theatre Viewport & HUD ---------- */
+.theatre__viewport {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: #08080a;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+.theatre__video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #08080a;
+}
+.theatre__hud-top {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  pointer-events: none;
+  z-index: 4;
+}
+.theatre__hud-pill,
+.theatre__hud-tag,
+.theatre__hud-keys {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.6rem;
+  border-radius: 2px;
+  background: rgb(10 10 12 / 0.78);
+  border: 1px solid rgb(244 239 230 / 0.18);
+  backdrop-filter: blur(6px);
+  font: 700 0.62rem / 1 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f4efe6;
+}
+.theatre__hud-tag {
+  color: var(--amber);
+  border-color: rgb(217 119 6 / 0.45);
+}
+.theatre__rec-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
+  animation: recPulse 1.6s ease-in-out infinite;
+}
+@keyframes recPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.82); }
+}
+
+/* ---------- 20.3 Sakuga Theatre Console Bar ---------- */
+.theatre__console {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #0e0e11;
+  border-top: 1px solid rgb(244 239 230 / 0.14);
+  color: #f4efe6;
+}
+.theatre__transport {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.theatre__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  height: 2.15rem;
+  padding: 0 0.65rem;
+  border-radius: 3px;
+  border: 1px solid rgb(244 239 230 / 0.2);
+  background: rgb(244 239 230 / 0.05);
+  color: #f4efe6;
+  font: 700 0.68rem / 1 var(--f-mono);
+  transition: background-color 0.18s, border-color 0.18s, color 0.18s, transform 0.12s;
+}
+.theatre__btn:hover {
+  background: rgb(244 239 230 / 0.14);
+  border-color: rgb(244 239 230 / 0.45);
+}
+.theatre__btn:active {
+  transform: translateY(1px);
+}
+.theatre__btn--play {
+  width: 2.45rem;
+  padding: 0;
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.theatre__btn--play:hover {
+  background: #e0351f;
+  border-color: #e0351f;
+}
+.theatre__btn--play svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+.theatre__btn--play .ic-pause {
+  display: none;
+}
+.theatre__btn--play.is-playing .ic-play {
+  display: none;
+}
+.theatre__btn--play.is-playing .ic-pause {
+  display: block;
+}
+.theatre__btn kbd,
+.theatre__kbd {
+  display: inline-block;
+  padding: 0.1rem 0.28rem;
+  border-radius: 2px;
+  background: rgb(244 239 230 / 0.12);
+  border: 1px solid rgb(244 239 230 / 0.22);
+  font: 700 0.62rem / 1 var(--f-mono);
+  color: var(--amber);
+}
+
+.theatre__timeline {
+  display: grid;
+  gap: 0.32rem;
+  min-width: 0;
+}
+.theatre__scrub {
+  width: 100%;
+  height: 5px;
+  appearance: none;
+  background: rgb(244 239 230 / 0.16);
+  border-radius: 999px;
+  cursor: pointer;
+  accent-color: var(--red);
+}
+.theatre__scrub::-webkit-slider-thumb {
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 2px solid #f4efe6;
+  box-shadow: 0 0 8px rgb(217 43 23 / 0.65);
+}
+.theatre__readout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font: 700 0.66rem / 1.2 var(--f-mono);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.theatre__xsheet-tc {
+  color: var(--amber);
+}
+.theatre__frame-tc {
+  color: rgb(244 239 230 / 0.85);
+}
+
+.theatre__tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.theatre__speeds {
+  display: inline-flex;
+  border: 1px solid rgb(244 239 230 / 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.theatre__speed {
+  padding: 0.38rem 0.52rem;
+  font: 700 0.62rem / 1 var(--f-mono);
+  letter-spacing: 0.05em;
+  color: rgb(244 239 230 / 0.68);
+  background: transparent;
+  transition: background-color 0.18s, color 0.18s;
+}
+.theatre__speed:hover {
+  color: #fff;
+  background: rgb(244 239 230 / 0.1);
+}
+.theatre__speed.is-active {
+  background: var(--amber);
+  color: #0b0b0d;
+}
+.theatre__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.62rem;
+  border-radius: 3px;
+  border: 1px solid rgb(244 239 230 / 0.22);
+  background: rgb(244 239 230 / 0.04);
+  color: rgb(244 239 230 / 0.78);
+  font: 700 0.6rem / 1 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.18s, border-color 0.18s, color 0.18s;
+}
+.theatre__chip svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+.theatre__chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.theatre__chip:hover {
+  color: #fff;
+  border-color: rgb(244 239 230 / 0.45);
+}
+.theatre__chip.is-active,
+.theatre__chip[aria-pressed="true"] {
+  background: rgb(30 78 140 / 0.38);
+  border-color: #60a5fa;
+  color: #93c5fd;
+}
+.theatre__speeds .theatre__chip.is-active,
+.theatre__speeds .theatre__chip[aria-pressed="true"] {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: #0b0b0d;
+}
+.theatre__chip--grid[aria-pressed="true"],
+[data-theatre-grid][aria-pressed="true"] {
+  background: rgb(217 43 23 / 0.28);
+  border-color: var(--red);
+  color: #fca5a5;
+}
+
+/* ---------- 20.4 100-Frame Anime Camera Framing Grid Overlay ---------- */
+.camera-grid-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.24s var(--ease-out);
+}
+.has-camera-grid > .camera-grid-layer {
+  opacity: 1;
+}
+.camera-grid-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.camera-grid-svg .cg-100 {
+  fill: none;
+  stroke: rgb(245 158 11 / 0.82);
+  stroke-width: 1.6;
+}
+.camera-grid-svg .cg-action {
+  fill: none;
+  stroke: rgb(56 189 248 / 0.72);
+  stroke-width: 1.1;
+  stroke-dasharray: 8 4;
+}
+.camera-grid-svg .cg-title {
+  fill: none;
+  stroke: rgb(16 185 129 / 0.65);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+.camera-grid-svg .cg-third {
+  stroke: rgb(244 239 230 / 0.25);
+  stroke-width: 0.9;
+  stroke-dasharray: 4 6;
+}
+.camera-grid-svg .cg-axis {
+  stroke: rgb(217 43 23 / 0.78);
+  stroke-width: 1.1;
+}
+.camera-grid-svg .cg-center-cross {
+  stroke: #ef4444;
+  stroke-width: 2;
+}
+.camera-grid-svg .cg-axis-ring {
+  fill: none;
+  stroke: rgb(239 68 68 / 0.85);
+  stroke-width: 1.3;
+}
+.camera-grid-svg .cg-tick {
+  stroke: rgb(245 158 11 / 0.75);
+  stroke-width: 1.1;
+}
+.camera-grid-svg .cg-label {
+  fill: #fbbf24;
+  font: 700 15px / 1 "JetBrains Mono", monospace;
+  letter-spacing: 0.1em;
+}
+.camera-grid-svg .cg-label--action {
+  fill: #38bdf8;
+}
+.camera-grid-svg .cg-label--title {
+  fill: #34d399;
+}
+
+/* ---------- 20.5 Interactive Pipeline Breakdown Console (03.1) ---------- */
+.cbd-console {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--paper-2);
+  overflow: hidden;
+  padding: 0 !important;
+}
+.cbd__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  flex-wrap: wrap;
+}
+.cbd__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: 700 0.65rem / 1.2 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.cbd__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  flex-wrap: wrap;
+}
+.cbd__tool-btn,
+.cbd__actions .cbd__tool-btn.media-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  width: auto;
+  padding: 0.32rem 0.58rem;
+  border-radius: 2px;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  color: var(--ink-2);
+  font: 700 0.58rem / 1 var(--f-mono);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: all 0.18s;
+}
+.cbd__tool-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.cbd__tool-btn[aria-pressed="true"] {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.cbd__stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: #0d0d10;
+  overflow: hidden;
+  user-select: none;
+  --cbd-wipe: 50%;
+}
+.cbd__base,
+.cbd__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.cbd__base img,
+.cbd__layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cbd__layer {
+  opacity: 0;
+  transition: opacity 0.26s var(--ease-out);
+  pointer-events: none;
+}
+.cbd__layer.is-active,
+.cbd__layer.is-selected {
+  opacity: 1;
+}
+.cbd-console.is-wipe .cbd__layer,
+.cbd-console.is-wipe-mode .cbd__layer {
+  transition: none;
+}
+.cbd-console.is-wipe .cbd__layer.is-wipe-top,
+.cbd-console.is-wipe-mode .cbd__layer.is-selected {
+  opacity: 1;
+  clip-path: inset(0 calc(100% - var(--cbd-wipe, 52%)) 0 0);
+}
+.cbd__wipe-ui {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.cbd-console.is-wipe .cbd__wipe-ui,
+.cbd-console.is-wipe-mode .cbd__wipe-ui {
+  opacity: 1;
+}
+.cbd__wipe-ui[hidden] {
+  display: none !important;
+}
+.cbd__wipe-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--cbd-wipe, 52%);
+  width: 2px;
+  background: var(--red);
+  box-shadow: 0 0 12px rgb(217 43 23 / 0.8);
+  transform: translateX(-1px);
+}
+.cbd__wipe-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font: 700 0.72rem / 1 var(--f-mono);
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.45);
+}
+.cbd__badge {
+  position: absolute;
+  bottom: 0.65rem;
+  padding: 0.24rem 0.52rem;
+  border-radius: 2px;
+  font: 700 0.56rem / 1 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.cbd__badge--left {
+  left: 0.75rem;
+  background: var(--red);
+  color: #fff;
+}
+.cbd__badge--right {
+  right: 0.75rem;
+  background: rgb(14 14 18 / 0.84);
+  color: #f4efe6;
+  border: 1px solid rgb(244 239 230 / 0.25);
+}
+.cbd__wipe-range {
+  display: none;
+}
+.cbd-console.is-wipe .cbd__wipe-range,
+.cbd-console.is-wipe-mode .cbd__wipe-range {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 5;
+}
+.cbd__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+}
+.cbd__step-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.58rem 0.7rem;
+  border-right: 1px solid var(--rule);
+  text-align: left;
+  transition: background-color 0.18s, color 0.18s;
+}
+.cbd__step-btn:last-child {
+  border-right: 0;
+}
+.cbd__step-btn:hover {
+  background: var(--paper-2);
+}
+.cbd__step-btn.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+.cbd__step-code {
+  font: 700 0.56rem / 1 var(--f-mono);
+  letter-spacing: 0.1em;
+  color: var(--red);
+}
+.cbd__step-btn.is-active .cbd__step-code {
+  color: var(--amber);
+}
+.cbd__step-name {
+  font: 600 0.68rem / 1.25 var(--f-sans);
+}
+.cbd-console > figcaption {
+  padding: 0.65rem 0.9rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- 20.6 Douga 24fps Speed & Grid Controls ---------- */
+.douga__stage {
+  position: relative;
+}
+.douga__rates {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.douga__rate {
+  padding: 0.3rem 0.48rem;
+  font: 700 0.62rem / 1 var(--f-mono);
+  color: var(--ink-mute);
+  background: var(--paper);
+  transition: background-color 0.16s, color 0.16s;
+}
+.douga__rate:hover {
+  color: var(--ink);
+}
+.douga__rate.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+@media (max-width: 960px) {
+  .theatre__console {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  .theatre__transport,
+  .theatre__tools {
+    justify-content: space-between;
+  }
+  .cbd__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cbd__step-btn:nth-child(2) {
+    border-right: 0;
+  }
+  .cbd__step-btn:nth-child(1),
+  .cbd__step-btn:nth-child(2) {
+    border-bottom: 1px solid var(--rule);
+  }
+}
+@media (max-width: 580px) {
+  .theatre-deck-tabs {
+    width: 100%;
+    justify-content: stretch;
+  }
+  .theatre-deck-tab {
+    flex: 1;
+    justify-content: center;
+    padding: 0.36rem 0.4rem;
+    font-size: 0.58rem;
+  }
+  .theatre__readout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+}
+
 

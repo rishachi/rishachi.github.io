@@ -912,6 +912,8 @@
     // 3H. Showreel Shot Breakdown Jump Buttons
     document.querySelectorAll('[data-reel-cue]').forEach((cueBtn) => {
       cueBtn.addEventListener('click', () => {
+        const ytTab = document.querySelector('[data-reel-deck-tab="youtube"]');
+        if (ytTab && !ytTab.classList.contains('is-active')) ytTab.click();
         const sec = Number(cueBtn.getAttribute('data-reel-cue')) || 0;
         const reelContainer = document.querySelector('[data-reel]');
         if (!reelContainer) return;

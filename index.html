@@ -34,7 +34,7 @@
   <!-- Above-the-fold hero art -->
   <link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/process-5-800.avif 800w, assets/img/process-5-1400.avif 1400w, assets/img/process-5-1751.avif 1751w" imagesizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high">
 
-  <link rel="stylesheet" href="assets/css/main.css?v=20261110.1">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261111.1">
 
   <script>
     // Flag JS early (prevents flash of un-animated content) + restore language & studio theme before paint.
@@ -334,31 +334,101 @@
       </div>
     </div>
 
-    <!-- ============ 01 — SHOWREEL ============ -->
-    <section class="section reel" id="reel" data-theme="dark" aria-labelledby="reel-title">
+    <!-- ============ 01 — SHOWREEL & SAKUGA 24FPS THEATRE PLAYER ============ -->
+    <section class="section reel" id="reel" data-theme="dark" aria-labelledby="reel-title" data-sakuga-theatre>
       <header class="section-head">
         <span class="section-head__idx">01</span>
         <h2 class="section-head__title" id="reel-title" data-split="chars" data-i18n="reel.title">Showreel</h2>
-        <span class="section-head__jp" lang="ja">ショーリール</span>
-        <span class="section-head__meta">2024 — 2026</span>
+        <span class="section-head__jp" lang="ja">ショーリール · 24FPS作画検収</span>
+        <div class="section-head__actions">
+          <div class="theatre-deck-tabs" role="tablist" aria-label="Showreel player mode">
+            <button class="theatre-deck-tab is-active" type="button" role="tab" aria-selected="true" data-reel-deck-tab="inspector">
+              <span class="theatre-deck-tab__dot" aria-hidden="true"></span>
+              <span data-i18n="theatre.tabInspector">Sakuga 24fps Theatre (Frame-Step)</span>
+            </button>
+            <button class="theatre-deck-tab" type="button" role="tab" aria-selected="false" data-reel-deck-tab="youtube">
+              <span data-i18n="theatre.tabYoutube">Full YouTube Showreel (2024–26)</span>
+            </button>
+          </div>
+          <span class="section-head__meta">2024 — 2026</span>
+        </div>
       </header>
 
       <div class="reel__stage" data-reel-stage>
-        <div class="reel__player" data-reel data-cursor="play">
-          <button class="reel__poster" type="button" data-reel-play aria-label="Play showreel" data-i18n-attr="aria-label:reel.play">
-            <picture>
-              <source type="image/avif" srcset="assets/img/reel-poster-800.avif 800w, assets/img/reel-poster-1400.avif 1400w" sizes="100vw">
-              <source type="image/webp" srcset="assets/img/reel-poster-800.webp 800w, assets/img/reel-poster-1400.webp 1400w" sizes="100vw">
-              <img src="assets/img/reel-poster.jpg" width="1280" height="720" alt="Phat Tran (RiSH) Animation Showreel 2024-2026 poster" loading="lazy" decoding="async" data-i18n-attr="alt:alt.reelPoster">
-            </picture>
-            <span class="reel__shade" aria-hidden="true"></span>
-            <span class="reel__play" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-            <span class="reel__label" aria-hidden="true"><span data-i18n="reel.play">Play reel</span> — 2024/26</span>
-            <span class="reel__tc" aria-hidden="true">TC <span data-timecode>00:00:00:00</span></span>
-            <span class="reel__rec" aria-hidden="true">● REC · 24FPS</span>
-          </button>
+        <!-- DECK A: SAKUGA 24FPS THEATRE PLAYER (Frame-by-Frame 1/24s, X-Sheet Timecode, 100-Frame Camera Grid) -->
+        <div class="theatre-panel is-active" data-reel-deck-panel="inspector">
+          <div class="theatre__viewport" data-theatre-stage>
+            <video class="theatre__video" data-theatre-video src="assets/video/shinkai-cut-1.mp4" poster="assets/img/douga/poster-final.jpg" playsinline muted loop preload="metadata"></video>
+            <div class="camera-grid-layer" data-theatre-grid-slot aria-hidden="true"></div>
+
+            <!-- Top HUD Telemetry Overlay -->
+            <div class="theatre__hud-top" aria-hidden="true">
+              <span class="theatre__hud-tag">● SAKUGA 24FPS INSPECTOR · CUT 004</span>
+              <span class="theatre__hud-keys" data-i18n="theatre.hintKeys">Keys: [ , ] -1 Frame (1/24s) · [ . ] +1 Frame (1/24s)</span>
+            </div>
+          </div>
+
+          <!-- 24FPS Animator Control Console -->
+          <div class="theatre__console" role="toolbar" aria-label="24fps Sakuga Theatre Controls">
+            <div class="theatre__transport">
+              <button class="theatre__btn" type="button" data-theatre-prev-frame title="Step Back 1 Frame (1/24s) — Shortcut: [ , ]" aria-label="Previous frame (1/24s)">
+                <kbd>,</kbd><span>-1F</span>
+              </button>
+              <button class="theatre__btn theatre__btn--play" type="button" data-theatre-play aria-pressed="false" aria-label="Play or pause 24fps cut">
+                <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3v14H7zm7 0h3v14h-3z"/></svg>
+              </button>
+              <button class="theatre__btn" type="button" data-theatre-next-frame title="Step Forward 1 Frame (1/24s) — Shortcut: [ . ]" aria-label="Next frame (1/24s)">
+                <span>+1F</span><kbd>.</kbd>
+              </button>
+            </div>
+
+            <div class="theatre__timeline">
+              <input class="theatre__scrub" type="range" min="1" max="144" value="1" step="1" data-theatre-scrub aria-label="Frame-by-frame scrubber">
+              <div class="theatre__readout" aria-live="off">
+                <span class="theatre__xsheet-tc" title="Japanese X-Sheet Timecode: Seconds + Koma (24fps)">
+                  <b>X-SHEET:</b> <output data-theatre-xsheet>00 + 01k</output>
+                </span>
+                <span class="theatre__frame-tc" data-theatre-frames>Frame: 001 / 144</span>
+              </div>
+            </div>
+
+            <div class="theatre__tools">
+              <div class="theatre__speeds" role="group" aria-label="Playback speed">
+                <button class="theatre__chip" type="button" data-theatre-speed="0.25" aria-pressed="false" title="0.25x — In-between / Douga Inspection">0.25x</button>
+                <button class="theatre__chip" type="button" data-theatre-speed="0.5" aria-pressed="false" title="0.5x — Timing / Genga Inspection">0.5x</button>
+                <button class="theatre__chip is-active" type="button" data-theatre-speed="1" aria-pressed="true" title="1.0x — Realtime 24fps">1.0x</button>
+              </div>
+              <button class="theatre__chip is-active" type="button" data-theatre-loop aria-pressed="true">
+                <span class="theatre__chip-dot" aria-hidden="true"></span>
+                <span data-i18n="theatre.loopCut">Loop Cut</span>
+              </button>
+              <button class="theatre__chip is-active" type="button" data-theatre-grid aria-pressed="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/></svg>
+                <span data-i18n="theatre.gridGuide">Grid / Frame Guide</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DECK B: FULL YOUTUBE SHOWREEL (2024-2026) -->
+        <div class="theatre-panel" data-reel-deck-panel="youtube" hidden>
+          <div class="reel__player" data-reel data-cursor="play">
+            <button class="reel__poster" type="button" data-reel-play aria-label="Play showreel" data-i18n-attr="aria-label:reel.play">
+              <picture>
+                <source type="image/avif" srcset="assets/img/reel-poster-800.avif 800w, assets/img/reel-poster-1400.avif 1400w" sizes="100vw">
+                <source type="image/webp" srcset="assets/img/reel-poster-800.webp 800w, assets/img/reel-poster-1400.webp 1400w" sizes="100vw">
+                <img src="assets/img/reel-poster.jpg" width="1280" height="720" alt="Phat Tran (RiSH) Animation Showreel 2024-2026 poster" loading="lazy" decoding="async" data-i18n-attr="alt:alt.reelPoster">
+              </picture>
+              <span class="reel__shade" aria-hidden="true"></span>
+              <span class="reel__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="reel__label" aria-hidden="true"><span data-i18n="reel.play">Play reel</span> — 2024/26</span>
+              <span class="reel__tc" aria-hidden="true">TC <span data-timecode>00:00:00:00</span></span>
+              <span class="reel__rec" aria-hidden="true">● REC · 24FPS</span>
+            </button>
+          </div>
         </div>
 
         <!-- Interactive Showreel Shot Cue Strip -->
@@ -563,14 +633,69 @@
             </button>
             <figcaption><span>B</span><span data-i18n="cap.standee">Event standee</span></figcaption>
           </figure>
-          <figure class="case__item case__item--breakdown" data-parallax="0.04">
-            <button class="media-btn" type="button" data-lightbox data-full="assets/img/process-breakdown-2000.jpg" data-w="14173" data-h="9449" data-cap="cap.breakdown" data-cursor="view">
-              <picture>
-                <source type="image/avif" srcset="assets/img/process-breakdown-800.avif 800w, assets/img/process-breakdown-1400.avif 1400w, assets/img/process-breakdown-2000.avif 2000w" sizes="(min-width: 1024px) 48vw, 100vw">
-                <source type="image/webp" srcset="assets/img/process-breakdown-800.webp 800w, assets/img/process-breakdown-1400.webp 1400w, assets/img/process-breakdown-2000.webp 2000w" sizes="(min-width: 1024px) 48vw, 100vw">
-                <img src="assets/img/process-breakdown-1400.jpg" width="14173" height="9449" alt="Layer breakdown of the sprint shot — background, colour, line and shadow layers side by side" loading="lazy" decoding="async" data-i18n-attr="alt:alt.breakdown">
-              </picture>
-            </button>
+          <figure class="case__item case__item--breakdown cbd-console is-wipe-mode" data-cut-breakdown style="--cbd-wipe: 52%;">
+            <div class="cbd__head">
+              <span class="cbd__title" data-i18n="cbd.title">Interactive Cut Breakdown · CUT 008 Anatomy</span>
+              <div class="cbd__actions">
+                <button class="cbd__tool-btn is-active" type="button" data-cbd-wipe-toggle aria-pressed="true">
+                  <span data-i18n="cbd.wipeBtn">A/B Wipe Compare</span>
+                </button>
+                <button class="cbd__tool-btn" type="button" data-cbd-grid-toggle aria-pressed="false">
+                  <span data-i18n="theatre.gridGuide">Grid / Frame Guide</span>
+                </button>
+                <button class="cbd__tool-btn media-btn" type="button" data-lightbox data-full="assets/img/process-breakdown-2000.jpg" data-w="14173" data-h="9449" data-cap="cap.breakdown" data-cursor="view">
+                  <picture class="sr-only">
+                    <source type="image/avif" srcset="assets/img/process-breakdown-800.avif 800w, assets/img/process-breakdown-1400.avif 1400w, assets/img/process-breakdown-2000.avif 2000w" sizes="(min-width: 1024px) 48vw, 100vw">
+                    <source type="image/webp" srcset="assets/img/process-breakdown-800.webp 800w, assets/img/process-breakdown-1400.webp 1400w, assets/img/process-breakdown-2000.webp 2000w" sizes="(min-width: 1024px) 48vw, 100vw">
+                    <img src="assets/img/process-breakdown-1400.jpg" width="14173" height="9449" alt="Layer breakdown of the sprint shot — background, colour, line and shadow layers side by side" loading="lazy" decoding="async" data-i18n-attr="alt:alt.breakdown">
+                  </picture>
+                  <span data-i18n="cbd.fullSheet">Full Sheet</span> ↗
+                </button>
+              </div>
+            </div>
+
+            <div class="cbd__stage" data-cbd-stage>
+              <!-- Base Reference Layer (Final Satsuei FX) -->
+              <div class="cbd__base">
+                <img src="assets/img/process-5-1400.webp" width="1751" height="1167" alt="Final Satsuei composite (After Effects)" loading="lazy" decoding="async">
+              </div>
+
+              <!-- Selectable / Wipe-Compared Pipeline Stage Layers -->
+              <div class="cbd__layer is-selected" data-cbd-layer="0">
+                <img src="assets/img/process-1-1400.webp" width="2600" height="1733" alt="Stage 1: 3D Camera / LO Rough Genga" loading="lazy" decoding="async">
+              </div>
+              <div class="cbd__layer" data-cbd-layer="1">
+                <img src="assets/img/process-2-1400.webp" width="2600" height="1733" alt="Stage 2: LO / Genga & Shadow Guides" loading="lazy" decoding="async">
+              </div>
+              <div class="cbd__layer" data-cbd-layer="2">
+                <img src="assets/img/process-3-1400.webp" width="2600" height="1733" alt="Stage 3: Douga & Paint (CSP EX / PaintMan)" loading="lazy" decoding="async">
+              </div>
+              <div class="cbd__layer" data-cbd-layer="3">
+                <img src="assets/img/process-4-1400.webp" width="2600" height="1733" alt="Stage 4: Composite (BG + Cel)" loading="lazy" decoding="async">
+              </div>
+
+              <div class="cbd__wipe-ui" aria-hidden="true">
+                <span class="cbd__wipe-line"><span class="cbd__wipe-knob">⇆</span></span>
+                <span class="cbd__badge cbd__badge--left" data-cbd-current-label>01 · 3D Layout / LO Rough</span>
+                <span class="cbd__badge cbd__badge--right">04 · Final Satsuei (After Effects)</span>
+              </div>
+              <input class="cbd__wipe-range" type="range" min="4" max="96" value="52" data-cbd-wipe-range aria-label="Pipeline stage comparison slider">
+            </div>
+
+            <div class="cbd__steps" role="tablist" aria-label="Pipeline breakdown stages">
+              <button class="cbd__step-btn is-active" type="button" role="tab" aria-selected="true" data-cbd-step="0" data-cbd-title="01 · 3D Layout / LO Rough">
+                <span data-i18n="cbd.s1">01 · 3D Layout / LO Rough</span>
+              </button>
+              <button class="cbd__step-btn" type="button" role="tab" aria-selected="false" data-cbd-step="1" data-cbd-title="02 · LO / Genga &amp; Shadow">
+                <span data-i18n="cbd.s2">02 · LO / Genga &amp; Shadow</span>
+              </button>
+              <button class="cbd__step-btn" type="button" role="tab" aria-selected="false" data-cbd-step="2" data-cbd-title="03 · Douga &amp; Paint (CSP EX)">
+                <span data-i18n="cbd.s3">03 · Douga &amp; Paint (CSP EX)</span>
+              </button>
+              <button class="cbd__step-btn" type="button" role="tab" aria-selected="false" data-cbd-step="3" data-cbd-title="04 · Final Satsuei (AE)">
+                <span data-i18n="cbd.s4">04 · Final Satsuei (AE)</span>
+              </button>
+            </div>
             <figcaption><span>C</span><span data-i18n="cap.breakdown">Layer breakdown of the sprint cut</span></figcaption>
           </figure>
         </div>
@@ -728,8 +853,18 @@
                 </div>
 
                 <div class="douga__tools">
-                  <span class="douga__count" aria-live="off"><b data-douga-cur>01</b><span data-douga-tot>/26</span></span>
-                  <button class="douga__chip" type="button" data-douga-speed aria-label="Playback speed">1×</button>
+                  <span class="douga__count" aria-live="off"><b data-douga-cur>00 + 01k</b><span data-douga-tot> · Frame: 001 / 144</span></span>
+                  <div class="douga__rates" role="group" aria-label="Playback speed">
+                    <button class="douga__chip" type="button" data-douga-rate="0.25" aria-pressed="false" title="0.25x — Douga / In-between inspection">0.25x</button>
+                    <button class="douga__chip" type="button" data-douga-rate="0.5" aria-pressed="false" title="0.5x — Genga / Timing inspection">0.5x</button>
+                    <button class="douga__chip is-active" type="button" data-douga-rate="1" aria-pressed="true" title="1.0x — Realtime 24fps">1.0x</button>
+                  </div>
+                  <button class="douga__chip is-active" type="button" data-douga-loop-btn aria-pressed="true" title="Loop Cut">
+                    <span data-i18n="theatre.loopCut">Loop Cut</span>
+                  </button>
+                  <button class="douga__chip" type="button" data-douga-grid-btn aria-pressed="false" title="100-Frame Camera Grid Guide">
+                    <span>GRID</span>
+                  </button>
                   <button class="douga__chip" type="button" data-douga-onion-btn aria-pressed="false">
                     <span class="douga__chip-dot" aria-hidden="true"></span>
                     <span data-i18n="douga.onion">Onion</span>
@@ -971,13 +1106,14 @@
   <!-- Toast -->
   <div class="toast" data-toast role="status" aria-live="polite"></div>
 
-  <!-- Libraries (GSAP 3 + ScrollTrigger + SplitText, Lenis, WebGL Stage) -->
+  <!-- Libraries (GSAP 3 + ScrollTrigger + SplitText, Lenis, WebGL Stage, Sakuga 24fps Theatre) -->
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="assets/vendor/SplitText.min.js" defer></script>
   <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="assets/js/portfolio-data.js?v=20261110.1" defer></script>
-  <script src="assets/js/webgl-stage.js?v=20261110.1" defer></script>
-  <script src="assets/js/main.js?v=20261110.1" defer></script>
+  <script src="assets/js/portfolio-data.js?v=20261111.1" defer></script>
+  <script src="assets/js/webgl-stage.js?v=20261111.1" defer></script>
+  <script src="assets/js/main.js?v=20261111.1" defer></script>
+  <script src="assets/js/sakuga-theatre.js?v=20261111.1" defer></script>
 </body>
 </html>

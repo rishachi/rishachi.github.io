@@ -124,3 +124,24 @@ This document lists all new and updated Japanese strings introduced in the `port
 | `work.viewEditorial` | `詳細シート表示` | Detailed Cut-Sheet View | Editorial layout view button |
 | `work.viewGrid` | `カット袋一覧グリッド` | Cut-Bag Index Grid | Compact 2-column bento grid button |
 | `douga.tabSplit` | `50/50 比較` | 50/50 Split Comparison | Side-by-side Final Cut vs Douga Line Art wipe |
+
+---
+
+### 9. Phase 2 — Sakuga 24fps Theatre Player & Interactive Cut Breakdown (`theatre.*`, `cbd.*`)
+- **Location**: Section `01 — Showreel` Sakuga 24fps Theatre Player (`[data-sakuga-theatre]`) and Section `03.1 — GET_SET RUN` Interactive Pipeline Breakdown Console (`[data-cut-breakdown]`)
+
+| Key | Japanese Text | English Meaning | Notes |
+| :--- | :--- | :--- | :--- |
+| `theatre.tabInspector` | `作画24fpsインスペクター (Cut 008)` | Sakuga 24fps Inspector (Cut 008) | Deck selector tab for native 24fps frame-stepping player |
+| `theatre.tabYoutube` | `YouTube 作画リール本編 (2024–26)` | Full YouTube Showreel (2024–26) | Deck selector tab for YouTube showreel facade |
+| `theatre.loopCut` | `ループ再生` | Loop Playback (Loop Cut) | Toggle button for seamless cut looping |
+| `theatre.gridGuide` | `100フレーム枠・安全フレーム` | 100-Frame Field & Safe Frame Guide | Toggle button for 100-Frame Anime Camera Framing Grid SVG overlay |
+| `theatre.hintKeys` | `キー操作: [,] 1コマ戻る · [.] 1コマ進む (1/24秒) · [G] カメラ枠ガイド` | Key controls: [,] Step back 1 koma · [.] Step forward 1 koma (1/24s) · [G] Camera frame guide | Instruction hint for animators & directors |
+| `cbd.title` | `インタラクティブ工程比較 · カット008 パイプライン` | Interactive Pipeline Breakdown · Cut 008 Pipeline | Header title for interactive cut breakdown console |
+| `cbd.s1` | `3D LO・ラフ原画` | 3D Layout & Rough Genga | Stage 01 button label |
+| `cbd.s2` | `原画・影付け設計` | Genga & Shadow Design | Stage 02 button label |
+| `cbd.s3` | `動画・仕上げ (CSP EX)` | Douga & Digital Paint (CSP EX) | Stage 03 button label |
+| `cbd.s4` | `最終撮影 (After Effects)` | Final Satsuei Compositing (After Effects) | Stage 04 button label |
+| `cbd.wipeBtn` | `A/B ワイプ比較` | A/B Wipe Compare | Toggle button for interactive wipe slider against Final Satsuei |
+| `cbd.fullSheet` | `4工程シート拡大 ↗` | Enlarge 4-Stage Sheet ↗ | Button opening the full 2000px composite breakdown sheet in lightbox |
+

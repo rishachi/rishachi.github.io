@@ -71,6 +71,37 @@ async function run() {
     await page.click('[data-theme-toggle]');
     await new Promise(r => setTimeout(r, 200));
 
+    // 2B. Test Section 01 — Sakuga 24fps Theatre Player & 100-Frame Camera Grid
+    console.log('[2B. SAKUGA 24FPS THEATRE & 100-FRAME CAMERA GRID CHECK]');
+    await page.evaluate(() => {
+      document.querySelector('[data-reel-stage]').scrollIntoView({ behavior: 'instant', block: 'center' });
+    });
+    await new Promise(r => setTimeout(r, 450));
+    await page.click('[data-theatre-speed="0.25"]');
+    await page.click('[data-theatre-next-frame]');
+    await page.keyboard.press('Period');
+    await new Promise(r => setTimeout(r, 350));
+    const theatreState = await page.evaluate(() => {
+      const vp = document.querySelector('[data-theatre-stage]');
+      const xsheet = document.querySelector('[data-theatre-xsheet]')?.textContent.trim();
+      const frames = document.querySelector('[data-theatre-frames]')?.textContent.trim();
+      const speed025 = document.querySelector('[data-theatre-speed="0.25"]')?.classList.contains('is-active');
+      return {
+        hasGrid: vp ? vp.classList.contains('has-camera-grid') : false,
+        xsheet,
+        frames,
+        speed025
+      };
+    });
+    console.log('  Theatre 100-Frame Grid active:', theatreState.hasGrid);
+    console.log('  Theatre X-Sheet Timecode:', theatreState.xsheet, '|', theatreState.frames);
+    console.log('  Theatre 0.25x Speed active:', theatreState.speed025);
+    if (!theatreState.hasGrid || !theatreState.speed025 || !theatreState.xsheet.includes('k')) {
+      throw new Error('FAILED: Sakuga 24fps Theatre state invalid!');
+    }
+    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'awwwards-sakuga-theatre.png') });
+    console.log('  ✓ Captured awwwards-sakuga-theatre.png (Sakuga 24fps Theatre + 100-Frame Camera Grid)\n');
+
     // 3. Test Section 02 Process — 3D Exploded Isometric Cel Stack
     console.log('[3. PROCESS 3D EXPLODED CEL STACK CHECK]');
     await page.evaluate(() => {
@@ -86,6 +117,31 @@ async function run() {
     }
     await page.screenshot({ path: path.join(ARTIFACT_DIR, 'awwwards-process-3d.png') });
     console.log('  ✓ Captured awwwards-process-3d.png (3D Exploded Isometric Cel Stack)\n');
+
+    // 3B. Test Section 03.1 Interactive Pipeline Breakdown Console
+    console.log('[3B. INTERACTIVE CUT BREAKDOWN CONSOLE CHECK]');
+    await page.evaluate(() => {
+      document.querySelector('[data-cut-breakdown]').scrollIntoView({ behavior: 'instant', block: 'center' });
+    });
+    await new Promise(r => setTimeout(r, 400));
+    await page.click('[data-cbd-step="1"]');
+    await page.click('[data-cbd-grid-toggle]');
+    await new Promise(r => setTimeout(r, 350));
+    const cbdState = await page.evaluate(() => {
+      const root = document.querySelector('[data-cut-breakdown]');
+      const stage = document.querySelector('[data-cbd-stage]');
+      return {
+        isWipe: root ? root.classList.contains('is-wipe-mode') : false,
+        hasGrid: stage ? stage.classList.contains('has-camera-grid') : false
+      };
+    });
+    console.log('  Cut Breakdown A/B Wipe active:', cbdState.isWipe);
+    console.log('  Cut Breakdown 100-Frame Grid active:', cbdState.hasGrid);
+    if (!cbdState.isWipe || !cbdState.hasGrid) {
+      throw new Error('FAILED: Interactive Cut Breakdown Console failed!');
+    }
+    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'awwwards-cut-breakdown.png') });
+    console.log('  ✓ Captured awwwards-cut-breakdown.png (Interactive Pipeline Breakdown + A/B Wipe + 100-Frame Grid)\n');
 
     // 4. Test Section 03.3 Douga 50/50 Split Comparison Mode
     console.log('[4. DOUGA 50/50 SPLIT COMPARISON CHECK]');

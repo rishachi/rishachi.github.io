@@ -206,7 +206,19 @@
       'work.filterIllust': 'Character & Illustration (02)',
       'work.viewEditorial': 'Editorial Cut-Sheet',
       'work.viewGrid': 'Cut-Bag Index Grid',
-      'douga.tabSplit': '50/50 Split'
+      'douga.tabSplit': '50/50 Split',
+      'theatre.tabInspector': 'Sakuga 24fps Theatre (Frame-Step)',
+      'theatre.tabYoutube': 'Full YouTube Showreel (2024–26)',
+      'theatre.loopCut': 'Loop Cut',
+      'theatre.gridGuide': 'Grid / Frame Guide',
+      'theatre.hintKeys': 'Keys: [ , ] -1 Frame (1/24s) · [ . ] +1 Frame (1/24s)',
+      'cbd.title': 'Interactive Cut Breakdown · CUT 008 Anatomy',
+      'cbd.s1': '01 · 3D Layout / LO Rough',
+      'cbd.s2': '02 · LO / Genga & Shadow',
+      'cbd.s3': '03 · Douga & Paint (CSP EX)',
+      'cbd.s4': '04 · Final Satsuei (AE)',
+      'cbd.wipeBtn': 'A/B Wipe Compare',
+      'cbd.fullSheet': 'Full Sheet'
     },
 
     vi: {
@@ -404,7 +416,19 @@
       'work.filterIllust': 'Thiết Kế Nhân Vật & Minh Hoạ (02)',
       'work.viewEditorial': 'Bản Trình Bày Chi Tiết',
       'work.viewGrid': 'Lưới Hồ Sơ Cut-Bag',
-      'douga.tabSplit': 'So sánh 50/50'
+      'douga.tabSplit': 'So sánh 50/50',
+      'theatre.tabInspector': 'Trình Soi Sakuga 24fps (Từng Frame)',
+      'theatre.tabYoutube': 'Showreel Đầy Đủ YouTube (2024–26)',
+      'theatre.loopCut': 'Lặp Cut (Loop)',
+      'theatre.gridGuide': 'Khung Lưới 100-Frame',
+      'theatre.hintKeys': 'Phím tắt: [ , ] Lùi 1 Frame (1/24s) · [ . ] Tiến 1 Frame (1/24s)',
+      'cbd.title': 'Giải Phẫu Quy Trình Cut · CUT 008',
+      'cbd.s1': '01 · 3D Layout / LO Phác Thảo',
+      'cbd.s2': '02 · LO / Genga & Chỉ Định Bóng',
+      'cbd.s3': '03 · Douga & Paint (CSP EX)',
+      'cbd.s4': '04 · Final Satsuei (After Effects)',
+      'cbd.wipeBtn': 'Kéo So Sánh A/B',
+      'cbd.fullSheet': 'Bảng Đầy Đủ'
     },
 
     ja: {
@@ -602,7 +626,19 @@
       'work.filterIllust': 'キャラ設定・イラスト (02)',
       'work.viewEditorial': '詳細シート表示',
       'work.viewGrid': 'カット袋一覧グリッド',
-      'douga.tabSplit': '50/50 比較'
+      'douga.tabSplit': '50/50 比較',
+      'theatre.tabInspector': '作画24fpsコマ送りシアター',
+      'theatre.tabYoutube': 'YouTube 本編リール (2024–26)',
+      'theatre.loopCut': 'ループ再生',
+      'theatre.gridGuide': '100フレーム・安全枠ガイド',
+      'theatre.hintKeys': 'ショートカット: [ , ] 1コマ戻る (1/24s) · [ . ] 1コマ進む (1/24s)',
+      'cbd.title': 'カット工程分解（インタラクティブ比較） · CUT 008',
+      'cbd.s1': '01 · 3Dレイアウト / ラフLO',
+      'cbd.s2': '02 · LO / 原画・影指定',
+      'cbd.s3': '03 · 動画・仕上げ (CSP EX)',
+      'cbd.s4': '04 · 撮影コンポジット (AE)',
+      'cbd.wipeBtn': 'A/B スライダー比較',
+      'cbd.fullSheet': '分解シート全体'
     }
   };
 
@@ -1612,16 +1648,23 @@
         const vTime = video ? (video.currentTime || 0) : (CUMULATIVE_TIMES[cur] || 0);
         const vDur = (video && video.duration && !isNaN(video.duration)) ? video.duration : TOTAL_DURATION;
         const ratio = Math.max(0, Math.min(1, vTime / Math.max(0.1, vDur)));
-        if (curReadout) curReadout.textContent = `${vTime.toFixed(1)}s`;
-        if (totReadout) totReadout.textContent = ` / ${vDur.toFixed(1)}s`;
+        const secWhole = Math.floor(vTime + 1e-4);
+        const koma = Math.min(24, Math.floor((vTime - secWhole) * 24 + 1e-4) + 1);
+        const totFrames = Math.max(1, Math.round(vDur * 24));
+        const curFrame = Math.min(totFrames, Math.floor(vTime * 24 + 1e-4) + 1);
+        if (curReadout) curReadout.textContent = `${String(secWhole).padStart(2, '0')} + ${String(koma).padStart(2, '0')}k`;
+        if (totReadout) totReadout.textContent = ` · Frame: ${String(curFrame).padStart(3, '0')} / ${String(totFrames).padStart(3, '0')}`;
         if (sheetCode) sheetCode.textContent = 'FINAL';
         if (specLabel) specLabel.textContent = '1080P · 24FPS';
         if (playhead) playhead.style.setProperty('--p', ratio.toFixed(4));
         if (scrub) scrub.setAttribute('aria-valuenow', String(Math.round(ratio * (TOTAL - 1)) + 1));
       } else {
+        const vTime = CUMULATIVE_TIMES[cur] || 0;
+        const secWhole = Math.floor(vTime + 1e-4);
+        const koma = Math.min(24, Math.floor((vTime - secWhole) * 24 + 1e-4) + 1);
         const label = String(cur + 1).padStart(2, '0');
-        if (curReadout) curReadout.textContent = label;
-        if (totReadout) totReadout.textContent = '/26';
+        if (curReadout) curReadout.textContent = `${String(secWhole).padStart(2, '0')} + ${String(koma).padStart(2, '0')}k`;
+        if (totReadout) totReadout.textContent = ` · Frame: ${label} / 26`;
         if (sheetCode) sheetCode.textContent = `A-${label}`;
         if (specLabel) specLabel.textContent = '24FPS · 3KOMA';
         if (playhead) playhead.style.setProperty('--p', (cur / (TOTAL - 1)).toFixed(4));
@@ -1828,8 +1871,15 @@
     function stepBy(delta) {
       setPlaying(false);
       if (dougaMode === 'final' && video) {
-        const nextTime = Math.max(0, Math.min(TOTAL_DURATION - 0.04, (video.currentTime || 0) + delta * 0.125));
-        video.currentTime = nextTime;
+        const vDur = (video.duration && !isNaN(video.duration)) ? video.duration : TOTAL_DURATION;
+        const totFrames = Math.max(1, Math.round(vDur * 24));
+        const curFrameIdx = Math.round((video.currentTime || 0) * 24);
+        const nextFrameIdx = video.loop
+          ? ((curFrameIdx + delta) % totFrames + totFrames) % totFrames
+          : Math.max(0, Math.min(totFrames - 1, curFrameIdx + delta));
+        try {
+          video.currentTime = Math.min(vDur - 0.001, nextFrameIdx * (1 / 24) + 0.0005);
+        } catch (_) {}
         updateReadout();
       } else {
         preloadFrames().then(() => {
@@ -1878,12 +1928,24 @@
 
     if (speedBtn) {
       speedBtn.addEventListener('click', () => {
-        speed = speed === 1 ? 0.5 : 1;
-        speedBtn.textContent = speed === 1 ? '1×' : '0.5×';
+        speed = speed === 1 ? 0.5 : (speed === 0.5 ? 0.25 : 1);
+        speedBtn.textContent = `${speed}×`;
         speedBtn.classList.toggle('is-active', speed !== 1);
         if (video) video.playbackRate = speed;
       });
     }
+
+    dougaEl.querySelectorAll('[data-douga-rate]').forEach((rateBtn) => {
+      rateBtn.addEventListener('click', () => {
+        const r = parseFloat(rateBtn.getAttribute('data-douga-rate')) || 1;
+        speed = r;
+        if (speedBtn) {
+          speedBtn.textContent = `${speed}×`;
+          speedBtn.classList.toggle('is-active', speed !== 1);
+        }
+        if (video) video.playbackRate = speed;
+      });
+    });
 
     if (onionBtn) {
       onionBtn.addEventListener('click', () => {
