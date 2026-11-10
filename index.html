@@ -34,16 +34,20 @@
   <!-- Above-the-fold hero art -->
   <link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/process-5-800.avif 800w, assets/img/process-5-1400.avif 1400w, assets/img/process-5-1751.avif 1751w" imagesizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high">
 
-  <link rel="stylesheet" href="assets/css/main.css?v=20261025.1">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261110.1">
 
   <script>
-    // Flag JS early (prevents flash of un-animated content) + restore language before paint.
+    // Flag JS early (prevents flash of un-animated content) + restore language & studio theme before paint.
     document.documentElement.classList.replace('no-js', 'js');
     try {
       var saved = localStorage.getItem('rish:lang');
       var nav = (navigator.language || 'en').slice(0, 2);
       var lang = saved || (['vi', 'ja'].indexOf(nav) > -1 ? nav : 'en');
       document.documentElement.lang = lang;
+      var savedMode = localStorage.getItem('rish:studio-mode');
+      if (savedMode === 'darkroom') {
+        document.documentElement.setAttribute('data-studio-mode', 'darkroom');
+      }
       if (location.protocol.indexOf('http') === 0) {
         var m = document.createElement('link');
         m.rel = 'manifest';
@@ -107,24 +111,33 @@
     <div class="cursor__dot"></div>
   </div>
 
-  <!-- ============ HEADER ============ -->
+  <!-- ============ HEADER — SAKUGA ATELIER CONTROL DECK ============ -->
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="RiSH — back to top">
       <span class="brand__mark" aria-hidden="true">八</span>
       <span class="brand__name">RiSH<sup>®</sup></span>
+      <span class="brand__role" aria-hidden="true">GENGA · 原画</span>
     </a>
 
     <nav class="nav" aria-label="Primary">
       <ul>
-        <li><a class="roll" href="#reel"><span data-i18n="nav.reel">Reel</span></a></li>
-        <li><a class="roll" href="#process"><span data-i18n="nav.process">Process</span></a></li>
-        <li><a class="roll" href="#work"><span data-i18n="nav.work">Work</span></a></li>
-        <li><a class="roll" href="#about"><span data-i18n="nav.about">About</span></a></li>
-        <li><a class="roll" href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
+        <li><a class="roll" href="#reel"><small class="nav__idx">01</small><span data-i18n="nav.reel">Reel</span></a></li>
+        <li><a class="roll" href="#process"><small class="nav__idx">02</small><span data-i18n="nav.process">Process</span></a></li>
+        <li><a class="roll" href="#work"><small class="nav__idx">03</small><span data-i18n="nav.work">Work</span></a></li>
+        <li><a class="roll" href="#about"><small class="nav__idx">04</small><span data-i18n="nav.about">About</span></a></li>
+        <li><a class="roll" href="#contact"><small class="nav__idx">05</small><span data-i18n="nav.contact">Contact</span></a></li>
       </ul>
     </nav>
 
     <div class="header__tools">
+      <button class="atelier-pill" type="button" data-theme-toggle aria-pressed="false" title="Switch Light-Table / Darkroom mode">
+        <span class="atelier-pill__dot" aria-hidden="true"></span>
+        <span data-mode-label data-i18n="atelier.modeLight">LIGHT TABLE</span>
+      </button>
+      <button class="atelier-pill atelier-pill--sfx" type="button" data-sfx-toggle aria-pressed="false" title="Toggle studio tactile sound effects">
+        <span class="sfx-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span data-i18n="atelier.sfx">SFX</span>
+      </button>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="en" lang="en">EN</button>
         <button type="button" data-lang="vi" lang="vi">VI</button>
@@ -162,7 +175,7 @@
     </div>
   </div>
 
-  <!-- HUD: scroll position as an animation frame counter -->
+  <!-- HUD: scroll position as an animation frame counter + X-Sheet Keyframe Rail -->
   <div class="hud" aria-hidden="true">
     <span class="hud__rec"></span>
     <span>F <b data-hud-frame>0001</b></span>
@@ -171,15 +184,32 @@
     <span class="hud__fps">24FPS</span>
   </div>
 
+  <aside class="xsheet-rail" aria-label="Timesheet section navigator">
+    <span class="xsheet-rail__head" aria-hidden="true">X-SHEET</span>
+    <div class="xsheet-rail__track">
+      <span class="xsheet-rail__bar" data-xsheet-progress aria-hidden="true"></span>
+      <a class="xsheet-rail__node is-active" href="#top" data-xsheet-jump="top" title="00 · Light-Table Hero"><span>00</span></a>
+      <a class="xsheet-rail__node" href="#reel" data-xsheet-jump="reel" title="01 · Showreel"><span>01</span></a>
+      <a class="xsheet-rail__node" href="#process" data-xsheet-jump="process" title="02 · Pipeline"><span>02</span></a>
+      <a class="xsheet-rail__node" href="#work" data-xsheet-jump="work" title="03 · Selected Work"><span>03</span></a>
+      <a class="xsheet-rail__node" href="#about" data-xsheet-jump="about" title="04 · Studio Dossier"><span>04</span></a>
+      <a class="xsheet-rail__node" href="#contact" data-xsheet-jump="contact" title="05 · Contact"><span>05</span></a>
+    </div>
+    <span class="xsheet-rail__foot" aria-hidden="true">24K</span>
+  </aside>
+
   <main id="main">
-    <!-- ============ HERO ============ -->
+    <!-- ============ HERO — WEBGL 5-LAYER SAKUGA LIGHT-TABLE ============ -->
     <section class="hero" id="top">
       <div class="hero__grid">
         <div class="hero__intro">
-          <p class="eyebrow" data-hero-fade>
-            <span class="eyebrow__idx">(00)</span>
-            <span data-i18n="hero.eyebrow">Key Animator (原画)</span>
-          </p>
+          <div class="hero__stamps" data-hero-fade>
+            <p class="eyebrow">
+              <span class="eyebrow__idx">(00)</span>
+              <span data-i18n="hero.eyebrow">Key Animator (原画)</span>
+            </p>
+            <span class="hero__spec-tag" aria-hidden="true">ACME 3-PEG · 24FPS · GLSL</span>
+          </div>
           <p class="hero__lede" data-split="lines" data-i18n-html="hero.lede">Bringing imagination to life — <em>one frame</em> at a time.</p>
           <p class="hero__sub" data-hero-fade data-i18n="hero.sub">Key animation, character acting, and layout for Japanese anime productions. Based in Vietnam — drawing toward Tokyo studios.</p>
           <div class="hero__cta" data-hero-fade>
@@ -192,12 +222,21 @@
               <span data-i18n="hero.ctaReel">Play showreel</span>
             </button>
           </div>
+
+          <div class="hero__telemetry" data-hero-fade aria-hidden="true">
+            <div><small>PIPELINE</small><b>LO · GENGA · DOUGA · SHIAGE</b></div>
+            <div><small>WORKFLOW</small><b>CSP EX · RETAS PAINTMAN</b></div>
+          </div>
         </div>
 
         <figure class="cel" data-lens data-cursor="peek">
-          <div class="cel__pegs" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="cel__pegs" aria-hidden="true">
+            <span class="cel__peg-code">CUT-008 / A-01</span>
+            <i></i><i></i><i></i>
+            <span class="cel__peg-code">16:9 · 35MM</span>
+          </div>
           <div class="cel__frame">
-            <!-- Cut 008 Akari Sprint Layer (Default Active on load — FX to Clean loupe) -->
+            <!-- Cut 008 Akari Sprint Layer (Default Active — WebGL 5-Layer Shader + DOM fallback) -->
             <div class="cel__cut-layer cel__cut-layer--akari is-active" data-layer="akari">
               <picture class="cel__layer cel__final">
                 <source type="image/avif" srcset="assets/img/process-5-800.avif 800w, assets/img/process-5-1400.avif 1400w, assets/img/process-5-1751.avif 1751w" sizes="(min-width: 1024px) 50vw, 100vw">
@@ -211,6 +250,7 @@
                   <img src="assets/img/process-2-1400.jpg" width="2600" height="1733" alt="" decoding="async">
                 </picture>
               </div>
+              <canvas class="cel__webgl" data-webgl-canvas aria-hidden="true"></canvas>
               <span class="cel__badge cel__badge--akari" aria-hidden="true" data-i18n="hero.badgeAkari">PHOTOGRAPHY &amp; FX ● SATSUEI (撮影)</span>
               <button class="cel__expand" type="button" data-lightbox data-full="assets/img/process-5-1751.jpg" data-w="1751" data-h="1167" data-cap="case.title" aria-label="Expand Akari sprint in lightbox" data-i18n-attr="aria-label:hero.expandAkariAria">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
@@ -237,6 +277,23 @@
             <span class="cel__corner cel__corner--bl" aria-hidden="true"></span>
             <span class="cel__corner cel__corner--br" aria-hidden="true"></span>
           </div>
+
+          <!-- WebGL 5-Layer Pipeline Scrubber & Onion-Skin Shader Bar -->
+          <div class="cel__pipeline-bar" role="toolbar" aria-label="WebGL shader layer controls">
+            <span class="cel__pipeline-label" data-i18n="hero.stageLabel">WEBGL 5-LAYER PIPELINE:</span>
+            <div class="cel__pipeline-steps">
+              <button class="cel__stage-btn" type="button" data-hero-stage="4" aria-pressed="false">01 RAFU</button>
+              <button class="cel__stage-btn" type="button" data-hero-stage="3" aria-pressed="false">02 CLEAN</button>
+              <button class="cel__stage-btn" type="button" data-hero-stage="2" aria-pressed="false">03 COLOR</button>
+              <button class="cel__stage-btn" type="button" data-hero-stage="1" aria-pressed="false">04 COMP</button>
+              <button class="cel__stage-btn is-active" type="button" data-hero-stage="0" aria-pressed="true">05 FX</button>
+            </div>
+            <button class="cel__onion-btn" type="button" data-hero-onion aria-pressed="false">
+              <span class="cel__onion-dot" aria-hidden="true"></span>
+              <span data-i18n="hero.onionGlsl">ONION-SKIN [GLSL]</span>
+            </button>
+          </div>
+
           <figcaption class="cel__meta">
             <div class="cel__meta-cuts" role="tablist" aria-label="Select hero animation cut">
               <button class="cel__cut-pill is-active" type="button" role="tab" aria-selected="true" data-hero-cut="akari">
@@ -257,12 +314,12 @@
         <span class="sr-only">Phat Tran — Key Animator (原画)</span>
         <span class="hero__name-row" aria-hidden="true" data-hero-name>PHAT&nbsp;TRAN</span>
       </h1>
-      <p class="hero__kana" aria-hidden="true">ファット・トラン</p>
+      <p class="hero__kana" aria-hidden="true">ファット・トラン · 原画</p>
 
       <div class="hero__foot" data-hero-fade>
         <a class="scroll-cue" href="#reel"><span class="scroll-cue__line" aria-hidden="true"></span><span data-i18n="hero.scroll">Scroll</span></a>
-        <span class="hero__route">VN <span aria-hidden="true">→</span> TYO</span>
-        <span class="hero__clock">HCMC <time data-clock>--:--</time> GMT+7</span>
+        <span class="hero__route">HCMC <span aria-hidden="true">───►</span> TOKYO</span>
+        <span class="hero__clock">VN <time data-clock>--:--</time> · TYO <time data-clock-tyo>--:--</time></span>
       </div>
     </section>
 
@@ -270,10 +327,10 @@
     <div class="marquee" aria-hidden="true" data-marquee>
       <div class="marquee__track">
         <span>KEY ANIMATION</span><i>✦</i><span lang="ja">原画</span><i>✦</i>
+        <span>LAYOUT (LO)</span><i>✦</i><span lang="ja">レイアウト</span><i>✦</i>
         <span>IN-BETWEEN</span><i>✦</i><span lang="ja">動画</span><i>✦</i>
         <span>CHARACTER DESIGN</span><i>✦</i><span lang="ja">キャラデザ</span><i>✦</i>
-        <span>ILLUSTRATION</span><i>✦</i><span lang="ja">イラスト</span><i>✦</i>
-        <span>CLEAN-UP</span><i>✦</i><span lang="ja">仕上げ</span><i>✦</i>
+        <span>DIGITAL PAINT</span><i>✦</i><span lang="ja">仕上げ</span><i>✦</i>
       </div>
     </div>
 
@@ -300,7 +357,27 @@
             </span>
             <span class="reel__label" aria-hidden="true"><span data-i18n="reel.play">Play reel</span> — 2024/26</span>
             <span class="reel__tc" aria-hidden="true">TC <span data-timecode>00:00:00:00</span></span>
-            <span class="reel__rec" aria-hidden="true">● REC</span>
+            <span class="reel__rec" aria-hidden="true">● REC · 24FPS</span>
+          </button>
+        </div>
+
+        <!-- Interactive Showreel Shot Cue Strip -->
+        <div class="reel__cues" role="group" aria-label="Showreel shot highlights">
+          <button class="reel__cue" type="button" data-reel-cue="0">
+            <small>TC 00:00</small>
+            <span data-i18n="reel.cue1">01 · Sprint Sakuga (LO / 1st Key)</span>
+          </button>
+          <button class="reel__cue" type="button" data-reel-cue="10">
+            <small>TC 00:10</small>
+            <span data-i18n="reel.cue2">02 · Character Acting (Genga)</span>
+          </button>
+          <button class="reel__cue" type="button" data-reel-cue="20">
+            <small>TC 00:20</small>
+            <span data-i18n="reel.cue3">03 · Wind &amp; Hair Physics (Douga)</span>
+          </button>
+          <button class="reel__cue" type="button" data-reel-cue="30">
+            <small>TC 00:30</small>
+            <span data-i18n="reel.cue4">04 · 2D FX &amp; Satsuei (Composite)</span>
           </button>
         </div>
       </div>
@@ -314,39 +391,45 @@
       </div>
     </section>
 
-    <!-- ============ 02 — PROCESS (pinned, scroll-scrubbed) ============ -->
+    <!-- ============ 02 — PROCESS (pinned, scroll-scrubbed + 3D Exploded Cel Stack) ============ -->
     <section class="section process" id="process" aria-labelledby="process-title">
       <header class="section-head">
         <span class="section-head__idx">02</span>
         <h2 class="section-head__title" id="process-title" data-split="chars" data-i18n="process.title">Process</h2>
         <span class="section-head__jp" lang="ja">作画工程</span>
-        <span class="section-head__meta" data-i18n="process.meta">Rough → Final</span>
+        <div class="section-head__actions">
+          <button class="process__3d-btn" type="button" data-process-3d-toggle aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span data-i18n="process.stack3d">3D Exploded Cel Stack</span>
+          </button>
+          <span class="section-head__meta" data-i18n="process.meta">Rough → Final</span>
+        </div>
       </header>
 
       <div class="process__pin" data-process>
         <div class="process__stage">
           <div class="process__frames">
-            <picture class="process__frame" data-step="0">
+            <picture class="process__frame" data-step="0" data-layer-tag="L01 · RAFU GENGA (ラフ原画)">
               <source type="image/avif" srcset="assets/img/process-1-800.avif 800w, assets/img/process-1-1400.avif 1400w, assets/img/process-1-2000.avif 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
               <source type="image/webp" srcset="assets/img/process-1-800.webp 800w, assets/img/process-1-1400.webp 1400w, assets/img/process-1-2000.webp 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
               <img src="assets/img/process-1-1400.jpg" width="2600" height="1733" alt="Step 1 — rough key drawing of a sprinting girl" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step1">
             </picture>
-            <picture class="process__frame" data-step="1">
+            <picture class="process__frame" data-step="1" data-layer-tag="L02 · CLEAN-UP &amp; KAGE SHITEI">
               <source type="image/avif" srcset="assets/img/process-2-800.avif 800w, assets/img/process-2-1400.avif 1400w, assets/img/process-2-2000.avif 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
               <source type="image/webp" srcset="assets/img/process-2-800.webp 800w, assets/img/process-2-1400.webp 1400w, assets/img/process-2-2000.webp 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
               <img src="assets/img/process-2-1400.jpg" width="2600" height="1733" alt="Step 2 — clean line art with shadow and highlight colour guides" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step2">
             </picture>
-            <picture class="process__frame" data-step="2">
+            <picture class="process__frame" data-step="2" data-layer-tag="L03 · SHIAGE / SAI-SHIKI (彩色)">
               <source type="image/avif" srcset="assets/img/process-3-800.avif 800w, assets/img/process-3-1400.avif 1400w, assets/img/process-3-2000.avif 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
               <source type="image/webp" srcset="assets/img/process-3-800.webp 800w, assets/img/process-3-1400.webp 1400w, assets/img/process-3-2000.webp 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
               <img src="assets/img/process-3-1400.jpg" width="2600" height="1733" alt="Step 3 — flat colour with the character palette" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step3">
             </picture>
-            <picture class="process__frame" data-step="3">
+            <picture class="process__frame" data-step="3" data-layer-tag="L04 · COMPOSITE (合成 · BG)">
               <source type="image/avif" srcset="assets/img/process-4-800.avif 800w, assets/img/process-4-1400.avif 1400w, assets/img/process-4-2000.avif 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
               <source type="image/webp" srcset="assets/img/process-4-800.webp 800w, assets/img/process-4-1400.webp 1400w, assets/img/process-4-2000.webp 2000w" sizes="(min-width: 1024px) 62vw, 100vw">
               <img src="assets/img/process-4-1400.jpg" width="2600" height="1733" alt="Step 4 — character cel composited over a speed-line background" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step4">
             </picture>
-            <picture class="process__frame" data-step="4">
+            <picture class="process__frame" data-step="4" data-layer-tag="L05 · SATSUEI FX (撮影・完成)">
               <source type="image/avif" srcset="assets/img/process-5-800.avif 800w, assets/img/process-5-1400.avif 1400w, assets/img/process-5-1751.avif 1751w" sizes="(min-width: 1024px) 62vw, 100vw">
               <source type="image/webp" srcset="assets/img/process-5-800.webp 800w, assets/img/process-5-1400.webp 1400w, assets/img/process-5-1751.webp 1751w" sizes="(min-width: 1024px) 62vw, 100vw">
               <img src="assets/img/process-5-1400.jpg" width="1751" height="1167" alt="Step 5 — final frame with lighting, blur and effects" loading="lazy" decoding="async" data-i18n-attr="alt:alt.step5">
@@ -410,8 +493,35 @@
         <span class="section-head__meta">2024 — <span data-year>2026</span></span>
       </header>
 
+      <!-- Cut-Bag Archive Filter & View Switcher -->
+      <div class="work-toolbar" role="toolbar" aria-label="Archive filter and layout view">
+        <div class="work-toolbar__filters" role="group" aria-label="Category filter">
+          <button class="work-filter-btn is-active" type="button" data-work-filter="all">
+            <span class="work-filter-btn__dot" aria-hidden="true"></span>
+            <span data-i18n="work.filterAll">All Cuts (05)</span>
+          </button>
+          <button class="work-filter-btn" type="button" data-work-filter="sakuga">
+            <span data-i18n="work.filterAnim">Sakuga / Genga / Douga (03)</span>
+          </button>
+          <button class="work-filter-btn" type="button" data-work-filter="illust">
+            <span data-i18n="work.filterIllust">Character &amp; Illustration (02)</span>
+          </button>
+        </div>
+
+        <div class="work-toolbar__views" role="group" aria-label="Archive layout mode">
+          <button class="work-view-btn is-active" type="button" data-work-layout="editorial" aria-pressed="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            <span data-i18n="work.viewEditorial">Editorial Cut-Sheet</span>
+          </button>
+          <button class="work-view-btn" type="button" data-work-layout="grid" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            <span data-i18n="work.viewGrid">Cut-Bag Index Grid</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Featured case study -->
-      <article class="case" aria-labelledby="case-title">
+      <article class="case" data-work-cat="sakuga" aria-labelledby="case-title">
         <div class="case__intro">
           <span class="work-row__no case__no" aria-hidden="true">03.1</span>
           <p class="kicker"><span class="kicker__dot" aria-hidden="true"></span><span data-i18n="case.kicker">Featured project · 2025</span></p>
@@ -471,7 +581,7 @@
         <h3 class="works-list__title"><span data-i18n="work.douga">Genga &amp; Douga</span><span class="works-list__jp" lang="ja">原画・動画</span></h3>
 
         <!-- ============ 03.2: GENGA & LAYOUT STUDY ============ -->
-        <article class="work-row genga-row">
+        <article class="work-row genga-row" data-work-cat="sakuga">
           <div class="work-row__meta">
             <span class="work-row__no">03.2</span>
             <h4 class="work-row__title">
@@ -534,7 +644,7 @@
         </article>
 
         <!-- ============ 03.3: DOUGA & FINAL CUT STUDY ============ -->
-        <article class="work-row douga-row">
+        <article class="work-row douga-row" data-work-cat="sakuga">
           <div class="work-row__meta">
             <span class="work-row__no">03.3</span>
             <h4 class="work-row__title" data-i18n="w.douga.t">Douga &amp; Final Cut Study</h4>
@@ -561,6 +671,10 @@
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                     <span data-i18n="douga.tabLine">Line Art</span>
                   </button>
+                  <button class="douga__mode-btn" type="button" role="tab" aria-selected="false" data-douga-mode="split">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h4M17 12h4M7 9l-3 3 3 3M17 9l3 3-3 3"/></svg>
+                    <span data-i18n="douga.tabSplit">50/50 Split</span>
+                  </button>
                 </div>
                 <div class="douga__spec-box">
                   <span class="douga__cut" data-douga-cut-label>CUT 004 · <b data-douga-sheet-code>FINAL</b></span>
@@ -580,6 +694,12 @@
                 <canvas class="douga__canvas" data-douga-canvas width="1280" height="905" aria-hidden="true"></canvas>
                 <canvas class="douga__onion" data-douga-onion width="1280" height="905" aria-hidden="true"></canvas>
                 <video class="douga__video" data-douga-video src="assets/video/shinkai-cut-1.mp4" poster="assets/img/douga/poster-final.jpg" playsinline muted loop preload="metadata" aria-hidden="true"></video>
+                <div class="douga__split-ui" aria-hidden="true">
+                  <span class="douga__split-line"><span class="douga__split-knob">⇆</span></span>
+                  <span class="douga__split-tag douga__split-tag--left">FINAL SATSUEI</span>
+                  <span class="douga__split-tag douga__split-tag--right">DOUGA IRO-TORESU</span>
+                </div>
+                <input class="douga__split-range" type="range" min="5" max="95" value="50" data-douga-split-range aria-label="Split comparison wipe position">
                 <span class="douga__onion-badge" data-douga-onion-badge aria-hidden="true">ONION · PREV</span>
                 <span class="douga__final-badge" data-douga-final-badge aria-hidden="true">COMPOSITE · SHINKAI STYLE (撮影)</span>
                 <span class="cel__corner cel__corner--tl" aria-hidden="true"></span>
@@ -625,7 +745,7 @@
       <div class="works-list">
         <h3 class="works-list__title"><span data-i18n="work.illust">Illustration &amp; Character Design</span><span class="works-list__jp" lang="ja">イラスト・キャラクターデザイン</span></h3>
 
-        <article class="work-row">
+        <article class="work-row" data-work-cat="illust">
           <div class="work-row__meta">
             <span class="work-row__no">03.4</span>
             <h4 class="work-row__title" data-i18n="w.fern.t">Fern &amp; Frieren</h4>
@@ -643,7 +763,7 @@
           </figure>
         </article>
 
-        <article class="work-row work-row--flip">
+        <article class="work-row work-row--flip" data-work-cat="illust">
           <div class="work-row__meta">
             <span class="work-row__no">03.5</span>
             <h4 class="work-row__title" data-i18n="w.aoi.t">Aoi — Character Sheet</h4>
@@ -851,12 +971,13 @@
   <!-- Toast -->
   <div class="toast" data-toast role="status" aria-live="polite"></div>
 
-  <!-- Libraries (GSAP 3 + ScrollTrigger + SplitText, Lenis) -->
+  <!-- Libraries (GSAP 3 + ScrollTrigger + SplitText, Lenis, WebGL Stage) -->
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="assets/vendor/SplitText.min.js" defer></script>
   <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="assets/js/portfolio-data.js?v=20261025.1" defer></script>
-  <script src="assets/js/main.js?v=20261025.1" defer></script>
+  <script src="assets/js/portfolio-data.js?v=20261110.1" defer></script>
+  <script src="assets/js/webgl-stage.js?v=20261110.1" defer></script>
+  <script src="assets/js/main.js?v=20261110.1" defer></script>
 </body>
 </html>

@@ -99,3 +99,28 @@ This document lists all new and updated Japanese strings introduced in the `port
   "Phat Tran (RiSH) Animation Showreel 2024-2026 Poster"
 - **Context & Intent**:
   Accessible alt description for the dedicated YouTube showreel video poster.
+
+
+---
+
+### 8. Awwwards "Sakuga Atelier" Interactive Controls (`atelier.*`, `hero.*`, `reel.cue*`, `process.stack3d`, `work.*`, `douga.tabSplit`)
+- **Location**: Header Control Deck, Hero WebGL Stage, Showreel Shot Breakdown, Process 3D Stack, Work Toolbar, and Douga Split Mode
+
+| Key | Japanese Text | English Meaning | Notes |
+| :--- | :--- | :--- | :--- |
+| `atelier.modeLight` | `作画机（明）` | Animation Desk (Light) | Light-table paper theme toggle label |
+| `atelier.modeDark` | `撮影室（暗）` | Photography / Satsuei Room (Dark) | Darkroom theme toggle label |
+| `atelier.sfx` | `効果音` | Sound Effects (SFX) | Tactile Web Audio synthesizer toggle |
+| `hero.onionGlsl` | `オニオンスキン [GLSL]` | Onion-Skin [GLSL] | Real-time Sobel edge-detection shader toggle |
+| `hero.stageLabel` | `透過レイヤー:` | X-Ray / Loupe Layer: | Label for 5-stage hero pipeline bar |
+| `reel.cue1` | `スプリント作画・インパクトカット` | Sprint Sakuga & Impact Cuts | Showreel cue 00:04 |
+| `reel.cue2` | `キャラクター芝居・感情表現` | Character Acting & Emotional Expression | Showreel cue 00:18 |
+| `reel.cue3` | `レイアウト（LO）・カメラワーク` | Layout (LO) & Camera Work | Showreel cue 00:34 |
+| `reel.cue4` | `2Dエフェクト・髪/布・撮影処理` | 2D Effects, Hair/Cloth & Satsuei Compositing | Showreel cue 00:49 |
+| `process.stack3d` | `3Dレイヤー分解表示` | 3D Exploded Layer View | Isometric 5-layer cel stack toggle |
+| `work.filterAll` | `全カット (05)` | All Cuts (05) | Cut-bag filter: all works |
+| `work.filterAnim` | `作画・原画・動画 (03)` | Sakuga / Genga / Douga (03) | Cut-bag filter: animation works |
+| `work.filterIllust` | `キャラ設定・イラスト (02)` | Character Design & Illustration (02) | Cut-bag filter: illustration works |
+| `work.viewEditorial` | `詳細シート表示` | Detailed Cut-Sheet View | Editorial layout view button |
+| `work.viewGrid` | `カット袋一覧グリッド` | Cut-Bag Index Grid | Compact 2-column bento grid button |
+| `douga.tabSplit` | `50/50 比較` | 50/50 Split Comparison | Side-by-side Final Cut vs Douga Line Art wipe |

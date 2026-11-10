@@ -189,7 +189,24 @@
       'cursor.view': 'VIEW',
       'cursor.open': 'PIXIV',
       'cursor.mail': 'EMAIL',
-      'toast.copied': 'Copied rikun113@gmail.com to clipboard'
+      'toast.copied': 'Copied rikun113@gmail.com to clipboard',
+
+      'atelier.modeLight': 'Light Table',
+      'atelier.modeDark': 'Darkroom',
+      'atelier.sfx': 'SFX',
+      'hero.onionGlsl': 'ONION-SKIN [GLSL]',
+      'hero.stageLabel': 'LOUPE LAYER:',
+      'reel.cue1': 'Sakuga Sprint & Impact Cuts',
+      'reel.cue2': 'Character Acting & Subtlety',
+      'reel.cue3': '3D Camera / Layout & Perspective',
+      'reel.cue4': '2D FX, Hair / Cloth & Satsuei',
+      'process.stack3d': '3D Exploded Cel Stack',
+      'work.filterAll': 'All Cuts (05)',
+      'work.filterAnim': 'Sakuga / Genga / Douga (03)',
+      'work.filterIllust': 'Character & Illustration (02)',
+      'work.viewEditorial': 'Editorial Cut-Sheet',
+      'work.viewGrid': 'Cut-Bag Index Grid',
+      'douga.tabSplit': '50/50 Split'
     },
 
     vi: {
@@ -370,7 +387,24 @@
       'cursor.view': 'PHÓNG TO',
       'cursor.open': 'PIXIV',
       'cursor.mail': 'GỬI MAIL',
-      'toast.copied': 'Đã sao chép rikun113@gmail.com'
+      'toast.copied': 'Đã sao chép rikun113@gmail.com',
+
+      'atelier.modeLight': 'Bàn sáng',
+      'atelier.modeDark': 'Phòng tối',
+      'atelier.sfx': 'Âm thanh',
+      'hero.onionGlsl': 'SOI NÉT ONION [GLSL]',
+      'hero.stageLabel': 'LỚP SOI KÍNH LÚP:',
+      'reel.cue1': 'Sakuga Bứt Tốc & Va Chạm',
+      'reel.cue2': 'Diễn Xuất Nhân Vật & Biểu Cảm',
+      'reel.cue3': 'Layout Phối Cảnh & Camera 3D',
+      'reel.cue4': 'Hiệu Ứng 2D FX, Tóc / Vải & Satsuei',
+      'process.stack3d': 'Tách Lớp 3D (Isometric)',
+      'work.filterAll': 'Tất cả Cut (05)',
+      'work.filterAnim': 'Sakuga / Genga / Douga (03)',
+      'work.filterIllust': 'Thiết Kế Nhân Vật & Minh Hoạ (02)',
+      'work.viewEditorial': 'Bản Trình Bày Chi Tiết',
+      'work.viewGrid': 'Lưới Hồ Sơ Cut-Bag',
+      'douga.tabSplit': 'So sánh 50/50'
     },
 
     ja: {
@@ -551,7 +585,24 @@
       'cursor.view': '拡大',
       'cursor.open': 'PIXIV',
       'cursor.mail': 'メール',
-      'toast.copied': 'rikun113@gmail.com をコピーしました'
+      'toast.copied': 'rikun113@gmail.com をコピーしました',
+
+      'atelier.modeLight': '作画机（明）',
+      'atelier.modeDark': '撮影室（暗）',
+      'atelier.sfx': '効果音',
+      'hero.onionGlsl': 'オニオンスキン [GLSL]',
+      'hero.stageLabel': '透過レイヤー:',
+      'reel.cue1': 'スプリント作画・インパクトカット',
+      'reel.cue2': 'キャラクター芝居・感情表現',
+      'reel.cue3': 'レイアウト（LO）・カメラワーク',
+      'reel.cue4': '2Dエフェクト・髪/布・撮影処理',
+      'process.stack3d': '3Dレイヤー分解表示',
+      'work.filterAll': '全カット (05)',
+      'work.filterAnim': '作画・原画・動画 (03)',
+      'work.filterIllust': 'キャラ設定・イラスト (02)',
+      'work.viewEditorial': '詳細シート表示',
+      'work.viewGrid': 'カット袋一覧グリッド',
+      'douga.tabSplit': '50/50 比較'
     }
   };
 
@@ -1644,8 +1695,14 @@
           lastTime = 0;
           rafId = requestAnimationFrame(tick);
         }
+        if (dougaMode === 'split' && video) {
+          video.play().catch(() => {});
+        }
       } else {
         stopLoop();
+        if (dougaMode === 'split' && video) {
+          video.pause();
+        }
       }
     }
 
@@ -1671,13 +1728,14 @@
     function setPlaying(nextState) {
       isPlaying = nextState;
       if (toggleBtn) toggleBtn.setAttribute('aria-pressed', String(isPlaying));
-      if (dougaMode === 'final' && video) {
+      if ((dougaMode === 'final' || dougaMode === 'split') && video) {
         if (isPlaying) {
           video.play().catch(() => {});
         } else {
           video.pause();
         }
-      } else {
+      }
+      if (dougaMode !== 'final') {
         if (isPlaying) preloadFrames();
         syncLoop();
       }
@@ -1687,7 +1745,7 @@
       if (dougaMode === nextMode) return;
       dougaMode = nextMode;
       dougaEl.dataset.dougaMode = dougaMode;
-      if (expandBtn) expandBtn.dataset.currentMode = dougaMode;
+      if (expandBtn) expandBtn.dataset.currentMode = dougaMode === 'split' ? 'final' : dougaMode;
 
       modeBtns.forEach((b) => {
         const isAct = b.getAttribute('data-douga-mode') === dougaMode;
@@ -1695,6 +1753,7 @@
         b.setAttribute('aria-selected', String(isAct));
       });
       dougaEl.classList.toggle('is-final', dougaMode === 'final');
+      dougaEl.classList.toggle('is-split', dougaMode === 'split');
 
       if (dougaMode === 'final') {
         stopLoop();
@@ -1708,6 +1767,21 @@
             video.pause();
           }
         }
+      } else if (dougaMode === 'split') {
+        if (video) {
+          video.playbackRate = speed;
+          const targetTime = Math.min(TOTAL_DURATION - 0.05, CUMULATIVE_TIMES[cur] || 0);
+          try { video.currentTime = targetTime; } catch (_) {}
+          if (isPlaying && isVisible) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }
+        preloadFrames().then(() => {
+          draw();
+          syncLoop();
+        });
       } else {
         if (video) {
           const vTime = video.currentTime || 0;
