@@ -25,6 +25,12 @@
       featured: true,
       category: 'film',
       year: '2025',
+      cutBag: {
+        cutNo: 'CUT 008 · SPRINT A-12',
+        duration: '06 + 00k (144F)',
+        role: 'LO / GENGA / DOUGA / PAINT / COMP',
+        tools: 'CSP EX · RETAS PaintMan 6.6 · Blender · AE'
+      },
       title: {
         en: 'GET_SET RUN',
         vi: 'GET_SET RUN',
@@ -54,6 +60,12 @@
       featured: false,
       category: 'genga',
       year: '2026',
+      cutBag: {
+        cutNo: 'CUT 012 · LO / GENGA A-01',
+        duration: '03 + 12k (84F)',
+        role: '3D LAYOUT / LO / 1ST & 2ND GENGA',
+        tools: 'CSP EX · Blender · X-Sheet Tsume'
+      },
       title: {
         en: 'Key Animation (Genga) & Layout Study',
         vi: 'Nghiên Cứu Diễn Hoạt Genga & Bố Cục Layout (LO)',
@@ -86,6 +98,12 @@
       featured: false,
       category: 'douga',
       year: '2025',
+      cutBag: {
+        cutNo: 'CUT 004 · SHINKAI TURN',
+        duration: '03 + 12k (26 Drawings)',
+        role: 'DOUGA / IRO-TORESU / PAINT / COMP',
+        tools: 'CSP EX · RETAS PaintMan 6.6 · AE'
+      },
       title: {
         en: 'Douga & Final Cut Study',
         vi: 'Nghiên Cứu Douga & Phim Hoàn Thiện',
@@ -120,6 +138,12 @@
       featured: false,
       category: 'illustration',
       year: '2024',
+      cutBag: {
+        cutNo: 'CUT 019 · KEY VISUAL',
+        duration: '00 + 01k (STILL HOLD)',
+        role: 'KEY VISUAL / PAINT / SATSUEI COMP',
+        tools: 'CSP EX · Photoshop · After Effects'
+      },
       title: {
         en: 'Fern & Frieren',
         vi: 'Fern & Frieren',
@@ -152,6 +176,12 @@
       featured: false,
       category: 'illustration',
       year: '2024',
+      cutBag: {
+        cutNo: 'SETTEI 01 · MODEL SHEET',
+        duration: '00 + 00k (3-VIEW TURN)',
+        role: 'CHARACTER DESIGN / SETTEI / PAINT',
+        tools: 'CSP EX · RETAS PaintMan 6.6'
+      },
       title: {
         en: 'Aoi — Character Sheet',
         vi: 'Aoi — Thiết Kế Nhân Vật (Character Sheet)',

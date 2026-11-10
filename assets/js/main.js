@@ -19,9 +19,9 @@
       'nav.work': 'Work',
       'nav.about': 'About',
       'nav.contact': 'Contact',
-      status: 'Available for work',
+      status: '🟢 Available for Webgen Work (LO · Genga · 2nd Key · Douga)',
 
-      'hero.eyebrow': 'Key Animator (原画)',
+      'hero.eyebrow': 'Animator / Aspiring Episode Director (2D Digital Paint / Douga / 2nd & 1st Key / 3D Layout / Satsuei)',
       'hero.lede': 'Bringing imagination to life — <em>one frame</em> at a time.',
       'hero.sub': 'Key animation, character acting, and layout for Japanese anime productions. Based in Vietnam — drawing toward Tokyo studios.',
       'hero.ctaWork': 'Selected work',
@@ -111,7 +111,7 @@
       'id.name': 'Name',
       'id.alias': 'Alias',
       'id.role': 'Role',
-      'id.roleVal': 'In-between (動画) & Digital Paint (仕上げ) · Aspiring Key Animator (原画)',
+      'id.roleVal': 'Animator / Aspiring Episode Director (2D Digital Paint / Douga / 2nd & 1st Key / 3D Layout / Satsuei)',
       'id.base': 'Based in',
       'id.baseVal': 'Ho Chi Minh City, Vietnam (GMT+7)',
       'id.credits': 'Credits',
@@ -218,7 +218,13 @@
       'cbd.s3': '03 · Douga & Paint (CSP EX)',
       'cbd.s4': '04 · Final Satsuei (AE)',
       'cbd.wipeBtn': 'A/B Wipe Compare',
-      'cbd.fullSheet': 'Full Sheet'
+      'cbd.fullSheet': 'Full Sheet',
+      'seisaku.label': 'SEISAKU DIRECT:',
+      'seisaku.copyX': 'Copy @Ri_Shachi',
+      'seisaku.copyXShort': 'Copy X Handle',
+      'seisaku.copyMail': 'Copy rikun113@gmail.com',
+      'toast.copiedX': '✓ Copied @Ri_Shachi to clipboard (Ready for Seisaku DM)',
+      'toast.copiedMail': '✓ Copied rikun113@gmail.com to clipboard'
     },
 
     vi: {
@@ -229,9 +235,9 @@
       'nav.work': 'Tác phẩm',
       'nav.about': 'Hồ sơ',
       'nav.contact': 'Liên hệ',
-      status: 'Sẵn sàng hợp tác',
+      status: '🟢 Đang nhận việc Webgen (LO · Genga · Nigen · Douga)',
 
-      'hero.eyebrow': 'Hoạ sĩ Diễn hoạt chính · Key Animator (原画)',
+      'hero.eyebrow': 'Hoạ sĩ Diễn hoạt / Hướng tới Đạo diễn (2D Digital Paint / Douga / Genga 1 & 2 / 3D Layout / Satsuei)',
       'hero.lede': 'Thổi hồn vào trí tưởng tượng — qua <em>từng khung hình.</em>',
       'hero.sub': 'Diễn hoạt chính (Key Animation), diễn xuất nhân vật và bố cục layout cho anime Nhật Bản. Sống tại Việt Nam — vẽ từng khung hình hướng tới các studio Tokyo.',
       'hero.ctaWork': 'Xem tác phẩm',
@@ -321,7 +327,7 @@
       'id.name': 'Họ tên',
       'id.alias': 'Nghệ danh',
       'id.role': 'Vai trò',
-      'id.roleVal': 'In-between (動画) & Digital Paint (仕上げ) · Hướng tới Key Animator (原画)',
+      'id.roleVal': 'Hoạ sĩ Diễn hoạt / Hướng tới Đạo diễn (2D Digital Paint / Douga / Genga 1 & 2 / 3D Layout / Satsuei)',
       'id.base': 'Nơi ở',
       'id.baseVal': 'TP. Hồ Chí Minh, Việt Nam (GMT+7)',
       'id.credits': 'Credit tác phẩm',
@@ -428,7 +434,13 @@
       'cbd.s3': '03 · Douga & Paint (CSP EX)',
       'cbd.s4': '04 · Final Satsuei (After Effects)',
       'cbd.wipeBtn': 'Kéo So Sánh A/B',
-      'cbd.fullSheet': 'Bảng Đầy Đủ'
+      'cbd.fullSheet': 'Bảng Đầy Đủ',
+      'seisaku.label': 'LIÊN HỆ TRỰC TIẾP (SEISAKU):',
+      'seisaku.copyX': 'Sao chép @Ri_Shachi',
+      'seisaku.copyXShort': 'Sao chép X',
+      'seisaku.copyMail': 'Sao chép rikun113@gmail.com',
+      'toast.copiedX': '✓ Đã sao chép @Ri_Shachi vào bộ nhớ tạm',
+      'toast.copiedMail': '✓ Đã sao chép rikun113@gmail.com vào bộ nhớ tạm'
     },
 
     ja: {
@@ -439,9 +451,9 @@
       'nav.work': '作品',
       'nav.about': 'プロフィール',
       'nav.contact': '連絡先',
-      status: 'お仕事募集中',
+      status: '🟢 現在、LO・原画・第二原画・動画のご依頼を受け付けております (Available for Webgen Work)',
 
-      'hero.eyebrow': '2Dアニメーター・原画マン (Key Animator)',
+      'hero.eyebrow': 'アニメーター / 演出志望 (2D Digital Paint / 動画 / 第二原画・原画 / 3Dレイアウト / 撮影)',
       'hero.lede': '想像に命を吹き込む — <em>1フレーム</em>ずつ。',
       'hero.sub': '日本のアニメーション制作における原画（一原・二原）・レイアウト・キャラクター芝居を担当。ベトナムを拠点に東京のスタジオを目指して作画中。',
       'hero.ctaWork': '作品を見る',
@@ -531,7 +543,7 @@
       'id.name': '氏名',
       'id.alias': '名義',
       'id.role': '役職',
-      'id.roleVal': '動画（Douga） & 仕上げ · 原画育成中（Genga）',
+      'id.roleVal': 'アニメーター / 演出志望 (2D Digital Paint / 動画 / 第二原画・原画 / 3Dレイアウト / 撮影)',
       'id.base': '拠点',
       'id.baseVal': 'ベトナム・ホーチミン市 (GMT+7)',
       'id.credits': '作画クレジット',
@@ -638,7 +650,13 @@
       'cbd.s3': '03 · 動画・仕上げ (CSP EX)',
       'cbd.s4': '04 · 撮影コンポジット (AE)',
       'cbd.wipeBtn': 'A/B スライダー比較',
-      'cbd.fullSheet': '分解シート全体'
+      'cbd.fullSheet': '分解シート全体',
+      'seisaku.label': '制作進行直通 (SEISAKU DIRECT):',
+      'seisaku.copyX': 'X (@Ri_Shachi) をコピー',
+      'seisaku.copyXShort': 'X IDをコピー',
+      'seisaku.copyMail': 'メールをコピー (rikun113@gmail.com)',
+      'toast.copiedX': '✓ @Ri_Shachi をコピーしました（制作進行DM用）',
+      'toast.copiedMail': '✓ rikun113@gmail.com をクリップボードにコピーしました'
     }
   };
 
@@ -2236,9 +2254,9 @@
   }
 
   /* =====================================================================
-     17. COPY EMAIL TOAST
+     17. SEISAKU DIRECT 1-CLICK COPY (X HANDLE & EMAIL) + TOAST
      ===================================================================== */
-  const copyBtn = document.querySelector('[data-copy]');
+  const copyBtns = document.querySelectorAll('[data-copy]');
   const toast = document.querySelector('[data-toast]');
   let toastTimer = null;
 
@@ -2249,25 +2267,29 @@
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toast.classList.remove('is-visible');
-    }, 2600);
+    }, 2800);
   }
 
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async () => {
-      const email = copyBtn.getAttribute('data-copy') || 'rikun113@gmail.com';
+  copyBtns.forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const value = btn.getAttribute('data-copy') || 'rikun113@gmail.com';
+      const kind = btn.getAttribute('data-copy-kind') || (value.startsWith('@') ? 'x' : 'mail');
       try {
-        await navigator.clipboard.writeText(email);
+        await navigator.clipboard.writeText(value);
       } catch (_) {
         const ta = document.createElement('textarea');
-        ta.value = email;
+        ta.value = value;
         document.body.appendChild(ta);
         ta.select();
         document.execCommand('copy');
         ta.remove();
       }
-      showToast(t('toast.copied'));
+      btn.classList.add('is-copied');
+      setTimeout(() => btn.classList.remove('is-copied'), 1600);
+      if (window.RishAudio && typeof window.RishAudio.chime === 'function') window.RishAudio.chime(659.25);
+      showToast(kind === 'x' ? t('toast.copiedX') : t('toast.copiedMail'));
     });
-  }
+  });
 
   /* =====================================================================
      18. BOOTSTRAP

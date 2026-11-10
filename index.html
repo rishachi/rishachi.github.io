@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" data-studio-mode="darkroom">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Phat Tran (RiSH) — Key Animator (原画)</title>
   <meta name="description" content="Portfolio of Phat Tran (RiSH), a 2D Key Animator (原画) specializing in anime production, dynamic character acting, layout (LO), and sakuga sequences.">
   <meta name="author" content="Phat Tran">
-  <meta name="theme-color" content="#f2efe9">
+  <meta name="theme-color" content="#0a0a0c">
   <link rel="canonical" href="https://rishachi.github.io/">
 
   <!-- Open Graph / social -->
@@ -34,7 +34,7 @@
   <!-- Above-the-fold hero art -->
   <link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/process-5-800.avif 800w, assets/img/process-5-1400.avif 1400w, assets/img/process-5-1751.avif 1751w" imagesizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high">
 
-  <link rel="stylesheet" href="assets/css/main.css?v=20261111.1">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261111.2">
 
   <script>
     // Flag JS early (prevents flash of un-animated content) + restore language & studio theme before paint.
@@ -45,7 +45,9 @@
       var lang = saved || (['vi', 'ja'].indexOf(nav) > -1 ? nav : 'en');
       document.documentElement.lang = lang;
       var savedMode = localStorage.getItem('rish:studio-mode');
-      if (savedMode === 'darkroom') {
+      if (savedMode === 'paper' || savedMode === 'light') {
+        document.documentElement.setAttribute('data-studio-mode', 'paper');
+      } else {
         document.documentElement.setAttribute('data-studio-mode', 'darkroom');
       }
       if (location.protocol.indexOf('http') === 0) {
@@ -141,11 +143,11 @@
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="en" lang="en">EN</button>
         <button type="button" data-lang="vi" lang="vi">VI</button>
-        <button type="button" data-lang="ja" lang="ja">JP</button>
+        <button type="button" data-lang="ja" lang="ja" title="日本語 (Seisaku Direct)">日本語</button>
       </div>
-      <a class="status" href="#contact">
+      <a class="status status--seisaku" href="#contact" title="Available for Webgen Work (LO / Genga / Nigen / Douga / Paint)">
         <span class="status__dot" aria-hidden="true"></span>
-        <span data-i18n="status">Available for work</span>
+        <span class="status__text" data-i18n="status">🟢 Available for Webgen Work (LO · Genga · 2nd Key · Douga)</span>
       </a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-btn>
         <span class="menu-btn__bars" aria-hidden="true"><i></i><i></i></span>
@@ -223,9 +225,22 @@
             </button>
           </div>
 
+          <!-- Seisaku Direct Dispatch Quick-Copy Bar -->
+          <div class="seisaku-direct" data-hero-fade role="region" aria-label="Seisaku Shinkou Quick Contact">
+            <span class="seisaku-direct__tag" data-i18n="seisaku.label">SEISAKU DIRECT (制作進行直通):</span>
+            <button class="seisaku-direct__btn" type="button" data-copy="@Ri_Shachi" data-copy-kind="x" title="1-Click Copy X Handle (@Ri_Shachi)">
+              <span class="seisaku-direct__icon" aria-hidden="true">𝕏</span>
+              <span data-i18n="seisaku.copyX">Copy @Ri_Shachi</span>
+            </button>
+            <button class="seisaku-direct__btn" type="button" data-copy="rikun113@gmail.com" data-copy-kind="mail" title="1-Click Copy Email (rikun113@gmail.com)">
+              <span class="seisaku-direct__icon" aria-hidden="true">✉</span>
+              <span data-i18n="seisaku.copyMail">Copy rikun113@gmail.com</span>
+            </button>
+          </div>
+
           <div class="hero__telemetry" data-hero-fade aria-hidden="true">
-            <div><small>PIPELINE</small><b>LO · GENGA · DOUGA · SHIAGE</b></div>
-            <div><small>WORKFLOW</small><b>CSP EX · RETAS PAINTMAN</b></div>
+            <div><small>PIPELINE</small><b>3D LO · GENGA · DOUGA · PAINT · SATSUEI</b></div>
+            <div><small>TOOLS</small><b>CSP EX · RETAS PAINTMAN 6.6 · BLENDER · AE</b></div>
           </div>
         </div>
 
@@ -592,6 +607,24 @@
 
       <!-- Featured case study -->
       <article class="case" data-work-cat="sakuga" aria-labelledby="case-title">
+        <header class="cut-bag-head" aria-label="Cut Envelope Technical Metadata">
+          <div class="cut-bag-head__cell">
+            <span class="cut-bag-head__k">CUT NO.</span>
+            <strong class="cut-bag-head__v">CUT 008 · SPRINT A-12</strong>
+          </div>
+          <div class="cut-bag-head__cell">
+            <span class="cut-bag-head__k">DURATION (24FPS)</span>
+            <strong class="cut-bag-head__v">06 + 00k <small>(144F)</small></strong>
+          </div>
+          <div class="cut-bag-head__cell">
+            <span class="cut-bag-head__k">ROLE</span>
+            <strong class="cut-bag-head__v">LO / GENGA / DOUGA / PAINT / COMP</strong>
+          </div>
+          <div class="cut-bag-head__cell">
+            <span class="cut-bag-head__k">TOOLS</span>
+            <strong class="cut-bag-head__v">CSP EX · RETAS PaintMan 6.6 · Blender · AE</strong>
+          </div>
+        </header>
         <div class="case__intro">
           <span class="work-row__no case__no" aria-hidden="true">03.1</span>
           <p class="kicker"><span class="kicker__dot" aria-hidden="true"></span><span data-i18n="case.kicker">Featured project · 2025</span></p>
@@ -707,6 +740,24 @@
 
         <!-- ============ 03.2: GENGA & LAYOUT STUDY ============ -->
         <article class="work-row genga-row" data-work-cat="sakuga">
+          <header class="cut-bag-head" aria-label="Cut Envelope Technical Metadata">
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">CUT NO.</span>
+              <strong class="cut-bag-head__v">CUT 012 · LO / GENGA A-01</strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">DURATION (24FPS)</span>
+              <strong class="cut-bag-head__v">03 + 12k <small>(84F)</small></strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">ROLE</span>
+              <strong class="cut-bag-head__v">3D LAYOUT / LO / 1ST &amp; 2ND GENGA</strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">TOOLS</span>
+              <strong class="cut-bag-head__v">CSP EX · Blender · X-Sheet Tsume</strong>
+            </div>
+          </header>
           <div class="work-row__meta">
             <span class="work-row__no">03.2</span>
             <h4 class="work-row__title">
@@ -770,6 +821,24 @@
 
         <!-- ============ 03.3: DOUGA & FINAL CUT STUDY ============ -->
         <article class="work-row douga-row" data-work-cat="sakuga">
+          <header class="cut-bag-head" aria-label="Cut Envelope Technical Metadata">
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">CUT NO.</span>
+              <strong class="cut-bag-head__v">CUT 004 · SHINKAI TURN</strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">DURATION (24FPS)</span>
+              <strong class="cut-bag-head__v">03 + 12k <small>(26 Drawings)</small></strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">ROLE</span>
+              <strong class="cut-bag-head__v">DOUGA / IRO-TORESU / PAINT / COMP</strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">TOOLS</span>
+              <strong class="cut-bag-head__v">CSP EX · RETAS PaintMan 6.6 · AE</strong>
+            </div>
+          </header>
           <div class="work-row__meta">
             <span class="work-row__no">03.3</span>
             <h4 class="work-row__title" data-i18n="w.douga.t">Douga &amp; Final Cut Study</h4>
@@ -881,6 +950,24 @@
         <h3 class="works-list__title"><span data-i18n="work.illust">Illustration &amp; Character Design</span><span class="works-list__jp" lang="ja">イラスト・キャラクターデザイン</span></h3>
 
         <article class="work-row" data-work-cat="illust">
+          <header class="cut-bag-head" aria-label="Cut Envelope Technical Metadata">
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">CUT NO.</span>
+              <strong class="cut-bag-head__v">CUT 019 · KEY VISUAL</strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">DURATION (24FPS)</span>
+              <strong class="cut-bag-head__v">00 + 01k <small>(STILL HOLD)</small></strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">ROLE</span>
+              <strong class="cut-bag-head__v">KEY VISUAL / PAINT / SATSUEI COMP</strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">TOOLS</span>
+              <strong class="cut-bag-head__v">CSP EX · Photoshop · After Effects</strong>
+            </div>
+          </header>
           <div class="work-row__meta">
             <span class="work-row__no">03.4</span>
             <h4 class="work-row__title" data-i18n="w.fern.t">Fern &amp; Frieren</h4>
@@ -899,6 +986,24 @@
         </article>
 
         <article class="work-row work-row--flip" data-work-cat="illust">
+          <header class="cut-bag-head" aria-label="Cut Envelope Technical Metadata">
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">CUT NO.</span>
+              <strong class="cut-bag-head__v">SETTEI 01 · MODEL SHEET</strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">DURATION (24FPS)</span>
+              <strong class="cut-bag-head__v">00 + 00k <small>(3-VIEW TURN)</small></strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">ROLE</span>
+              <strong class="cut-bag-head__v">CHARACTER DESIGN / SETTEI / PAINT</strong>
+            </div>
+            <div class="cut-bag-head__cell">
+              <span class="cut-bag-head__k">TOOLS</span>
+              <strong class="cut-bag-head__v">CSP EX · RETAS PaintMan 6.6</strong>
+            </div>
+          </header>
           <div class="work-row__meta">
             <span class="work-row__no">03.5</span>
             <h4 class="work-row__title" data-i18n="w.aoi.t">Aoi — Character Sheet</h4>
@@ -1063,9 +1168,16 @@
           <p class="contact__intro" data-i18n="contact.intro">Open for studio positions, freelance animation and illustration commissions, and collaborations.</p>
           <div class="mailbox">
             <a class="mailbox__link" href="mailto:rikun113@gmail.com" data-magnetic data-cursor="mail">rikun113@gmail.com</a>
-            <button class="mailbox__copy" type="button" data-copy="rikun113@gmail.com">
+            <button class="mailbox__copy" type="button" data-copy="rikun113@gmail.com" data-copy-kind="mail">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg>
               <span data-i18n="contact.copy">Copy</span>
+            </button>
+          </div>
+          <div class="mailbox mailbox--x">
+            <a class="mailbox__link" href="https://x.com/Ri_Shachi" target="_blank" rel="noopener" data-magnetic>@Ri_Shachi</a>
+            <button class="mailbox__copy" type="button" data-copy="@Ri_Shachi" data-copy-kind="x">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg>
+              <span data-i18n="seisaku.copyXShort">Copy X Handle</span>
             </button>
           </div>
         </div>
@@ -1111,9 +1223,9 @@
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="assets/vendor/SplitText.min.js" defer></script>
   <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="assets/js/portfolio-data.js?v=20261111.1" defer></script>
-  <script src="assets/js/webgl-stage.js?v=20261111.1" defer></script>
-  <script src="assets/js/main.js?v=20261111.1" defer></script>
-  <script src="assets/js/sakuga-theatre.js?v=20261111.1" defer></script>
+  <script src="assets/js/portfolio-data.js?v=20261111.2" defer></script>
+  <script src="assets/js/webgl-stage.js?v=20261111.2" defer></script>
+  <script src="assets/js/main.js?v=20261111.2" defer></script>
+  <script src="assets/js/sakuga-theatre.js?v=20261111.2" defer></script>
 </body>
 </html>

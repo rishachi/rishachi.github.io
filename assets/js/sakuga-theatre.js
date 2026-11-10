@@ -486,15 +486,63 @@
     syncBreakdownUI();
   }
 
+  /* =====================================================================
+     4. KINETIC CUT-BAG ENVELOPE REVEALS (GSAP + SCROLLTRIGGER SNAPPY 2D)
+     ===================================================================== */
+  function initCutBagKineticMotion() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (typeof window.gsap === 'undefined' || typeof window.ScrollTrigger === 'undefined') return;
+
+    const cutHeaders = document.querySelectorAll('.cut-bag-head');
+    cutHeaders.forEach((header) => {
+      const cells = header.querySelectorAll('.cut-bag-head__cell');
+      gsap.fromTo(
+        header,
+        { clipPath: 'inset(0 100% 0 0)', opacity: 0.25 },
+        {
+          clipPath: 'inset(0 0% 0 0)',
+          opacity: 1,
+          duration: 0.42,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: header,
+            start: 'top 90%',
+            once: true
+          }
+        }
+      );
+      if (cells.length) {
+        gsap.fromTo(
+          cells,
+          { y: 10, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.34,
+            stagger: 0.055,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: header,
+              start: 'top 90%',
+              once: true
+            }
+          }
+        );
+      }
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initSakugaTheatre();
       enhanceDougaPlayer();
       initPipelineBreakdown();
+      initCutBagKineticMotion();
     });
   } else {
     initSakugaTheatre();
     enhanceDougaPlayer();
     initPipelineBreakdown();
+    initCutBagKineticMotion();
   }
 })();

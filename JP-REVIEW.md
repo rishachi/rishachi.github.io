@@ -145,3 +145,20 @@ This document lists all new and updated Japanese strings introduced in the `port
 | `cbd.wipeBtn` | `A/B ワイプ比較` | A/B Wipe Compare | Toggle button for interactive wipe slider against Final Satsuei |
 | `cbd.fullSheet` | `4工程シート拡大 ↗` | Enlarge 4-Stage Sheet ↗ | Button opening the full 2000px composite breakdown sheet in lightbox |
 
+---
+
+### 10. Phase 4 — Seisaku Direct (制作進行直通) Terminology & Quick-Copy Toast (`status`, `hero.eyebrow`, `id.roleVal`, `seisaku.*`, `toast.*`)
+- **Location**: Header Webgen Status Pill, Hero Eyebrow, About ID Card Role, Hero Seisaku Direct Bar, and Contact Quick-Copy Toast
+
+| Key | Japanese Text | English Meaning | Notes |
+| :--- | :--- | :--- | :--- |
+| `status` | `🟢 現在、LO・原画・第二原画・動画のご依頼を受け付けております (Available for Webgen Work)` | Currently accepting LO, 1st Key, 2nd Key, and Douga requests (Available for Webgen Work) | Prominent Header availability status pill |
+| `hero.eyebrow` / `id.roleVal` | `アニメーター / 演出志望 (2D Digital Paint / 動画 / 第二原画・原画 / 3Dレイアウト / 撮影)` | Animator / Aspiring Episode Director (2D Digital Paint / Douga / 2nd & 1st Key / 3D Layout / Satsuei) | Standard Japanese anime studio pipeline role specification |
+| `seisaku.label` | `制作進行直通 (SEISAKU DIRECT):` | Seisaku Shinkou Direct Contact: | Label for 1-click copy dispatch bar |
+| `seisaku.copyX` | `X (@Ri_Shachi) をコピー` | Copy X (@Ri_Shachi) | 1-click copy button for X handle |
+| `seisaku.copyXShort` | `X IDをコピー` | Copy X ID | Compact copy button in Contact section |
+| `seisaku.copyMail` | `メールをコピー (rikun113@gmail.com)` | Copy Email (rikun113@gmail.com) | 1-click copy button for email |
+| `toast.copiedX` | `✓ @Ri_Shachi をコピーしました（制作進行DM用）` | ✓ Copied @Ri_Shachi (for Production Assistant DM) | Toast confirmation when copying X handle |
+| `toast.copiedMail` | `✓ rikun113@gmail.com をクリップボードにコピーしました` | ✓ Copied rikun113@gmail.com to clipboard | Toast confirmation when copying email |
+
+

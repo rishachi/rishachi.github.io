@@ -724,7 +724,9 @@
       if (withSound) StudioAudio.chime(isDark ? 392.0 : 587.33);
     }
 
-    if (savedTheme === 'darkroom') {
+    if (savedTheme === 'paper' || savedTheme === 'light') {
+      applyStudioMode('paper', false);
+    } else {
       applyStudioMode('darkroom', false);
     }
 

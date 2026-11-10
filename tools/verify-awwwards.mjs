@@ -25,23 +25,25 @@ async function run() {
       consoleErrors.push(String(err));
     });
 
-    await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1.5 });
+    await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
     await page.goto('http://localhost:3000', { waitUntil: 'networkidle2' });
 
     // Wait for preloader and hero clip-path entrance + WebGL textures to finish
     await new Promise(r => setTimeout(r, 2700));
 
-    // 1. Check WebGL Stage & 5-Layer Pipeline Scrubber
+    // 1. Check WebGL Stage & 5-Layer Pipeline Scrubber + Default Deep Obsidian (#0A0A0C) Theme
     const hasWebGL = await page.$eval('.cel', el => el.classList.contains('has-webgl'));
     const stageButtonsCount = await page.$$eval('[data-hero-stage]', els => els.length);
-    console.log('[1. WEBGL 5-LAYER STAGE CHECK]');
+    const defaultMode = await page.evaluate(() => document.documentElement.getAttribute('data-studio-mode'));
+    console.log('[1. WEBGL 5-LAYER STAGE & DEEP OBSIDIAN THEME CHECK]');
     console.log('  .cel.has-webgl:', hasWebGL);
     console.log('  Pipeline Stage Buttons:', stageButtonsCount);
-    if (!hasWebGL || stageButtonsCount !== 5) {
-      throw new Error('FAILED: WebGL stage or 5-layer pipeline buttons not initialized!');
+    console.log('  Default Studio Mode:', defaultMode);
+    if (!hasWebGL || stageButtonsCount !== 5 || defaultMode !== 'darkroom') {
+      throw new Error('FAILED: WebGL stage, 5-layer pipeline buttons, or darkroom default not initialized!');
     }
 
-    // Move mouse over Hero Cel and toggle Onion-Skin GLSL + Stage 01 RAFU
+    // Move mouse over Hero Cel and toggle Onion-Skin GLSL
     const frameBox = await page.$eval('.cel__frame', el => {
       const r = el.getBoundingClientRect();
       return { x: r.left + r.width * 0.54, y: r.top + r.height * 0.44 };
@@ -50,24 +52,50 @@ async function run() {
     await page.click('[data-hero-onion]');
     await new Promise(r => setTimeout(r, 350));
 
-    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'awwwards-hero-light.png') });
-    console.log('  ✓ Captured awwwards-hero-light.png (Light-Table + WebGL Loupe + GLSL Onion-Skin)\n');
+    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'awwwards-hero-darkroom.png') });
+    console.log('  ✓ Captured awwwards-hero-darkroom.png (Deep Obsidian #0A0A0C + WebGL Loupe + GLSL Onion-Skin)\n');
 
-    // 2. Test Darkroom Satsuei Mode Toggle
-    console.log('[2. SATSUEI DARKROOM THEME CHECK]');
+    // 1B. Test Phase 4 Seisaku Direct (日本語 + 1-Click Copy @Ri_Shachi + Toast)
+    console.log('[1B. PHASE 4 SEISAKU DIRECT (日本語 & 1-CLICK COPY TOAST) CHECK]');
+    await page.evaluate(() => {
+      const jaBtn = document.querySelector('button[data-lang="ja"]');
+      if (jaBtn) jaBtn.click();
+      const copyX = document.querySelector('[data-copy="@Ri_Shachi"]');
+      if (copyX) copyX.click();
+    });
+    await new Promise(r => setTimeout(r, 300));
+    const seisakuState = await page.evaluate(() => ({
+      eyebrow: document.querySelector('[data-i18n="hero.eyebrow"]')?.textContent.trim(),
+      status: document.querySelector('[data-i18n="status"]')?.textContent.trim(),
+      toastText: document.querySelector('[data-toast]')?.textContent.trim(),
+      toastVisible: document.querySelector('[data-toast]')?.classList.contains('is-visible')
+    }));
+    console.log('  JP Role:', seisakuState.eyebrow);
+    console.log('  JP Status:', seisakuState.status);
+    console.log('  JP Toast:', seisakuState.toastText, '| visible:', seisakuState.toastVisible);
+    if (!seisakuState.toastVisible || !seisakuState.status.includes('現在、LO・原画')) {
+      throw new Error('FAILED: Phase 4 Seisaku Direct JP or Toast failed!');
+    }
+    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'phase4-seisaku-direct-jp.png') });
+    console.log('  ✓ Captured phase4-seisaku-direct-jp.png (Seisaku Direct JP + Toast Confirmation)\n');
+
+    // Switch back to EN & test Light-Table Mode toggle
+    await page.evaluate(() => {
+      const enBtn = document.querySelector('button[data-lang="en"]');
+      if (enBtn) enBtn.click();
+    });
+    console.log('[2. LIGHT-TABLE PAPER THEME TOGGLE CHECK]');
     await page.click('[data-theme-toggle]');
     await new Promise(r => setTimeout(r, 350));
     const studioMode = await page.evaluate(() => document.documentElement.getAttribute('data-studio-mode'));
     console.log('  data-studio-mode:', studioMode);
-    if (studioMode !== 'darkroom') {
-      throw new Error('FAILED: Darkroom mode did not activate!');
+    if (studioMode !== 'paper') {
+      throw new Error('FAILED: Light-Table paper mode did not activate!');
     }
-    await page.mouse.move(frameBox.x - 40, frameBox.y + 20);
-    await new Promise(r => setTimeout(r, 250));
-    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'awwwards-hero-darkroom.png') });
-    console.log('  ✓ Captured awwwards-hero-darkroom.png (Darkroom Satsuei Mode)\n');
+    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'awwwards-hero-light.png') });
+    console.log('  ✓ Captured awwwards-hero-light.png (Light-Table Paper Mode)\n');
 
-    // Switch back to Light-Table mode for editorial warmth
+    // Switch back to Deep Obsidian Darkroom Mode (#0A0A0C)
     await page.click('[data-theme-toggle]');
     await new Promise(r => setTimeout(r, 200));
 
@@ -118,8 +146,20 @@ async function run() {
     await page.screenshot({ path: path.join(ARTIFACT_DIR, 'awwwards-process-3d.png') });
     console.log('  ✓ Captured awwwards-process-3d.png (3D Exploded Isometric Cel Stack)\n');
 
-    // 3B. Test Section 03.1 Interactive Pipeline Breakdown Console
-    console.log('[3B. INTERACTIVE CUT BREAKDOWN CONSOLE CHECK]');
+    // 3B. Test Section 03.1 Cut-Bag Header & Interactive Pipeline Breakdown Console
+    console.log('[3B. CUT-BAG HEADER & INTERACTIVE CUT BREAKDOWN CONSOLE CHECK]');
+    await page.evaluate(() => {
+      document.querySelector('.case').scrollIntoView({ behavior: 'instant', block: 'start' });
+    });
+    await new Promise(r => setTimeout(r, 400));
+    const cutBagCount = await page.$$eval('.cut-bag-head', els => els.length);
+    console.log('  Cut-Bag Headers count:', cutBagCount);
+    if (cutBagCount !== 5) {
+      throw new Error(`FAILED: Expected 5 Cut-Bag Headers, got ${cutBagCount}`);
+    }
+    await page.screenshot({ path: path.join(ARTIFACT_DIR, 'phase3-cut-bag-desktop.png') });
+    console.log('  ✓ Captured phase3-cut-bag-desktop.png (Cut Envelope Technical Metadata Grid)\n');
+
     await page.evaluate(() => {
       document.querySelector('[data-cut-breakdown]').scrollIntoView({ behavior: 'instant', block: 'center' });
     });
@@ -206,18 +246,28 @@ async function run() {
     });
     console.log('  ✓ 100% i18n parity verified across EN / VI / JA.\n');
 
-    // 7. Responsive Zero-Overflow Check (375px, 768px, 1440px)
+    // 7. Responsive Zero-Overflow Check (375px, 768px, 1440px, 1920px)
     console.log('[7. RESPONSIVE ZERO-OVERFLOW CHECK]');
-    for (const width of [375, 768, 1440]) {
-      await page.setViewport({ width, height: 800 });
-      await new Promise(r => setTimeout(r, 120));
+    for (const width of [375, 768, 1440, 1920]) {
+      await page.setViewport({ width, height: 812 });
+      await new Promise(r => setTimeout(r, 150));
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
       console.log(`  Viewport ${width}px overflow:`, overflow);
       if (overflow) {
         throw new Error(`FAILED: Horizontal overflow at ${width}px!`);
       }
+      if (width === 375) {
+        await page.evaluate(() => {
+          window.scrollTo(0, 0);
+          const jaBtn = document.querySelector('button[data-lang="ja"]');
+          if (jaBtn) jaBtn.click();
+        });
+        await new Promise(r => setTimeout(r, 150));
+        await page.screenshot({ path: path.join(ARTIFACT_DIR, 'phase5-mobile-view.png') });
+        console.log('  ✓ Captured phase5-mobile-view.png (375x812 Mobile View in JP)');
+      }
     }
-    console.log('  ✓ Zero horizontal overflow across 375px, 768px, 1440px.\n');
+    console.log('  ✓ Zero horizontal overflow across 375px, 768px, 1440px, 1920px.\n');
 
     // 8. Console Errors Check
     if (consoleErrors.length > 0) {

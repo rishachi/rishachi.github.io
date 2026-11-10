@@ -33,34 +33,33 @@ http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', '*');
 
+    const data = await readFile(filePath);
+
     // Support HTTP Range requests for video seeking & smooth streaming
     const rangeHeader = req.headers.range;
     if (rangeHeader && fileStat.isFile()) {
       const match = /^bytes=(\d+)-(\d*)$/.exec(rangeHeader);
       if (match) {
         const start = parseInt(match[1], 10);
-        const end = match[2] ? parseInt(match[2], 10) : fileStat.size - 1;
-        if (start < fileStat.size && end < fileStat.size && start <= end) {
-          const chunkLen = end - start + 1;
+        const end = match[2] ? Math.min(fileStat.size - 1, parseInt(match[2], 10)) : fileStat.size - 1;
+        if (start < fileStat.size && start <= end) {
+          const chunk = data.subarray(start, end + 1);
           res.writeHead(206, {
             'Content-Type': contentType,
             'Content-Range': `bytes ${start}-${end}/${fileStat.size}`,
             'Accept-Ranges': 'bytes',
-            'Content-Length': chunkLen,
+            'Content-Length': chunk.length,
             'Access-Control-Allow-Origin': '*'
           });
-          const fileHandle = await open(filePath, 'r');
-          const stream = fileHandle.createReadStream({ start, end });
-          stream.pipe(res);
+          res.end(chunk);
           return;
         }
       }
     }
 
-    const data = await readFile(filePath);
     res.writeHead(200, {
       'Content-Type': contentType,
-      'Content-Length': fileStat.size,
+      'Content-Length': data.length,
       'Accept-Ranges': 'bytes'
     });
     res.end(data);
